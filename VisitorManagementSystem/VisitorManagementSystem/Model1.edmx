@@ -1,0 +1,362 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="VMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="VMSModelStoreContainer">
+          <EntitySet Name="AccessArea" EntityType="VMSModel.Store.AccessArea" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Appointment" EntityType="VMSModel.Store.Appointment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AreaHead" EntityType="VMSModel.Store.AreaHead" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employee" EntityType="VMSModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Manager" EntityType="VMSModel.Store.Manager" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityAdmin" EntityType="VMSModel.Store.SecurityAdmin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="VMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Visit" EntityType="VMSModel.Store.Visit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Visitor" EntityType="VMSModel.Store.Visitor" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="AccessArea">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="AreaName" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Name="AppointmentId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Time" Type="time" />
+        </EntityType>
+        <EntityType Name="AreaHead">
+          <Key>
+            <PropertyRef Name="AreaHeadId" />
+          </Key>
+          <Property Name="AreaHeadId" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="100" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="NicNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="WorkPhone" Type="int" />
+          <Property Name="Mobile" Type="int" />
+          <Property Name="Other" Type="int" />
+          <Property Name="Photo" Type="image" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="ManagerId" />
+          </Key>
+          <Property Name="ManagerId" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="SecurityAdmin">
+          <Key>
+            <PropertyRef Name="SecurityAdminId" />
+          </Key>
+          <Property Name="SecurityAdminId" Type="varchar" Nullable="false" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Visit">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Name="VisitId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDtae" Type="date" />
+          <Property Name="Purpose" Type="varchar" MaxLength="50" />
+          <Property Name="InTime" Type="time" />
+          <Property Name="OutTime" Type="time" />
+          <Property Name="NoOfDaysStayed" Type="int" />
+          <Property Name="PlaceStayed" Type="varbinary" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="VisitorId" />
+          </Key>
+          <Property Name="VisitorId" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="NicNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Organization" Type="varchar" MaxLength="50" />
+          <Property Name="Designation" Type="varchar" MaxLength="50" />
+          <Property Name="Category" Type="varchar" MaxLength="20" />
+          <Property Name="DateOfBirth" Type="date" />
+          <Property Name="Gender" Type="varchar" MaxLength="10" />
+          <Property Name="PersonalAddress" Type="varchar" MaxLength="100" />
+          <Property Name="CompanyAddress" Type="varchar" MaxLength="100" />
+          <Property Name="WorkPhone" Type="int" />
+          <Property Name="Mobile" Type="int" />
+          <Property Name="Other" Type="int" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="image" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VMSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="VMSEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="AccessAreas" EntityType="VMSModel.AccessArea" />
+          <EntitySet Name="Appointments" EntityType="VMSModel.Appointment" />
+          <EntitySet Name="AreaHeads" EntityType="VMSModel.AreaHead" />
+          <EntitySet Name="Employees" EntityType="VMSModel.Employee" />
+          <EntitySet Name="Managers" EntityType="VMSModel.Manager" />
+          <EntitySet Name="SecurityAdmins" EntityType="VMSModel.SecurityAdmin" />
+          <EntitySet Name="sysdiagrams" EntityType="VMSModel.sysdiagram" />
+          <EntitySet Name="Visits" EntityType="VMSModel.Visit" />
+          <EntitySet Name="Visitors" EntityType="VMSModel.Visitor" />
+        </EntityContainer>
+        <EntityType Name="AccessArea">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="AreaName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="AppointmentId" />
+          </Key>
+          <Property Name="AppointmentId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Time" Type="Time" Precision="7" />
+        </EntityType>
+        <EntityType Name="AreaHead">
+          <Key>
+            <PropertyRef Name="AreaHeadId" />
+          </Key>
+          <Property Name="AreaHeadId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeId" />
+          </Key>
+          <Property Name="EmployeeId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="NicNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WorkPhone" Type="Int32" />
+          <Property Name="Mobile" Type="Int32" />
+          <Property Name="Other" Type="Int32" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Manager">
+          <Key>
+            <PropertyRef Name="ManagerId" />
+          </Key>
+          <Property Name="ManagerId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SecurityAdmin">
+          <Key>
+            <PropertyRef Name="SecurityAdminId" />
+          </Key>
+          <Property Name="SecurityAdminId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Visit">
+          <Key>
+            <PropertyRef Name="VisitId" />
+          </Key>
+          <Property Name="VisitId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDtae" Type="DateTime" Precision="0" />
+          <Property Name="Purpose" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="InTime" Type="Time" Precision="7" />
+          <Property Name="OutTime" Type="Time" Precision="7" />
+          <Property Name="NoOfDaysStayed" Type="Int32" />
+          <Property Name="PlaceStayed" Type="Binary" MaxLength="50" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="VisitorId" />
+          </Key>
+          <Property Name="VisitorId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NicNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Organization" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Category" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="PersonalAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="WorkPhone" Type="Int32" />
+          <Property Name="Mobile" Type="Int32" />
+          <Property Name="Other" Type="Int32" />
+          <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VMSModelStoreContainer" CdmEntityContainer="VMSEntities">
+          <EntitySetMapping Name="AccessAreas">
+            <EntityTypeMapping TypeName="VMSModel.AccessArea">
+              <MappingFragment StoreEntitySet="AccessArea">
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaName" ColumnName="AreaName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="VMSModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="AppointmentId" ColumnName="AppointmentId" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AreaHeads">
+            <EntityTypeMapping TypeName="VMSModel.AreaHead">
+              <MappingFragment StoreEntitySet="AreaHead">
+                <ScalarProperty Name="AreaHeadId" ColumnName="AreaHeadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="VMSModel.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="NicNumber" ColumnName="NicNumber" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="VMSModel.Manager">
+              <MappingFragment StoreEntitySet="Manager">
+                <ScalarProperty Name="ManagerId" ColumnName="ManagerId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecurityAdmins">
+            <EntityTypeMapping TypeName="VMSModel.SecurityAdmin">
+              <MappingFragment StoreEntitySet="SecurityAdmin">
+                <ScalarProperty Name="SecurityAdminId" ColumnName="SecurityAdminId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="VMSModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visits">
+            <EntityTypeMapping TypeName="VMSModel.Visit">
+              <MappingFragment StoreEntitySet="Visit">
+                <ScalarProperty Name="VisitId" ColumnName="VisitId" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDtae" ColumnName="ToDtae" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="NoOfDaysStayed" ColumnName="NoOfDaysStayed" />
+                <ScalarProperty Name="PlaceStayed" ColumnName="PlaceStayed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors">
+            <EntityTypeMapping TypeName="VMSModel.Visitor">
+              <MappingFragment StoreEntitySet="Visitor">
+                <ScalarProperty Name="VisitorId" ColumnName="VisitorId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="NicNumber" ColumnName="NicNumber" />
+                <ScalarProperty Name="Organization" ColumnName="Organization" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="PersonalAddress" ColumnName="PersonalAddress" />
+                <ScalarProperty Name="CompanyAddress" ColumnName="CompanyAddress" />
+                <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Other" ColumnName="Other" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

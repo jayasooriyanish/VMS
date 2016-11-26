@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VMSModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="VMSEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="AccessAreas" EntityType="VMSModel.AccessArea" />
+    <EntitySet Name="Appointments" EntityType="VMSModel.Appointment" />
+    <EntitySet Name="AreaHeads" EntityType="VMSModel.AreaHead" />
+    <EntitySet Name="Employees" EntityType="VMSModel.Employee" />
+    <EntitySet Name="Managers" EntityType="VMSModel.Manager" />
+    <EntitySet Name="SecurityAdmins" EntityType="VMSModel.SecurityAdmin" />
+    <EntitySet Name="sysdiagrams" EntityType="VMSModel.sysdiagram" />
+    <EntitySet Name="Visits" EntityType="VMSModel.Visit" />
+    <EntitySet Name="Visitors" EntityType="VMSModel.Visitor" />
+  </EntityContainer>
+  <EntityType Name="AccessArea">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="AreaName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentId" />
+    </Key>
+    <Property Name="AppointmentId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="Time" Type="Time" Precision="7" />
+  </EntityType>
+  <EntityType Name="AreaHead">
+    <Key>
+      <PropertyRef Name="AreaHeadId" />
+    </Key>
+    <Property Name="AreaHeadId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Department" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="NicNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhone" Type="Int32" />
+    <Property Name="Mobile" Type="Int32" />
+    <Property Name="Other" Type="Int32" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ManagerId" />
+    </Key>
+    <Property Name="ManagerId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="SecurityAdmin">
+    <Key>
+      <PropertyRef Name="SecurityAdminId" />
+    </Key>
+    <Property Name="SecurityAdminId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDtae" Type="DateTime" Precision="0" />
+    <Property Name="Purpose" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="InTime" Type="Time" Precision="7" />
+    <Property Name="OutTime" Type="Time" Precision="7" />
+    <Property Name="NoOfDaysStayed" Type="Int32" />
+    <Property Name="PlaceStayed" Type="Binary" MaxLength="50" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Visitor">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Name="VisitorId" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="NicNumber" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="Organization" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Category" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="PersonalAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="WorkPhone" Type="Int32" />
+    <Property Name="Mobile" Type="Int32" />
+    <Property Name="Other" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+</Schema>

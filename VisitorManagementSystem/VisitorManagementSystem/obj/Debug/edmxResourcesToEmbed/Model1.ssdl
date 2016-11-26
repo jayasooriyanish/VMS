@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="VMSModelStoreContainer">
+    <EntitySet Name="AccessArea" EntityType="VMSModel.Store.AccessArea" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Appointment" EntityType="VMSModel.Store.Appointment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AreaHead" EntityType="VMSModel.Store.AreaHead" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="VMSModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Manager" EntityType="VMSModel.Store.Manager" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SecurityAdmin" EntityType="VMSModel.Store.SecurityAdmin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="VMSModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visit" EntityType="VMSModel.Store.Visit" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Visitor" EntityType="VMSModel.Store.Visitor" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="AccessArea">
+    <Key>
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="AreaId" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="AreaName" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentId" />
+    </Key>
+    <Property Name="AppointmentId" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Date" Type="date" />
+    <Property Name="Time" Type="time" />
+  </EntityType>
+  <EntityType Name="AreaHead">
+    <Key>
+      <PropertyRef Name="AreaHeadId" />
+    </Key>
+    <Property Name="AreaHeadId" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="100" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="NicNumber" Type="varchar" MaxLength="10" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="WorkPhone" Type="int" />
+    <Property Name="Mobile" Type="int" />
+    <Property Name="Other" Type="int" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
+  <EntityType Name="Manager">
+    <Key>
+      <PropertyRef Name="ManagerId" />
+    </Key>
+    <Property Name="ManagerId" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="SecurityAdmin">
+    <Key>
+      <PropertyRef Name="SecurityAdminId" />
+    </Key>
+    <Property Name="SecurityAdminId" Type="varchar" Nullable="false" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Visit">
+    <Key>
+      <PropertyRef Name="VisitId" />
+    </Key>
+    <Property Name="VisitId" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDtae" Type="date" />
+    <Property Name="Purpose" Type="varchar" MaxLength="50" />
+    <Property Name="InTime" Type="time" />
+    <Property Name="OutTime" Type="time" />
+    <Property Name="NoOfDaysStayed" Type="int" />
+    <Property Name="PlaceStayed" Type="varbinary" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Visitor">
+    <Key>
+      <PropertyRef Name="VisitorId" />
+    </Key>
+    <Property Name="VisitorId" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="NicNumber" Type="varchar" MaxLength="10" />
+    <Property Name="Organization" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="Category" Type="varchar" MaxLength="20" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="PersonalAddress" Type="varchar" MaxLength="100" />
+    <Property Name="CompanyAddress" Type="varchar" MaxLength="100" />
+    <Property Name="WorkPhone" Type="int" />
+    <Property Name="Mobile" Type="int" />
+    <Property Name="Other" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Photo" Type="image" />
+  </EntityType>
+</Schema>
