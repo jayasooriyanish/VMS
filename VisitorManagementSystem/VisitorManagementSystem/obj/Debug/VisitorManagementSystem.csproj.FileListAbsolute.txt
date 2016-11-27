@@ -41,3 +41,36 @@ C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\VisitorManagementSystem\
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormFacilitiesArrangement.resources
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormCheckIn.resources
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitor.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\Interop.Accessibility.dll
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.csproj.ResolveComReference.cache
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.pdb
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.Context.cs
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.cs
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.Designer.cs
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.Context.tt
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.edmx.diagram
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Model1.tt
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\VisitorManagementSystem.pdb
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\EntityFramework.dll
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\EntityFramework.xml
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.csprojResolveAssemblyReference.cache
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.AppointmentsForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.EmployeeForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormAppointmentsApprovalRequest.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormCheckIn.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormEmployee.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormRegister1.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormSearchVisitor.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitor.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitConfirmation.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormFacilitiesArrangement.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitsAndAppointments.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.LoginForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.MainForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.Properties.Resources.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.VisitorForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.VisitorRegisterForm.resources
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.csproj.GenerateResource.Cache
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\VisitorManagementSystem.exe.config
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\VisitorManagementSystem.exe
+D:\VMS\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.exe
