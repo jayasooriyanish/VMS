@@ -611,6 +611,7 @@
             this.Name = "FormAppointmentsApprovalRequest";
             this.Text = "Appointments Approval Requests";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FormAppointmentsApprovalRequest_Load);
             this.panelVisitorDetails.ResumeLayout(false);
             this.panelVisitorDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();

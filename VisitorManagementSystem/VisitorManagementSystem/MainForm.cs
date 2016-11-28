@@ -48,7 +48,7 @@ namespace VisitorManagementSystem
 
         private void searchVisitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormSearchVisitor formSearch = new FormSearchVisitor();
+            FormSearchVisitorToEmployee formSearch = new FormSearchVisitorToEmployee();
             formSearch.ShowDialog();
         }
 

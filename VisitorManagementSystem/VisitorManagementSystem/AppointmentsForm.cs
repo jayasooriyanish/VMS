@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace VisitorManagementSystem
 {
     public partial class AppointmentsForm : Form
@@ -57,7 +58,7 @@ namespace VisitorManagementSystem
                     textBoxMobile.Text = dr["Mobile"].ToString();
                     textBoxOther.Text = dr["Other"].ToString();
                     textBoxEmail.Text = dr["Email"].ToString();
-                    //pictureBoxPhoto.Image = dr["Photo"].ToString();
+                    //pictureBoxPhoto.Image =;
 
                 }
                 dr.Close();
@@ -94,5 +95,20 @@ namespace VisitorManagementSystem
             FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
             newConfirmationForm.ShowDialog();
         }
+
+        //public string ImageToBase64(Image image,
+        //                    System.Drawing.Imaging.ImageFormat format)
+        //{
+        //    using (MemoryStream ms = new MemoryStream())
+        //    {
+        //        // Convert Image to byte[]
+        //        image.Save(ms, format);
+        //        byte[] imageBytes = ms.ToArray();
+
+        //        // Convert byte[] to Base64 String
+        //        string base64String = Convert.ToBase64String(imageBytes);
+        //        return base64String;
+        //    }
+        //}
     }
 }

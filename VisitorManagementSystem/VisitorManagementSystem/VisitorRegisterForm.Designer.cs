@@ -463,6 +463,7 @@
             this.buttonAddAppointment.TabIndex = 5;
             this.buttonAddAppointment.Text = "Add Appointment";
             this.buttonAddAppointment.UseVisualStyleBackColor = false;
+            this.buttonAddAppointment.Click += new System.EventHandler(this.buttonAddAppointment_Click);
             // 
             // buttonCancel
             // 

@@ -51,6 +51,9 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\packages\Zen.Barcode.Rendering.Framework.3.1.10729.1\lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentsForm.cs">
@@ -83,17 +86,29 @@
     <Compile Include="FormEmployee.Designer.cs">
       <DependentUpon>FormEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormProceedToCheckin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProceedToCheckin.Designer.cs">
+      <DependentUpon>FormProceedToCheckin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormRegister1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRegister1.Designer.cs">
       <DependentUpon>FormRegister1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSearchVisitor.cs">
+    <Compile Include="FormSearchVisitorToEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSearchVisitor.Designer.cs">
-      <DependentUpon>FormSearchVisitor.cs</DependentUpon>
+    <Compile Include="FormSearchVisitorToEmployee.Designer.cs">
+      <DependentUpon>FormSearchVisitorToEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSearchVisitotToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSearchVisitotToSecurity.Designer.cs">
+      <DependentUpon>FormSearchVisitotToSecurity.cs</DependentUpon>
     </Compile>
     <Compile Include="FormViewVisitor.cs">
       <SubType>Form</SubType>
@@ -112,6 +127,18 @@
     </Compile>
     <Compile Include="FormFacilitiesArrangement.Designer.cs">
       <DependentUpon>FormFacilitiesArrangement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisitorRegisterFromSearchToEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisitorRegisterFromSearchToEmployee.Designer.cs">
+      <DependentUpon>FormVisitorRegisterFromSearchToEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisitorRegisterFromSearchToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisitorRegisterFromSearchToSecurity.Designer.cs">
+      <DependentUpon>FormVisitorRegisterFromSearchToSecurity.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVisitsAndAppointments.cs">
       <SubType>Form</SubType>
@@ -172,11 +199,17 @@
     <EmbeddedResource Include="FormEmployee.resx">
       <DependentUpon>FormEmployee.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormProceedToCheckin.resx">
+      <DependentUpon>FormProceedToCheckin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRegister1.resx">
       <DependentUpon>FormRegister1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSearchVisitor.resx">
-      <DependentUpon>FormSearchVisitor.cs</DependentUpon>
+    <EmbeddedResource Include="FormSearchVisitorToEmployee.resx">
+      <DependentUpon>FormSearchVisitorToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSearchVisitotToSecurity.resx">
+      <DependentUpon>FormSearchVisitotToSecurity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewVisitor.resx">
       <DependentUpon>FormViewVisitor.cs</DependentUpon>
@@ -186,6 +219,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormFacilitiesArrangement.resx">
       <DependentUpon>FormFacilitiesArrangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisitorRegisterFromSearchToEmployee.resx">
+      <DependentUpon>FormVisitorRegisterFromSearchToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisitorRegisterFromSearchToSecurity.resx">
+      <DependentUpon>FormVisitorRegisterFromSearchToSecurity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVisitsAndAppointments.resx">
       <DependentUpon>FormVisitsAndAppointments.cs</DependentUpon>

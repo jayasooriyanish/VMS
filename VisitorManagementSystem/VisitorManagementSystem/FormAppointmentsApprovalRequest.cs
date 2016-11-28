@@ -16,5 +16,10 @@ namespace VisitorManagementSystem
         {
             InitializeComponent();
         }
+
+        private void FormAppointmentsApprovalRequest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

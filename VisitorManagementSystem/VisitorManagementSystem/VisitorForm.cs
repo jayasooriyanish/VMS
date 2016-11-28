@@ -25,7 +25,7 @@ namespace VisitorManagementSystem
 
         private void buttonSearchVisitor_Click(object sender, EventArgs e)
         {
-            FormSearchVisitor newSearch = new FormSearchVisitor();
+            FormSearchVisitorToEmployee newSearch = new FormSearchVisitorToEmployee();
             newSearch.ShowDialog();
         }
 

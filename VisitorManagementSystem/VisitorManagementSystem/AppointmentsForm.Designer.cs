@@ -30,6 +30,9 @@
         {
             this.labelAppoinmentId = new System.Windows.Forms.Label();
             this.groupBoxVisitorDetails = new System.Windows.Forms.GroupBox();
+            this.textBoxVisitorId = new System.Windows.Forms.TextBox();
+            this.textBoxGender = new System.Windows.Forms.TextBox();
+            this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.labelPhoto = new System.Windows.Forms.Label();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.labelOther = new System.Windows.Forms.Label();
@@ -92,13 +95,9 @@
             this.textBoxAppointmentId = new System.Windows.Forms.TextBox();
             this.checkBoxApproved = new System.Windows.Forms.CheckBox();
             this.panelVisitConfirmation = new System.Windows.Forms.Panel();
-            this.buttonProceedToCheckIn = new System.Windows.Forms.Button();
             this.buttonCAncelVisit = new System.Windows.Forms.Button();
             this.buttonConfirmVisit = new System.Windows.Forms.Button();
             this.buttonArrangeFacilities = new System.Windows.Forms.Button();
-            this.textBoxCategory = new System.Windows.Forms.TextBox();
-            this.textBoxGender = new System.Windows.Forms.TextBox();
-            this.textBoxVisitorId = new System.Windows.Forms.TextBox();
             this.groupBoxVisitorDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.groupBoxDetails.SuspendLayout();
@@ -157,6 +156,27 @@
             this.groupBoxVisitorDetails.TabIndex = 1;
             this.groupBoxVisitorDetails.TabStop = false;
             this.groupBoxVisitorDetails.Text = "Visitor Details";
+            // 
+            // textBoxVisitorId
+            // 
+            this.textBoxVisitorId.Location = new System.Drawing.Point(100, 33);
+            this.textBoxVisitorId.Name = "textBoxVisitorId";
+            this.textBoxVisitorId.Size = new System.Drawing.Size(206, 20);
+            this.textBoxVisitorId.TabIndex = 35;
+            // 
+            // textBoxGender
+            // 
+            this.textBoxGender.Location = new System.Drawing.Point(394, 108);
+            this.textBoxGender.Name = "textBoxGender";
+            this.textBoxGender.Size = new System.Drawing.Size(206, 20);
+            this.textBoxGender.TabIndex = 34;
+            // 
+            // textBoxCategory
+            // 
+            this.textBoxCategory.Location = new System.Drawing.Point(394, 32);
+            this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.Size = new System.Drawing.Size(206, 20);
+            this.textBoxCategory.TabIndex = 33;
             // 
             // labelPhoto
             // 
@@ -709,7 +729,6 @@
             // panelVisitConfirmation
             // 
             this.panelVisitConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelVisitConfirmation.Controls.Add(this.buttonProceedToCheckIn);
             this.panelVisitConfirmation.Controls.Add(this.buttonCAncelVisit);
             this.panelVisitConfirmation.Controls.Add(this.buttonConfirmVisit);
             this.panelVisitConfirmation.Controls.Add(this.buttonArrangeFacilities);
@@ -717,16 +736,6 @@
             this.panelVisitConfirmation.Name = "panelVisitConfirmation";
             this.panelVisitConfirmation.Size = new System.Drawing.Size(141, 279);
             this.panelVisitConfirmation.TabIndex = 8;
-            // 
-            // buttonProceedToCheckIn
-            // 
-            this.buttonProceedToCheckIn.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonProceedToCheckIn.Location = new System.Drawing.Point(3, 212);
-            this.buttonProceedToCheckIn.Name = "buttonProceedToCheckIn";
-            this.buttonProceedToCheckIn.Size = new System.Drawing.Size(129, 41);
-            this.buttonProceedToCheckIn.TabIndex = 9;
-            this.buttonProceedToCheckIn.Text = "Proceed To Checkin";
-            this.buttonProceedToCheckIn.UseVisualStyleBackColor = false;
             // 
             // buttonCAncelVisit
             // 
@@ -760,27 +769,6 @@
             this.buttonArrangeFacilities.Text = "Arrange Facilities";
             this.buttonArrangeFacilities.UseVisualStyleBackColor = false;
             this.buttonArrangeFacilities.Click += new System.EventHandler(this.buttonArrangeFacilities_Click);
-            // 
-            // textBoxCategory
-            // 
-            this.textBoxCategory.Location = new System.Drawing.Point(394, 32);
-            this.textBoxCategory.Name = "textBoxCategory";
-            this.textBoxCategory.Size = new System.Drawing.Size(206, 20);
-            this.textBoxCategory.TabIndex = 33;
-            // 
-            // textBoxGender
-            // 
-            this.textBoxGender.Location = new System.Drawing.Point(394, 108);
-            this.textBoxGender.Name = "textBoxGender";
-            this.textBoxGender.Size = new System.Drawing.Size(206, 20);
-            this.textBoxGender.TabIndex = 34;
-            // 
-            // textBoxVisitorId
-            // 
-            this.textBoxVisitorId.Location = new System.Drawing.Point(100, 33);
-            this.textBoxVisitorId.Name = "textBoxVisitorId";
-            this.textBoxVisitorId.Size = new System.Drawing.Size(206, 20);
-            this.textBoxVisitorId.TabIndex = 35;
             // 
             // AppointmentsForm
             // 
@@ -881,7 +869,6 @@
         private System.Windows.Forms.Button buttonArrangeFacilities;
         private System.Windows.Forms.CheckBox checkBoxNeedAccomodation;
         private System.Windows.Forms.CheckBox checkBoxNeedVehicles;
-        private System.Windows.Forms.Button buttonProceedToCheckIn;
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.TextBox textBoxGender;
         private System.Windows.Forms.TextBox textBoxVisitorId;

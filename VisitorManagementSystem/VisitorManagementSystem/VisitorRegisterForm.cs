@@ -313,19 +313,29 @@ namespace VisitorManagementSystem
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "Select * from Visitor where FirstName='" + textBoxFirstName.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "'";
                     cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dataGridView1.DataSource = dt;
+                    Object VisitorExist = cmd.ExecuteScalar();
+                    Console.Write("Visitor"+VisitorExist);
+
+                    if (VisitorExist != null)
+                    {
+                        DataTable dt = new DataTable();
+                        SqlDataAdapter da = new SqlDataAdapter(cmd);
+                        da.Fill(dt);
+                        dataGridView1.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Visitor Not Found!");
+                    }
                     con.Close();
 
                     textBoxVisitorId.Focus();
 
                 }
-                catch 
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("The visitor you searched not found.Please check the data and enter again!"); 
+                    Console.Write(ex);
+                    MessageBox.Show(ex.Message); 
                 }
             }
 
@@ -452,6 +462,23 @@ namespace VisitorManagementSystem
                 }
             
 
+            }
+
+            private void buttonAddAppointment_Click(object sender, EventArgs e)
+            {
+                try
+                {
+                    AppointmentsForm appForm = new AppointmentsForm();
+                    appForm.PassValue = textBoxVisitorId.Text;
+                    appForm.ShowDialog();
+
+
+                }
+                catch 
+                {
+                    
+                    MessageBox.Show("ERROR!");
+                }
             }
 
             //private void VisitorRegisterForm_LoadForSearchVisitor(object sender, EventArgs e)
