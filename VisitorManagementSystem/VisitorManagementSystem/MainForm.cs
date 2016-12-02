@@ -97,5 +97,22 @@ namespace VisitorManagementSystem
             EmployeeForm emp = new EmployeeForm();
             emp.ShowDialog();
         }
+
+        private void registerEmployeeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonS_Click(object sender, EventArgs e)
+        {
+            MainFormToSecurityAdmin main = new MainFormToSecurityAdmin();
+            main.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MainFormToManager mnger = new MainFormToManager();
+            mnger.Show();
+        }
     }
 }

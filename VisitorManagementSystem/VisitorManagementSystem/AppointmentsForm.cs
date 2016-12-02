@@ -31,6 +31,10 @@ namespace VisitorManagementSystem
 
         private void AppointmentsForm_Load(object sender, EventArgs e)
         {
+            groupBoxAppointmentDetails.Enabled = false;
+            buttonConfirmVisit.Enabled = false;
+            buttonArrangeFacilities.Enabled = false;
+            buttonRequestApproval.Enabled = false;
 
             textBoxVisitorId.Text = id;
             try
@@ -70,10 +74,10 @@ namespace VisitorManagementSystem
                 dateTimePickerFromDate.Focus();
 
             }
-            catch 
+            catch(Exception ex) 
             {
                 
-                MessageBox.Show("Error!");
+                MessageBox.Show(ex.Message);
             }
 
         }
@@ -87,13 +91,52 @@ namespace VisitorManagementSystem
         private void buttonConfirmVisit_Click(object sender, EventArgs e)
         {
             FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
-            newConfirmationForm.ShowDialog();
+            newConfirmationForm.Show();
         }
 
         private void buttonCAncelVisit_Click(object sender, EventArgs e)
         {
             FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
             newConfirmationForm.ShowDialog();
+        }
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxApproved.Checked + "','" + textBoxVisitorId.Text + "','"+textBoxEmployeeId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Record Saved!");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonAddAppointments_Click(object sender, EventArgs e)
+        {
+            groupBoxAppointmentDetails.Enabled = true;
+            buttonRequestApproval.Enabled = true;
+            dateTimePickerFromDate.Focus();
+            
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         //public string ImageToBase64(Image image,

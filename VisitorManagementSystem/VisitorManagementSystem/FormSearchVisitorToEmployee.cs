@@ -58,10 +58,40 @@ namespace VisitorManagementSystem
 
         private void buttonSearch_Click(object sender, EventArgs e)
         {
-            
-            FormVisitorRegisterFromSearchToEmployee newRegForm = new FormVisitorRegisterFromSearchToEmployee();
-            newRegForm.PassValue = maskedTextBoxNIC.Text; 
-            newRegForm.ShowDialog();
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNIC.Text + "'";
+
+                Object VisitorExist = cmd.ExecuteScalar();
+
+                if (VisitorExist != null)
+                {
+                    FormVisitorRegisterFromSearchToEmployee newRegForm = new FormVisitorRegisterFromSearchToEmployee();
+                    newRegForm.PassValue = maskedTextBoxNIC.Text;
+                    newRegForm.ShowDialog();
+                }
+                else
+                {
+                    DialogResult answer;
+                    answer = MessageBox.Show("Visitor Not Found!Do You Want To Register New", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (answer == DialogResult.Yes)
+                    {
+                        VisitorRegisterForm newfrm = new VisitorRegisterForm();
+                        newfrm.Show();
+
+                    }
+
+                }
+
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }

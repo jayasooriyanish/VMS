@@ -35,10 +35,23 @@
             this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.searchVisitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.searchVisitorToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerVisitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewVisitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.appointmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.visitListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registerEmployeeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.buttonVisits = new System.Windows.Forms.Button();
+            this.buttonS = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,31 +118,112 @@
             this.fileMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.searchVisitorToolStripMenuItem,
             this.registerToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.exitToolStripMenuItem,
+            this.reportsToolStripMenuItem,
+            this.exitToolStripMenuItem1});
             this.fileMenu.Name = "fileMenu";
             this.fileMenu.Size = new System.Drawing.Size(37, 20);
             this.fileMenu.Text = "&File";
             // 
             // searchVisitorToolStripMenuItem
             // 
+            this.searchVisitorToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.searchVisitorToolStripMenuItem1,
+            this.registerVisitorToolStripMenuItem,
+            this.viewVisitorToolStripMenuItem});
             this.searchVisitorToolStripMenuItem.Name = "searchVisitorToolStripMenuItem";
-            this.searchVisitorToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.searchVisitorToolStripMenuItem.Text = "&Search Visitor";
+            this.searchVisitorToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.searchVisitorToolStripMenuItem.Text = "Visitor";
             this.searchVisitorToolStripMenuItem.Click += new System.EventHandler(this.searchVisitorToolStripMenuItem_Click);
+            // 
+            // searchVisitorToolStripMenuItem1
+            // 
+            this.searchVisitorToolStripMenuItem1.Name = "searchVisitorToolStripMenuItem1";
+            this.searchVisitorToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.searchVisitorToolStripMenuItem1.Text = "Search Visitor";
+            // 
+            // registerVisitorToolStripMenuItem
+            // 
+            this.registerVisitorToolStripMenuItem.Name = "registerVisitorToolStripMenuItem";
+            this.registerVisitorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registerVisitorToolStripMenuItem.Text = "Register Visitor";
+            // 
+            // viewVisitorToolStripMenuItem
+            // 
+            this.viewVisitorToolStripMenuItem.Name = "viewVisitorToolStripMenuItem";
+            this.viewVisitorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.viewVisitorToolStripMenuItem.Text = "View Visitor";
             // 
             // registerToolStripMenuItem
             // 
+            this.registerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.appointmentsToolStripMenuItem,
+            this.visitsToolStripMenuItem,
+            this.visitListToolStripMenuItem});
             this.registerToolStripMenuItem.Name = "registerToolStripMenuItem";
-            this.registerToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.registerToolStripMenuItem.Text = "&Register";
+            this.registerToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.registerToolStripMenuItem.Text = "Visit";
             this.registerToolStripMenuItem.Click += new System.EventHandler(this.registerToolStripMenuItem_Click);
+            // 
+            // appointmentsToolStripMenuItem
+            // 
+            this.appointmentsToolStripMenuItem.Name = "appointmentsToolStripMenuItem";
+            this.appointmentsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.appointmentsToolStripMenuItem.Text = "Appointments";
+            // 
+            // visitsToolStripMenuItem
+            // 
+            this.visitsToolStripMenuItem.Name = "visitsToolStripMenuItem";
+            this.visitsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.visitsToolStripMenuItem.Text = "Visits";
+            // 
+            // visitListToolStripMenuItem
+            // 
+            this.visitListToolStripMenuItem.Name = "visitListToolStripMenuItem";
+            this.visitListToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.visitListToolStripMenuItem.Text = "Visit List";
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerEmployeeToolStripMenuItem,
+            this.registerEmployeeToolStripMenuItem1,
+            this.viewEmployeeToolStripMenuItem});
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.exitToolStripMenuItem.Text = "&Exit";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.exitToolStripMenuItem.Text = "Employee";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // registerEmployeeToolStripMenuItem
+            // 
+            this.registerEmployeeToolStripMenuItem.Name = "registerEmployeeToolStripMenuItem";
+            this.registerEmployeeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.registerEmployeeToolStripMenuItem.Text = "Search Visitor";
+            this.registerEmployeeToolStripMenuItem.Click += new System.EventHandler(this.registerEmployeeToolStripMenuItem_Click);
+            // 
+            // registerEmployeeToolStripMenuItem1
+            // 
+            this.registerEmployeeToolStripMenuItem1.Name = "registerEmployeeToolStripMenuItem1";
+            this.registerEmployeeToolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.registerEmployeeToolStripMenuItem1.Text = "Register Employee";
+            // 
+            // viewEmployeeToolStripMenuItem
+            // 
+            this.viewEmployeeToolStripMenuItem.Name = "viewEmployeeToolStripMenuItem";
+            this.viewEmployeeToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.viewEmployeeToolStripMenuItem.Text = "View Employee";
+            // 
+            // reportsToolStripMenuItem
+            // 
+            this.reportsToolStripMenuItem.Name = "reportsToolStripMenuItem";
+            this.reportsToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.reportsToolStripMenuItem.Text = "Reports";
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
             // 
             // toolStrip1
             // 
@@ -152,12 +246,34 @@
             this.buttonVisits.UseVisualStyleBackColor = false;
             this.buttonVisits.Click += new System.EventHandler(this.buttonRegisterVisitor_Click);
             // 
+            // buttonS
+            // 
+            this.buttonS.Location = new System.Drawing.Point(113, 183);
+            this.buttonS.Name = "buttonS";
+            this.buttonS.Size = new System.Drawing.Size(75, 23);
+            this.buttonS.TabIndex = 25;
+            this.buttonS.Text = "button1";
+            this.buttonS.UseVisualStyleBackColor = true;
+            this.buttonS.Click += new System.EventHandler(this.buttonS_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(239, 183);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Manager";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(552, 389);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonS);
             this.Controls.Add(this.buttonVisits);
             this.Controls.Add(this.buttonReports);
             this.Controls.Add(this.buttonExit);
@@ -188,6 +304,19 @@
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button buttonVisits;
+        private System.Windows.Forms.ToolStripMenuItem searchVisitorToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registerVisitorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewVisitorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem appointmentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visitsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem visitListToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registerEmployeeToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem viewEmployeeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
+        private System.Windows.Forms.Button buttonS;
+        private System.Windows.Forms.Button button1;
     }
 }
 

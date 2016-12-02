@@ -63,7 +63,9 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelVisitorId = new System.Windows.Forms.Label();
-            this.groupBoxDetails = new System.Windows.Forms.GroupBox();
+            this.groupBoxAppointmentDetails = new System.Windows.Forms.GroupBox();
+            this.checkBoxCheckedIn = new System.Windows.Forms.CheckBox();
+            this.checkBoxCheckedOut = new System.Windows.Forms.CheckBox();
             this.checkBoxNeedVehicles = new System.Windows.Forms.CheckBox();
             this.checkBoxNeedAccomodation = new System.Windows.Forms.CheckBox();
             this.labelEmployeeLastName = new System.Windows.Forms.Label();
@@ -85,25 +87,21 @@
             this.labelToDate = new System.Windows.Forms.Label();
             this.labelFromDate = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
-            this.dataGridViewAppointments = new System.Windows.Forms.DataGridView();
             this.buttonRequestApproval = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.groupBoxAction = new System.Windows.Forms.GroupBox();
+            this.buttonAddAppointments = new System.Windows.Forms.Button();
+            this.buttonConfirmVisit = new System.Windows.Forms.Button();
+            this.buttonArrangeFacilities = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.textBoxAppointmentId = new System.Windows.Forms.TextBox();
             this.checkBoxApproved = new System.Windows.Forms.CheckBox();
-            this.panelVisitConfirmation = new System.Windows.Forms.Panel();
-            this.buttonCAncelVisit = new System.Windows.Forms.Button();
-            this.buttonConfirmVisit = new System.Windows.Forms.Button();
-            this.buttonArrangeFacilities = new System.Windows.Forms.Button();
             this.groupBoxVisitorDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
-            this.groupBoxDetails.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointments)).BeginInit();
+            this.groupBoxAppointmentDetails.SuspendLayout();
             this.groupBoxAction.SuspendLayout();
-            this.panelVisitConfirmation.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelAppoinmentId
@@ -427,35 +425,59 @@
             this.labelVisitorId.TabIndex = 0;
             this.labelVisitorId.Text = "Visitor Id";
             // 
-            // groupBoxDetails
+            // groupBoxAppointmentDetails
             // 
-            this.groupBoxDetails.Controls.Add(this.checkBoxNeedVehicles);
-            this.groupBoxDetails.Controls.Add(this.checkBoxNeedAccomodation);
-            this.groupBoxDetails.Controls.Add(this.labelEmployeeLastName);
-            this.groupBoxDetails.Controls.Add(this.textBoxEmployeeLastName);
-            this.groupBoxDetails.Controls.Add(this.textBoxEmployeeFirstName);
-            this.groupBoxDetails.Controls.Add(this.textBoxEmployeeId);
-            this.groupBoxDetails.Controls.Add(this.labelEmployeeFirstName);
-            this.groupBoxDetails.Controls.Add(this.labelEmployeeId);
-            this.groupBoxDetails.Controls.Add(this.labelResponsibleEmployee);
-            this.groupBoxDetails.Controls.Add(this.textBoxPurpose);
-            this.groupBoxDetails.Controls.Add(this.labelPurpose);
-            this.groupBoxDetails.Controls.Add(this.labelToTime);
-            this.groupBoxDetails.Controls.Add(this.labelFrom);
-            this.groupBoxDetails.Controls.Add(this.dateTimePickerToTime);
-            this.groupBoxDetails.Controls.Add(this.dateTimePickerFromTime);
-            this.groupBoxDetails.Controls.Add(this.labelTime);
-            this.groupBoxDetails.Controls.Add(this.dateTimePickerToDate);
-            this.groupBoxDetails.Controls.Add(this.dateTimePickerFromDate);
-            this.groupBoxDetails.Controls.Add(this.labelToDate);
-            this.groupBoxDetails.Controls.Add(this.labelFromDate);
-            this.groupBoxDetails.Controls.Add(this.labelDate);
-            this.groupBoxDetails.Location = new System.Drawing.Point(12, 364);
-            this.groupBoxDetails.Name = "groupBoxDetails";
-            this.groupBoxDetails.Size = new System.Drawing.Size(773, 288);
-            this.groupBoxDetails.TabIndex = 2;
-            this.groupBoxDetails.TabStop = false;
-            this.groupBoxDetails.Text = "Appointment Details";
+            this.groupBoxAppointmentDetails.Controls.Add(this.checkBoxCheckedIn);
+            this.groupBoxAppointmentDetails.Controls.Add(this.checkBoxCheckedOut);
+            this.groupBoxAppointmentDetails.Controls.Add(this.checkBoxNeedVehicles);
+            this.groupBoxAppointmentDetails.Controls.Add(this.checkBoxNeedAccomodation);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelEmployeeLastName);
+            this.groupBoxAppointmentDetails.Controls.Add(this.textBoxEmployeeLastName);
+            this.groupBoxAppointmentDetails.Controls.Add(this.textBoxEmployeeFirstName);
+            this.groupBoxAppointmentDetails.Controls.Add(this.textBoxEmployeeId);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelEmployeeFirstName);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelEmployeeId);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelResponsibleEmployee);
+            this.groupBoxAppointmentDetails.Controls.Add(this.textBoxPurpose);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelPurpose);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelToTime);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelFrom);
+            this.groupBoxAppointmentDetails.Controls.Add(this.dateTimePickerToTime);
+            this.groupBoxAppointmentDetails.Controls.Add(this.dateTimePickerFromTime);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelTime);
+            this.groupBoxAppointmentDetails.Controls.Add(this.dateTimePickerToDate);
+            this.groupBoxAppointmentDetails.Controls.Add(this.dateTimePickerFromDate);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelToDate);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelFromDate);
+            this.groupBoxAppointmentDetails.Controls.Add(this.labelDate);
+            this.groupBoxAppointmentDetails.Location = new System.Drawing.Point(12, 364);
+            this.groupBoxAppointmentDetails.Name = "groupBoxAppointmentDetails";
+            this.groupBoxAppointmentDetails.Size = new System.Drawing.Size(773, 288);
+            this.groupBoxAppointmentDetails.TabIndex = 2;
+            this.groupBoxAppointmentDetails.TabStop = false;
+            this.groupBoxAppointmentDetails.Text = "Appointment Details";
+            // 
+            // checkBoxCheckedIn
+            // 
+            this.checkBoxCheckedIn.AutoSize = true;
+            this.checkBoxCheckedIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCheckedIn.Location = new System.Drawing.Point(616, 135);
+            this.checkBoxCheckedIn.Name = "checkBoxCheckedIn";
+            this.checkBoxCheckedIn.Size = new System.Drawing.Size(94, 20);
+            this.checkBoxCheckedIn.TabIndex = 22;
+            this.checkBoxCheckedIn.Text = "Checked In";
+            this.checkBoxCheckedIn.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxCheckedOut
+            // 
+            this.checkBoxCheckedOut.AutoSize = true;
+            this.checkBoxCheckedOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCheckedOut.Location = new System.Drawing.Point(616, 167);
+            this.checkBoxCheckedOut.Name = "checkBoxCheckedOut";
+            this.checkBoxCheckedOut.Size = new System.Drawing.Size(104, 20);
+            this.checkBoxCheckedOut.TabIndex = 21;
+            this.checkBoxCheckedOut.Text = "Checked Out";
+            this.checkBoxCheckedOut.UseVisualStyleBackColor = true;
             // 
             // checkBoxNeedVehicles
             // 
@@ -637,18 +659,10 @@
             this.labelDate.TabIndex = 0;
             this.labelDate.Text = "Date";
             // 
-            // dataGridViewAppointments
-            // 
-            this.dataGridViewAppointments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAppointments.Location = new System.Drawing.Point(12, 658);
-            this.dataGridViewAppointments.Name = "dataGridViewAppointments";
-            this.dataGridViewAppointments.Size = new System.Drawing.Size(920, 87);
-            this.dataGridViewAppointments.TabIndex = 3;
-            // 
             // buttonRequestApproval
             // 
             this.buttonRequestApproval.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonRequestApproval.Location = new System.Drawing.Point(6, 124);
+            this.buttonRequestApproval.Location = new System.Drawing.Point(6, 261);
             this.buttonRequestApproval.Name = "buttonRequestApproval";
             this.buttonRequestApproval.Size = new System.Drawing.Size(129, 45);
             this.buttonRequestApproval.TabIndex = 4;
@@ -658,25 +672,30 @@
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonCancel.Location = new System.Drawing.Point(6, 176);
+            this.buttonCancel.Location = new System.Drawing.Point(6, 478);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(129, 41);
             this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonExit.Location = new System.Drawing.Point(9, 229);
+            this.buttonExit.Location = new System.Drawing.Point(6, 541);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(129, 45);
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // groupBoxAction
             // 
+            this.groupBoxAction.Controls.Add(this.buttonAddAppointments);
+            this.groupBoxAction.Controls.Add(this.buttonConfirmVisit);
+            this.groupBoxAction.Controls.Add(this.buttonArrangeFacilities);
             this.groupBoxAction.Controls.Add(this.buttonSave);
             this.groupBoxAction.Controls.Add(this.buttonHome);
             this.groupBoxAction.Controls.Add(this.buttonExit);
@@ -684,19 +703,53 @@
             this.groupBoxAction.Controls.Add(this.buttonCancel);
             this.groupBoxAction.Location = new System.Drawing.Point(791, 60);
             this.groupBoxAction.Name = "groupBoxAction";
-            this.groupBoxAction.Size = new System.Drawing.Size(141, 298);
+            this.groupBoxAction.Size = new System.Drawing.Size(141, 592);
             this.groupBoxAction.TabIndex = 4;
             this.groupBoxAction.TabStop = false;
+            // 
+            // buttonAddAppointments
+            // 
+            this.buttonAddAppointments.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonAddAppointments.Location = new System.Drawing.Point(6, 126);
+            this.buttonAddAppointments.Name = "buttonAddAppointments";
+            this.buttonAddAppointments.Size = new System.Drawing.Size(129, 41);
+            this.buttonAddAppointments.TabIndex = 9;
+            this.buttonAddAppointments.Text = "Add Appointment";
+            this.buttonAddAppointments.UseVisualStyleBackColor = false;
+            this.buttonAddAppointments.Click += new System.EventHandler(this.buttonAddAppointments_Click);
+            // 
+            // buttonConfirmVisit
+            // 
+            this.buttonConfirmVisit.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonConfirmVisit.Location = new System.Drawing.Point(6, 408);
+            this.buttonConfirmVisit.Name = "buttonConfirmVisit";
+            this.buttonConfirmVisit.Size = new System.Drawing.Size(129, 41);
+            this.buttonConfirmVisit.TabIndex = 7;
+            this.buttonConfirmVisit.Text = "Confirm Visit";
+            this.buttonConfirmVisit.UseVisualStyleBackColor = false;
+            this.buttonConfirmVisit.Click += new System.EventHandler(this.buttonConfirmVisit_Click);
+            // 
+            // buttonArrangeFacilities
+            // 
+            this.buttonArrangeFacilities.BackColor = System.Drawing.Color.GhostWhite;
+            this.buttonArrangeFacilities.Location = new System.Drawing.Point(6, 348);
+            this.buttonArrangeFacilities.Name = "buttonArrangeFacilities";
+            this.buttonArrangeFacilities.Size = new System.Drawing.Size(129, 41);
+            this.buttonArrangeFacilities.TabIndex = 6;
+            this.buttonArrangeFacilities.Text = "Arrange Facilities";
+            this.buttonArrangeFacilities.UseVisualStyleBackColor = false;
+            this.buttonArrangeFacilities.Click += new System.EventHandler(this.buttonArrangeFacilities_Click);
             // 
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonSave.Location = new System.Drawing.Point(6, 69);
+            this.buttonSave.Location = new System.Drawing.Point(6, 202);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(129, 41);
             this.buttonSave.TabIndex = 8;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonHome
             // 
@@ -726,62 +779,16 @@
             this.checkBoxApproved.Text = "Approved";
             this.checkBoxApproved.UseVisualStyleBackColor = true;
             // 
-            // panelVisitConfirmation
-            // 
-            this.panelVisitConfirmation.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelVisitConfirmation.Controls.Add(this.buttonCAncelVisit);
-            this.panelVisitConfirmation.Controls.Add(this.buttonConfirmVisit);
-            this.panelVisitConfirmation.Controls.Add(this.buttonArrangeFacilities);
-            this.panelVisitConfirmation.Location = new System.Drawing.Point(791, 373);
-            this.panelVisitConfirmation.Name = "panelVisitConfirmation";
-            this.panelVisitConfirmation.Size = new System.Drawing.Size(141, 279);
-            this.panelVisitConfirmation.TabIndex = 8;
-            // 
-            // buttonCAncelVisit
-            // 
-            this.buttonCAncelVisit.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonCAncelVisit.Location = new System.Drawing.Point(3, 145);
-            this.buttonCAncelVisit.Name = "buttonCAncelVisit";
-            this.buttonCAncelVisit.Size = new System.Drawing.Size(129, 41);
-            this.buttonCAncelVisit.TabIndex = 8;
-            this.buttonCAncelVisit.Text = "Cancel Visit";
-            this.buttonCAncelVisit.UseVisualStyleBackColor = false;
-            this.buttonCAncelVisit.Click += new System.EventHandler(this.buttonCAncelVisit_Click);
-            // 
-            // buttonConfirmVisit
-            // 
-            this.buttonConfirmVisit.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonConfirmVisit.Location = new System.Drawing.Point(4, 82);
-            this.buttonConfirmVisit.Name = "buttonConfirmVisit";
-            this.buttonConfirmVisit.Size = new System.Drawing.Size(129, 41);
-            this.buttonConfirmVisit.TabIndex = 7;
-            this.buttonConfirmVisit.Text = "Confirm Visit";
-            this.buttonConfirmVisit.UseVisualStyleBackColor = false;
-            this.buttonConfirmVisit.Click += new System.EventHandler(this.buttonConfirmVisit_Click);
-            // 
-            // buttonArrangeFacilities
-            // 
-            this.buttonArrangeFacilities.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonArrangeFacilities.Location = new System.Drawing.Point(3, 19);
-            this.buttonArrangeFacilities.Name = "buttonArrangeFacilities";
-            this.buttonArrangeFacilities.Size = new System.Drawing.Size(129, 41);
-            this.buttonArrangeFacilities.TabIndex = 6;
-            this.buttonArrangeFacilities.Text = "Arrange Facilities";
-            this.buttonArrangeFacilities.UseVisualStyleBackColor = false;
-            this.buttonArrangeFacilities.Click += new System.EventHandler(this.buttonArrangeFacilities_Click);
-            // 
             // AppointmentsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(941, 749);
-            this.Controls.Add(this.panelVisitConfirmation);
+            this.ClientSize = new System.Drawing.Size(941, 670);
             this.Controls.Add(this.checkBoxApproved);
             this.Controls.Add(this.textBoxAppointmentId);
             this.Controls.Add(this.groupBoxAction);
-            this.Controls.Add(this.dataGridViewAppointments);
-            this.Controls.Add(this.groupBoxDetails);
+            this.Controls.Add(this.groupBoxAppointmentDetails);
             this.Controls.Add(this.groupBoxVisitorDetails);
             this.Controls.Add(this.labelAppoinmentId);
             this.Name = "AppointmentsForm";
@@ -790,11 +797,9 @@
             this.groupBoxVisitorDetails.ResumeLayout(false);
             this.groupBoxVisitorDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
-            this.groupBoxDetails.ResumeLayout(false);
-            this.groupBoxDetails.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointments)).EndInit();
+            this.groupBoxAppointmentDetails.ResumeLayout(false);
+            this.groupBoxAppointmentDetails.PerformLayout();
             this.groupBoxAction.ResumeLayout(false);
-            this.panelVisitConfirmation.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -833,7 +838,7 @@
         private System.Windows.Forms.Label labelOther;
         private System.Windows.Forms.Label labelMobile;
         private System.Windows.Forms.Label labelWorkPhone;
-        private System.Windows.Forms.GroupBox groupBoxDetails;
+        private System.Windows.Forms.GroupBox groupBoxAppointmentDetails;
         private System.Windows.Forms.Label labelResponsibleEmployee;
         private System.Windows.Forms.TextBox textBoxPurpose;
         private System.Windows.Forms.Label labelPurpose;
@@ -854,7 +859,6 @@
         private System.Windows.Forms.Label labelEmployeeFirstName;
         private System.Windows.Forms.Label labelEmployeeId;
         private System.Windows.Forms.Label labelPhoto;
-        private System.Windows.Forms.DataGridView dataGridViewAppointments;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonRequestApproval;
@@ -863,8 +867,6 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxAppointmentId;
         private System.Windows.Forms.CheckBox checkBoxApproved;
-        private System.Windows.Forms.Panel panelVisitConfirmation;
-        private System.Windows.Forms.Button buttonCAncelVisit;
         private System.Windows.Forms.Button buttonConfirmVisit;
         private System.Windows.Forms.Button buttonArrangeFacilities;
         private System.Windows.Forms.CheckBox checkBoxNeedAccomodation;
@@ -872,5 +874,8 @@
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.TextBox textBoxGender;
         private System.Windows.Forms.TextBox textBoxVisitorId;
+        private System.Windows.Forms.Button buttonAddAppointments;
+        private System.Windows.Forms.CheckBox checkBoxCheckedIn;
+        private System.Windows.Forms.CheckBox checkBoxCheckedOut;
     }
 }

@@ -115,5 +115,64 @@ namespace VisitorManagementSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void buttonRequestApproval_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxApproved.Checked + "','" + textBoxVisitorId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Record Saved!");
+
+                //below code for sending notification for mngmnt approval
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void buttonConfirmVisit_Click(object sender, EventArgs e)
+        {
+            FormVisitConfirmation newconfirm = new FormVisitConfirmation();
+            newconfirm.Show();
+        }
+
+        private void buttonArrangeFacilities_Click(object sender, EventArgs e)
+        {
+            FormFacilitiesArrangement newfrm = new FormFacilitiesArrangement();
+            newfrm.Show();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormSearchVisitorToEmployee newSearch = new FormSearchVisitorToEmployee();
+            newSearch.Close();
+            
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void buttonSaveChanges_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

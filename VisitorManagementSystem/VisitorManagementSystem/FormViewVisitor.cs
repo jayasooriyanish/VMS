@@ -27,7 +27,7 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Visitor";
+                cmd.CommandText = "select * from  Visitor";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -35,10 +35,10 @@ namespace VisitorManagementSystem
                 dataGridViewViewVisitor.DataSource = dt;
                 
             }
-            catch
+            catch(Exception ex)
             {
 
-                MessageBox.Show("There was an Error!");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -50,6 +50,37 @@ namespace VisitorManagementSystem
         private void buttonHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonViewHistory_Click(object sender, EventArgs e)
+        {
+            FormVisitorHistory newfrm = new FormVisitorHistory();
+            newfrm.Show();
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonMoreDetails_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonAddAppointment_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewViewVisitor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -47,9 +47,9 @@
             // 
             this.buttonAppointments.BackColor = System.Drawing.Color.GhostWhite;
             this.buttonAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAppointments.Location = new System.Drawing.Point(90, 26);
+            this.buttonAppointments.Location = new System.Drawing.Point(109, 52);
             this.buttonAppointments.Name = "buttonAppointments";
-            this.buttonAppointments.Size = new System.Drawing.Size(115, 50);
+            this.buttonAppointments.Size = new System.Drawing.Size(157, 50);
             this.buttonAppointments.TabIndex = 0;
             this.buttonAppointments.Text = "Appointments";
             this.buttonAppointments.UseVisualStyleBackColor = false;
@@ -59,9 +59,9 @@
             // 
             this.buttonVisits.BackColor = System.Drawing.Color.GhostWhite;
             this.buttonVisits.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVisits.Location = new System.Drawing.Point(90, 91);
+            this.buttonVisits.Location = new System.Drawing.Point(109, 117);
             this.buttonVisits.Name = "buttonVisits";
-            this.buttonVisits.Size = new System.Drawing.Size(115, 49);
+            this.buttonVisits.Size = new System.Drawing.Size(157, 49);
             this.buttonVisits.TabIndex = 1;
             this.buttonVisits.Text = "Visits";
             this.buttonVisits.UseVisualStyleBackColor = false;
@@ -70,9 +70,9 @@
             // 
             this.buttonVisitList.BackColor = System.Drawing.Color.GhostWhite;
             this.buttonVisitList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVisitList.Location = new System.Drawing.Point(90, 155);
+            this.buttonVisitList.Location = new System.Drawing.Point(109, 181);
             this.buttonVisitList.Name = "buttonVisitList";
-            this.buttonVisitList.Size = new System.Drawing.Size(115, 49);
+            this.buttonVisitList.Size = new System.Drawing.Size(157, 49);
             this.buttonVisitList.TabIndex = 2;
             this.buttonVisitList.Text = "Visit List";
             this.buttonVisitList.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             // pictureBoxAppointments
             // 
             this.pictureBoxAppointments.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxAppointments.Image")));
-            this.pictureBoxAppointments.Location = new System.Drawing.Point(35, 26);
+            this.pictureBoxAppointments.Location = new System.Drawing.Point(54, 52);
             this.pictureBoxAppointments.Name = "pictureBoxAppointments";
             this.pictureBoxAppointments.Size = new System.Drawing.Size(49, 50);
             this.pictureBoxAppointments.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -90,7 +90,7 @@
             // pictureBoxVisits
             // 
             this.pictureBoxVisits.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxVisits.Image")));
-            this.pictureBoxVisits.Location = new System.Drawing.Point(35, 91);
+            this.pictureBoxVisits.Location = new System.Drawing.Point(54, 117);
             this.pictureBoxVisits.Name = "pictureBoxVisits";
             this.pictureBoxVisits.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxVisits.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -100,7 +100,7 @@
             // pictureBoxVisitList
             // 
             this.pictureBoxVisitList.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxVisitList.Image")));
-            this.pictureBoxVisitList.Location = new System.Drawing.Point(35, 155);
+            this.pictureBoxVisitList.Location = new System.Drawing.Point(54, 181);
             this.pictureBoxVisitList.Name = "pictureBoxVisitList";
             this.pictureBoxVisitList.Size = new System.Drawing.Size(49, 49);
             this.pictureBoxVisitList.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -110,7 +110,7 @@
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonCancel.Location = new System.Drawing.Point(13, 226);
+            this.buttonCancel.Location = new System.Drawing.Point(32, 252);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
@@ -120,7 +120,7 @@
             // buttonHome
             // 
             this.buttonHome.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonHome.Location = new System.Drawing.Point(104, 226);
+            this.buttonHome.Location = new System.Drawing.Point(123, 252);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(75, 23);
             this.buttonHome.TabIndex = 7;
@@ -130,7 +130,7 @@
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonExit.Location = new System.Drawing.Point(197, 226);
+            this.buttonExit.Location = new System.Drawing.Point(216, 252);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 8;
@@ -142,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(335, 318);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.buttonCancel);

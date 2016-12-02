@@ -36,24 +36,28 @@
             this.labelFirstName = new System.Windows.Forms.Label();
             this.labelInTime = new System.Windows.Forms.Label();
             this.groupBoxVisitorPass = new System.Windows.Forms.GroupBox();
-            this.labelOrganization = new System.Windows.Forms.Label();
-            this.labelDesignation = new System.Windows.Forms.Label();
-            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
-            this.buttonPrint = new System.Windows.Forms.Button();
-            this.printDialogBox = new System.Windows.Forms.PrintDialog();
-            this.textBoxVisitorId = new System.Windows.Forms.TextBox();
-            this.textBoxFirstName = new System.Windows.Forms.TextBox();
-            this.textBoxNicNumber = new System.Windows.Forms.TextBox();
-            this.textBoxLastName = new System.Windows.Forms.TextBox();
-            this.textBoxDesignation = new System.Windows.Forms.TextBox();
-            this.textBoxOrganization = new System.Windows.Forms.TextBox();
             this.pictureBoxBarCode = new System.Windows.Forms.PictureBox();
             this.labelBarCode = new System.Windows.Forms.Label();
+            this.textBoxOrganization = new System.Windows.Forms.TextBox();
+            this.textBoxDesignation = new System.Windows.Forms.TextBox();
+            this.textBoxLastName = new System.Windows.Forms.TextBox();
+            this.textBoxNicNumber = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
+            this.textBoxVisitorId = new System.Windows.Forms.TextBox();
+            this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
+            this.labelDesignation = new System.Windows.Forms.Label();
+            this.labelOrganization = new System.Windows.Forms.Label();
+            this.buttonPrint = new System.Windows.Forms.Button();
+            this.printDialogBox = new System.Windows.Forms.PrintDialog();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.lableSecurityId = new System.Windows.Forms.Label();
+            this.textBoxOutTime = new System.Windows.Forms.TextBox();
+            this.labelOutTime = new System.Windows.Forms.Label();
+            this.checkBoxCheckedIn = new System.Windows.Forms.CheckBox();
+            this.checkBoxheckedOut = new System.Windows.Forms.CheckBox();
             this.groupBoxVisitorPass.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxInTime
@@ -136,98 +140,16 @@
             this.groupBoxVisitorPass.Controls.Add(this.labelFirstName);
             this.groupBoxVisitorPass.Location = new System.Drawing.Point(12, 89);
             this.groupBoxVisitorPass.Name = "groupBoxVisitorPass";
-            this.groupBoxVisitorPass.Size = new System.Drawing.Size(493, 237);
+            this.groupBoxVisitorPass.Size = new System.Drawing.Size(493, 213);
             this.groupBoxVisitorPass.TabIndex = 7;
             this.groupBoxVisitorPass.TabStop = false;
             this.groupBoxVisitorPass.Text = "Visitor Pass";
-            // 
-            // labelOrganization
-            // 
-            this.labelOrganization.AutoSize = true;
-            this.labelOrganization.Location = new System.Drawing.Point(183, 63);
-            this.labelOrganization.Name = "labelOrganization";
-            this.labelOrganization.Size = new System.Drawing.Size(66, 13);
-            this.labelOrganization.TabIndex = 7;
-            this.labelOrganization.Text = "Organization";
-            // 
-            // labelDesignation
-            // 
-            this.labelDesignation.AutoSize = true;
-            this.labelDesignation.Location = new System.Drawing.Point(184, 94);
-            this.labelDesignation.Name = "labelDesignation";
-            this.labelDesignation.Size = new System.Drawing.Size(63, 13);
-            this.labelDesignation.TabIndex = 8;
-            this.labelDesignation.Text = "Designation";
-            // 
-            // pictureBoxPhoto
-            // 
-            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxPhoto.Location = new System.Drawing.Point(372, 19);
-            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
-            this.pictureBoxPhoto.Size = new System.Drawing.Size(104, 101);
-            this.pictureBoxPhoto.TabIndex = 9;
-            this.pictureBoxPhoto.TabStop = false;
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.Location = new System.Drawing.Point(313, 343);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(81, 37);
-            this.buttonPrint.TabIndex = 8;
-            this.buttonPrint.Text = "Print Pass";
-            this.buttonPrint.UseVisualStyleBackColor = true;
-            // 
-            // printDialogBox
-            // 
-            this.printDialogBox.UseEXDialog = true;
-            // 
-            // textBoxVisitorId
-            // 
-            this.textBoxVisitorId.Location = new System.Drawing.Point(77, 37);
-            this.textBoxVisitorId.Name = "textBoxVisitorId";
-            this.textBoxVisitorId.Size = new System.Drawing.Size(99, 20);
-            this.textBoxVisitorId.TabIndex = 10;
-            // 
-            // textBoxFirstName
-            // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(77, 63);
-            this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(99, 20);
-            this.textBoxFirstName.TabIndex = 11;
-            // 
-            // textBoxNicNumber
-            // 
-            this.textBoxNicNumber.Location = new System.Drawing.Point(255, 33);
-            this.textBoxNicNumber.Name = "textBoxNicNumber";
-            this.textBoxNicNumber.Size = new System.Drawing.Size(99, 20);
-            this.textBoxNicNumber.TabIndex = 12;
-            // 
-            // textBoxLastName
-            // 
-            this.textBoxLastName.Location = new System.Drawing.Point(77, 89);
-            this.textBoxLastName.Name = "textBoxLastName";
-            this.textBoxLastName.Size = new System.Drawing.Size(99, 20);
-            this.textBoxLastName.TabIndex = 13;
-            // 
-            // textBoxDesignation
-            // 
-            this.textBoxDesignation.Location = new System.Drawing.Point(255, 87);
-            this.textBoxDesignation.Name = "textBoxDesignation";
-            this.textBoxDesignation.Size = new System.Drawing.Size(99, 20);
-            this.textBoxDesignation.TabIndex = 14;
-            // 
-            // textBoxOrganization
-            // 
-            this.textBoxOrganization.Location = new System.Drawing.Point(255, 61);
-            this.textBoxOrganization.Name = "textBoxOrganization";
-            this.textBoxOrganization.Size = new System.Drawing.Size(99, 20);
-            this.textBoxOrganization.TabIndex = 15;
             // 
             // pictureBoxBarCode
             // 
             this.pictureBoxBarCode.BackColor = System.Drawing.Color.GhostWhite;
             this.pictureBoxBarCode.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pictureBoxBarCode.Location = new System.Drawing.Point(77, 136);
+            this.pictureBoxBarCode.Location = new System.Drawing.Point(75, 136);
             this.pictureBoxBarCode.Name = "pictureBoxBarCode";
             this.pictureBoxBarCode.Size = new System.Drawing.Size(172, 52);
             this.pictureBoxBarCode.TabIndex = 9;
@@ -241,6 +163,88 @@
             this.labelBarCode.Size = new System.Drawing.Size(48, 13);
             this.labelBarCode.TabIndex = 16;
             this.labelBarCode.Text = "BarCode";
+            // 
+            // textBoxOrganization
+            // 
+            this.textBoxOrganization.Location = new System.Drawing.Point(255, 61);
+            this.textBoxOrganization.Name = "textBoxOrganization";
+            this.textBoxOrganization.Size = new System.Drawing.Size(99, 20);
+            this.textBoxOrganization.TabIndex = 15;
+            // 
+            // textBoxDesignation
+            // 
+            this.textBoxDesignation.Location = new System.Drawing.Point(255, 87);
+            this.textBoxDesignation.Name = "textBoxDesignation";
+            this.textBoxDesignation.Size = new System.Drawing.Size(99, 20);
+            this.textBoxDesignation.TabIndex = 14;
+            // 
+            // textBoxLastName
+            // 
+            this.textBoxLastName.Location = new System.Drawing.Point(77, 89);
+            this.textBoxLastName.Name = "textBoxLastName";
+            this.textBoxLastName.Size = new System.Drawing.Size(99, 20);
+            this.textBoxLastName.TabIndex = 13;
+            // 
+            // textBoxNicNumber
+            // 
+            this.textBoxNicNumber.Location = new System.Drawing.Point(255, 33);
+            this.textBoxNicNumber.Name = "textBoxNicNumber";
+            this.textBoxNicNumber.Size = new System.Drawing.Size(99, 20);
+            this.textBoxNicNumber.TabIndex = 12;
+            // 
+            // textBoxFirstName
+            // 
+            this.textBoxFirstName.Location = new System.Drawing.Point(77, 63);
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(99, 20);
+            this.textBoxFirstName.TabIndex = 11;
+            // 
+            // textBoxVisitorId
+            // 
+            this.textBoxVisitorId.Location = new System.Drawing.Point(77, 37);
+            this.textBoxVisitorId.Name = "textBoxVisitorId";
+            this.textBoxVisitorId.Size = new System.Drawing.Size(99, 20);
+            this.textBoxVisitorId.TabIndex = 10;
+            // 
+            // pictureBoxPhoto
+            // 
+            this.pictureBoxPhoto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxPhoto.Location = new System.Drawing.Point(372, 19);
+            this.pictureBoxPhoto.Name = "pictureBoxPhoto";
+            this.pictureBoxPhoto.Size = new System.Drawing.Size(104, 101);
+            this.pictureBoxPhoto.TabIndex = 9;
+            this.pictureBoxPhoto.TabStop = false;
+            // 
+            // labelDesignation
+            // 
+            this.labelDesignation.AutoSize = true;
+            this.labelDesignation.Location = new System.Drawing.Point(184, 94);
+            this.labelDesignation.Name = "labelDesignation";
+            this.labelDesignation.Size = new System.Drawing.Size(63, 13);
+            this.labelDesignation.TabIndex = 8;
+            this.labelDesignation.Text = "Designation";
+            // 
+            // labelOrganization
+            // 
+            this.labelOrganization.AutoSize = true;
+            this.labelOrganization.Location = new System.Drawing.Point(183, 63);
+            this.labelOrganization.Name = "labelOrganization";
+            this.labelOrganization.Size = new System.Drawing.Size(66, 13);
+            this.labelOrganization.TabIndex = 7;
+            this.labelOrganization.Text = "Organization";
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.Location = new System.Drawing.Point(313, 343);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(81, 37);
+            this.buttonPrint.TabIndex = 8;
+            this.buttonPrint.Text = "Print Pass";
+            this.buttonPrint.UseVisualStyleBackColor = true;
+            // 
+            // printDialogBox
+            // 
+            this.printDialogBox.UseEXDialog = true;
             // 
             // buttonCancel
             // 
@@ -261,12 +265,52 @@
             this.lableSecurityId.Size = new System.Drawing.Size(2, 15);
             this.lableSecurityId.TabIndex = 10;
             // 
+            // textBoxOutTime
+            // 
+            this.textBoxOutTime.Location = new System.Drawing.Point(257, 49);
+            this.textBoxOutTime.Name = "textBoxOutTime";
+            this.textBoxOutTime.Size = new System.Drawing.Size(100, 20);
+            this.textBoxOutTime.TabIndex = 12;
+            // 
+            // labelOutTime
+            // 
+            this.labelOutTime.AutoSize = true;
+            this.labelOutTime.Location = new System.Drawing.Point(201, 52);
+            this.labelOutTime.Name = "labelOutTime";
+            this.labelOutTime.Size = new System.Drawing.Size(50, 13);
+            this.labelOutTime.TabIndex = 11;
+            this.labelOutTime.Text = "Out Time";
+            // 
+            // checkBoxCheckedIn
+            // 
+            this.checkBoxCheckedIn.AutoSize = true;
+            this.checkBoxCheckedIn.Location = new System.Drawing.Point(417, 26);
+            this.checkBoxCheckedIn.Name = "checkBoxCheckedIn";
+            this.checkBoxCheckedIn.Size = new System.Drawing.Size(81, 17);
+            this.checkBoxCheckedIn.TabIndex = 13;
+            this.checkBoxCheckedIn.Text = "Checked In";
+            this.checkBoxCheckedIn.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxheckedOut
+            // 
+            this.checkBoxheckedOut.AutoSize = true;
+            this.checkBoxheckedOut.Location = new System.Drawing.Point(417, 52);
+            this.checkBoxheckedOut.Name = "checkBoxheckedOut";
+            this.checkBoxheckedOut.Size = new System.Drawing.Size(89, 17);
+            this.checkBoxheckedOut.TabIndex = 14;
+            this.checkBoxheckedOut.Text = "Checked Out";
+            this.checkBoxheckedOut.UseVisualStyleBackColor = true;
+            // 
             // FormProceedToCheckin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(523, 392);
+            this.Controls.Add(this.checkBoxheckedOut);
+            this.Controls.Add(this.checkBoxCheckedIn);
+            this.Controls.Add(this.textBoxOutTime);
+            this.Controls.Add(this.labelOutTime);
             this.Controls.Add(this.lableSecurityId);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonPrint);
@@ -279,8 +323,8 @@
             this.Load += new System.EventHandler(this.FormProceedToCheckin_Load);
             this.groupBoxVisitorPass.ResumeLayout(false);
             this.groupBoxVisitorPass.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBarCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,5 +355,9 @@
         private System.Windows.Forms.Label labelBarCode;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label lableSecurityId;
+        private System.Windows.Forms.TextBox textBoxOutTime;
+        private System.Windows.Forms.Label labelOutTime;
+        private System.Windows.Forms.CheckBox checkBoxCheckedIn;
+        private System.Windows.Forms.CheckBox checkBoxheckedOut;
     }
 }
