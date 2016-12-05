@@ -117,6 +117,7 @@
             this.buttonViewAll.TabIndex = 8;
             this.buttonViewAll.Text = "View All";
             this.buttonViewAll.UseVisualStyleBackColor = false;
+            this.buttonViewAll.Click += new System.EventHandler(this.buttonViewAll_Click);
             // 
             // buttonSearch
             // 
@@ -127,6 +128,7 @@
             this.buttonSearch.TabIndex = 7;
             this.buttonSearch.Text = "Search";
             this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // buttonExit
             // 
@@ -137,6 +139,7 @@
             this.buttonExit.TabIndex = 6;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonAddAppointment
             // 
@@ -147,6 +150,7 @@
             this.buttonAddAppointment.TabIndex = 5;
             this.buttonAddAppointment.Text = "Add Appointment";
             this.buttonAddAppointment.UseVisualStyleBackColor = false;
+            this.buttonAddAppointment.Click += new System.EventHandler(this.buttonAddAppointment_Click);
             // 
             // buttonCancel
             // 
@@ -157,6 +161,7 @@
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonDelete
             // 
@@ -167,6 +172,7 @@
             this.buttonDelete.TabIndex = 4;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonSaveAndAddAppointment
             // 
@@ -177,6 +183,7 @@
             this.buttonSaveAndAddAppointment.TabIndex = 2;
             this.buttonSaveAndAddAppointment.Text = "Save And Add Appointment";
             this.buttonSaveAndAddAppointment.UseVisualStyleBackColor = false;
+            this.buttonSaveAndAddAppointment.Click += new System.EventHandler(this.buttonSaveAndAddAppointment_Click);
             // 
             // buttonSave
             // 
@@ -187,6 +194,7 @@
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonAddNew
             // 
@@ -197,6 +205,7 @@
             this.buttonAddNew.TabIndex = 0;
             this.buttonAddNew.Text = "Add New";
             this.buttonAddNew.UseVisualStyleBackColor = false;
+            this.buttonAddNew.Click += new System.EventHandler(this.buttonAddNew_Click);
             // 
             // buttonPhoto
             // 
@@ -506,6 +515,7 @@
             this.dataGridViewVisitor.Name = "dataGridViewVisitor";
             this.dataGridViewVisitor.Size = new System.Drawing.Size(636, 231);
             this.dataGridViewVisitor.TabIndex = 44;
+            this.dataGridViewVisitor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVisitor_CellClick);
             // 
             // FormRegisterFromVisitorFormToManager
             // 
@@ -538,6 +548,7 @@
             this.Controls.Add(this.dataGridViewVisitor);
             this.Name = "FormRegisterFromVisitorFormToManager";
             this.Text = "Register Visitor";
+            this.Load += new System.EventHandler(this.FormRegisterFromVisitorFormToManager_Load);
             this.groupBoxAction.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.groupBoxContactDetails.ResumeLayout(false);

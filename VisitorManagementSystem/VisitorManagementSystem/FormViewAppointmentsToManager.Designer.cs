@@ -1,6 +1,6 @@
 ﻿namespace VisitorManagementSystem
 {
-    partial class FormAppointmentsToManager
+    partial class FormViewAppointmentsToManager
     {
         /// <summary>
         /// Required designer variable.
@@ -151,7 +151,6 @@
             this.comboBoxSelectAppointments.Items.AddRange(new object[] {
             "All",
             "Approved",
-            "Blocked",
             "Pending Requests",
             "Checked In",
             "Checked Out"});
@@ -177,7 +176,7 @@
             this.labelSearch.TabIndex = 14;
             this.labelSearch.Text = "Search";
             // 
-            // FormAppointmentsToManager
+            // FormViewAppointmentsToManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -197,7 +196,7 @@
             this.Controls.Add(this.labelFromDate);
             this.Controls.Add(this.labelSelectDate);
             this.Controls.Add(this.dataGridViewAppointmentsToManager);
-            this.Name = "FormAppointmentsToManager";
+            this.Name = "FormViewAppointmentsToManager";
             this.Text = "Appointments";
             this.Load += new System.EventHandler(this.FormAppointmentsToManager_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAppointmentsToManager)).EndInit();

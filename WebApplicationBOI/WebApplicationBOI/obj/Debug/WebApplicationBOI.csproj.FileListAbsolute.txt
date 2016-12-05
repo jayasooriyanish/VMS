@@ -28,3 +28,33 @@ C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\WebApplicationBOI\WebApp
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.csprojResolveAssemblyReference.cache
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.dll
 C:\Users\nishadhi\Documents\Visual Studio 2012\Projects\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.pdb
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\WebApplicationBOI.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\WebApplicationBOI.pdb
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Antlr3.Runtime.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\AspNet.ScriptManager.jQuery.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\AspNet.ScriptManager.jQuery.UI.Combined.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.AspNet.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.Core.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OAuth.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OpenId.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\EntityFramework.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Microsoft.AspNet.Membership.OpenAuth.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\Microsoft.Web.Infrastructure.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\System.Web.Optimization.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\System.Web.Providers.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\WebGrease.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\EntityFramework.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.Core.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OAuth.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OpenId.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\bin\DotNetOpenAuth.AspNet.xml
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.csprojResolveAssemblyReference.cache
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.dll
+D:\Silueta\VMS\Source\VMS\WebApplicationBOI\WebApplicationBOI\obj\Debug\WebApplicationBOI.pdb

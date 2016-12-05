@@ -11,12 +11,11 @@ using System.Data.SqlClient;
 
 namespace VisitorManagementSystem
 {
-    public partial class AppointmentsForm : Form
+    public partial class FormAppointmentsFromSearchToManager : Form
     {
+
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         private string id;
-
-
 
         public string PassValue
         {
@@ -24,26 +23,41 @@ namespace VisitorManagementSystem
             set { id = value; }
         }
 
-        public AppointmentsForm()
+
+        public FormAppointmentsFromSearchToManager()
         {
             InitializeComponent();
         }
 
-        private void AppointmentsForm_Load(object sender, EventArgs e)
+        private void buttonExit_Click(object sender, EventArgs e)
         {
-            groupBoxAppointmentDetails.Enabled = false;
-            buttonConfirmVisit.Enabled = false;
-            buttonArrangeFacilities.Enabled = false;
-            buttonRequestApproval.Enabled = false;
+            this.Close();
+        }
 
+        private void buttonArrangeFacilities_Click(object sender, EventArgs e)
+        {
+            FormFacilitiesArrangementFromSearchToManager frm = new FormFacilitiesArrangementFromSearchToManager();
+            frm.Show();
+        }
+
+        private void buttonConfirmVisit_Click(object sender, EventArgs e)
+        {
+            FormVisitConfirmationFromSearchToManager confirm = new FormVisitConfirmationFromSearchToManager();
+            confirm.Show();
+        }
+
+        private void FormVisitorRegisterFromSearchToManager_Load(object sender, EventArgs e)
+        {
             textBoxVisitorId.Text = id;
+
             try
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText ="select * from Visitor where VisitorId='"+textBoxVisitorId.Text+"'";
-                //cmd.ExecuteNonQuery();
+                cmd.CommandText = "select * from Visitor where VisitorId='" + textBoxVisitorId.Text + "'";
+
+                Object VisitorExist = cmd.ExecuteScalar();
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
@@ -52,10 +66,10 @@ namespace VisitorManagementSystem
                     textBoxLastName.Text = dr["LastName"].ToString();
                     maskedTextBoxNicNumber.Text = dr["NicNumber"].ToString();
                     dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
-                    textBoxCategory.Text = dr["Category"].ToString();
+                    comboBoxCategory.Text = dr["Category"].ToString();
                     textBoxOrganization.Text = dr["Organization"].ToString();
                     textBoxDesignation.Text = dr["Designation"].ToString();
-                    textBoxGender.Text = dr["Gender"].ToString();
+                    comboBoxGender.Text = dr["Gender"].ToString();
                     textBoxPersonalAddress.Text = dr["PersonalAddress"].ToString();
                     textBoxCompanyAddress.Text = dr["CompanyAddress"].ToString();
                     textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
@@ -66,48 +80,36 @@ namespace VisitorManagementSystem
 
                 }
                 dr.Close();
-                
-                
 
 
                 con.Close();
-                dateTimePickerFromDate.Focus();
+
+                //dateTimePickerFromDate.Focus();
 
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void buttonArrangeFacilities_Click(object sender, EventArgs e)
+        private void buttonAddAppointment_Click(object sender, EventArgs e)
         {
-            FormFacilitiesArrangement newfacilitiesform = new FormFacilitiesArrangement();
-            newfacilitiesform.ShowDialog();
+            groupBoxAppointments.Enabled = true;
+            dateTimePickerFromDate.Focus();
         }
 
-        private void buttonConfirmVisit_Click(object sender, EventArgs e)
+        private void buttonSaveAppointment_Click(object sender, EventArgs e)
         {
-            FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
-            newConfirmationForm.Show();
-        }
 
-        private void buttonCAncelVisit_Click(object sender, EventArgs e)
-        {
-            FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
-            newConfirmationForm.ShowDialog();
-        }
-
-        private void buttonSave_Click(object sender, EventArgs e)
-        {
             try
             {
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','"+textBoxFirstName.Text+"','"+textBoxLastName.Text+"','"+textBoxEmployeeId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','"+textBoxFirstName.Text+"',"+textBoxLastName.Text+",'" + textBoxEmployeeId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -121,12 +123,26 @@ namespace VisitorManagementSystem
             }
         }
 
-        private void buttonAddAppointments_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e)
         {
-            groupBoxAppointmentDetails.Enabled = true;
-            buttonRequestApproval.Enabled = true;
-            dateTimePickerFromDate.Focus();
-            
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "Delete * From Appointment where AppointmentId = '"+textBoxAppointmentId.Text+"'";
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                MessageBox.Show("Record Deleted!");
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -144,17 +160,11 @@ namespace VisitorManagementSystem
             checkBoxCheckedIn.Checked = false;
             checkBoxCheckedOut.Checked = false;
             
-
         }
 
-        private void buttonExit_Click(object sender, EventArgs e)
+        private void panelAppointments_Paint(object sender, PaintEventArgs e)
         {
-            this.Close();
-        }
 
-        private void buttonHome_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
@@ -164,7 +174,7 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText ="select * from Employee where EmployeeId='"+textBoxEmployeeId.Text+"'";
+                cmd.CommandText = "select * from Employee where EmployeeId='" + textBoxEmployeeId.Text + "'";
                 //cmd.ExecuteNonQuery();
 
                 SqlDataReader dr = cmd.ExecuteReader();
@@ -180,24 +190,9 @@ namespace VisitorManagementSystem
             }
             catch (Exception ex)
             {
-                
+
                 MessageBox.Show(ex.Message);
             }
         }
-
-        //public string ImageToBase64(Image image,
-        //                    System.Drawing.Imaging.ImageFormat format)
-        //{
-        //    using (MemoryStream ms = new MemoryStream())
-        //    {
-        //        // Convert Image to byte[]
-        //        image.Save(ms, format);
-        //        byte[] imageBytes = ms.ToArray();
-
-        //        // Convert byte[] to Base64 String
-        //        string base64String = Convert.ToBase64String(imageBytes);
-        //        return base64String;
-        //    }
-        //}
     }
 }

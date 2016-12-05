@@ -67,6 +67,19 @@
                     <ul id="menu">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/About.aspx">About</a></li>
+                        <li><a id="A1" runat="server" href="~/About.aspx">Registered Companies</a>
+                            <ul class="SubMenuRegisterNewCompany">
+                                <li><a id="A3" runat="server" href="~/Account/Register.aspx">Register New</a></li>
+                                <li><a id="A4" runat="server" href="~/About.aspx">Company List</a></li>
+                            </ul>
+                        </li>
+                        <li><a id="A2" runat="server" href="~/About.aspx">Visitors</a>
+                            <ul class="SubMenuVisitor">
+                                <li><a id="A5" runat="server" href="~/About.aspx">View Visitors</a></li>
+                                <li><a id="A6" runat="server" href="~/About.aspx">Pending Appointments</a></li>
+                            </ul>
+
+                        </li>
                         <li><a runat="server" href="~/Contact.aspx">Contact</a></li>
                     </ul>
                 </nav>

@@ -53,10 +53,10 @@ namespace VisitorManagementSystem
 
 
             }
-            catch 
+            catch (Exception ex)
             {
 
-                MessageBox.Show("There was an Error!");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -187,26 +187,7 @@ namespace VisitorManagementSystem
                 con.Close();
             }
             
-            //try
-            //{
-                //con.Open();
-                //SqlCommand cmd = con.CreateCommand();
-                //cmd.CommandType = CommandType.Text;
-                //cmd.CommandText = "Insert into visitor values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + comboBoxCategory.Text + "','" + comboBoxGender.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + dateTimePickerDateOfBirth.Text + "','" + listBoxPersonalAddress.Text + "','" + listBoxCompanyAddress.Text + "','" + textBoxEmail.Text + "','" + textBoxWorkPhone.Text + "','" + textBoxMobile.Text + "','" + textBoxOther.Text + "','" + pictureBoxPhoto.Image + "')";
-                ////cmd.ExecuteNonQuery();
-                //con.Close();
-                //disp_data();
-                //MessageBox.Show("Record Saved Successfully!");
-            //}
-            //catch (Exception ex)
-            //{
-
-            //    //throw ex;
-            //}
-            //finally
-            //{
-            //    con.Close();
-            //}
+           
         }
 
             public void disp_data()
@@ -271,9 +252,9 @@ namespace VisitorManagementSystem
                     disp_data();
                 }
 
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("There was an error!");
+                    MessageBox.Show(ex.Message);
                     textBoxVisitorId.Focus();
                 }
             }
@@ -360,9 +341,9 @@ namespace VisitorManagementSystem
                     disp_data();
                 }
 
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("There was an error!");
+                    MessageBox.Show(ex.Message);
                     textBoxVisitorId.Focus();
                 }
 
@@ -375,10 +356,10 @@ namespace VisitorManagementSystem
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Select * from Visitor where FirstName='" + textBoxFirstName.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                    cmd.CommandText = "Select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
                     cmd.ExecuteNonQuery();
                     Object VisitorExist = cmd.ExecuteScalar();
-                    Console.Write("Visitor"+VisitorExist);
+                    
 
                     if (VisitorExist != null)
                     {
@@ -386,6 +367,29 @@ namespace VisitorManagementSystem
                         SqlDataAdapter da = new SqlDataAdapter(cmd);
                         da.Fill(dt);
                         dataGridView1.DataSource = dt;
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            textBoxFirstName.Text = dr["FirstName"].ToString();
+                            textBoxLastName.Text = dr["LastName"].ToString();
+                            textBoxVisitorId.Text = dr["VisitorId"].ToString();
+                            dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                            comboBoxCategory.Text = dr["Category"].ToString();
+                            textBoxOrganization.Text = dr["Organization"].ToString();
+                            textBoxDesignation.Text = dr["Designation"].ToString();
+                            comboBoxGender.Text = dr["Gender"].ToString();
+                            textBoxPersonalAddress.Text = dr["PersonalAddress"].ToString();
+                            textBoxCompanyAddress.Text = dr["CompanyAddress"].ToString();
+                            textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                            textBoxMobile.Text = dr["Mobile"].ToString();
+                            textBoxOther.Text = dr["Other"].ToString();
+                            textBoxEmail.Text = dr["Email"].ToString();
+                            //pictureBoxPhoto.Image =;
+
+                        }
+                        dr.Close();
+                        con.Close();
                     }
                     else
                     {
@@ -400,7 +404,7 @@ namespace VisitorManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    Console.Write(ex);
+                    
                     MessageBox.Show(ex.Message); 
                 }
             }
@@ -429,8 +433,7 @@ namespace VisitorManagementSystem
                 textBoxVisitorId.Focus();
             }
 
-            //int visitorId;
-
+            
             private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
             {
                 try
@@ -461,6 +464,7 @@ namespace VisitorManagementSystem
                         textBoxMobile.Text = dr["Mobile"].ToString();
                         textBoxOther.Text = dr["Other"].ToString();
                         textBoxEmail.Text = dr["Email"].ToString();
+                        //photo
  
                     }
                     con.Close();
@@ -478,67 +482,92 @@ namespace VisitorManagementSystem
             {
                 try
                 {
+
+                    
                     con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
-                    cmd.ExecuteNonQuery();
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "Select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                    cmd2.ExecuteNonQuery();
+                    
+                    Object VisitorExist = cmd2.ExecuteScalar();
                     con.Close();
-                    //GenerateAutoId();  
 
-                //    comboBoxCategory.SelectedIndex = 0;
-                //    comboBoxGender.SelectedIndex = 0;
-                //    textBoxVisitorId.Text = "";
-                //    textBoxFirstName.Text = "";
-                //    textBoxLastName.Text = "";
-                //    textBoxOrganization.Text = "";
-                //    textBoxDesignation.Text = "";
-                //    //comboBoxCategory.Text = "";
-                //    maskedTextBoxNicNumber.Text = "";
-                //    //comboBoxGender.Text = "";
-                //    textBoxPersonalAddress.Text = "";
-                //    textBoxCompanyAddress.Text = "";
-                //    textBoxEmail.Text = "";
-                //    textBoxWorkPhone.Text = "";
-                //    textBoxMobile.Text = "";
-                //    textBoxOther.Text = "";
-                //    pictureBoxPhoto.Image = null;
+                    if (VisitorExist == null)
+                    {
+                        con.Close();
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        //GenerateAutoId(); 
 
+                        
+                        MessageBox.Show("Record Saved!");
+                        //    textBoxVisitorId.Focus();
 
-                    MessageBox.Show("Record Saved!");
-                //    textBoxVisitorId.Focus();
-
-                    disp_data();
-
-                    AppointmentsForm appForm = new AppointmentsForm();
-                    appForm.PassValue = textBoxVisitorId.Text;
-                    appForm.ShowDialog();
-
-                    //comboBoxCategory.SelectedIndex = 0;
-                    //comboBoxGender.SelectedIndex = 0;
-                    //textBoxVisitorId.Text = "";
-                    //textBoxFirstName.Text = "";
-                    //textBoxLastName.Text = "";
-                    //textBoxOrganization.Text = "";
-                    //textBoxDesignation.Text = "";
-                    ////comboBoxCategory.Text = "";
-                    //maskedTextBoxNicNumber.Text = "";
-                    ////comboBoxGender.Text = "";
-                    //textBoxPersonalAddress.Text = "";
-                    //textBoxCompanyAddress.Text = "";
-                    //textBoxEmail.Text = "";
-                    //textBoxWorkPhone.Text = "";
-                    //textBoxMobile.Text = "";
-                    //textBoxOther.Text = "";
-                    //pictureBoxPhoto.Image = null;
+                        disp_data();
+                        con.Close();
 
 
+                        AppointmentsForm appForm = new AppointmentsForm();
+                        appForm.PassValue = textBoxVisitorId.Text;
+                        appForm.ShowDialog();
+                    }
+
+                    else
+                    {
+
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                        //cmd.ExecuteNonQuery();
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            textBoxFirstName.Text = dr["FirstName"].ToString();
+                            textBoxLastName.Text = dr["LastName"].ToString();
+                            textBoxVisitorId.Text = dr["VisitorId"].ToString();
+                            dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                            comboBoxCategory.Text = dr["Category"].ToString();
+                            textBoxOrganization.Text = dr["Organization"].ToString();
+                            textBoxDesignation.Text = dr["Designation"].ToString();
+                            comboBoxGender.Text = dr["Gender"].ToString();
+                            textBoxPersonalAddress.Text = dr["PersonalAddress"].ToString();
+                            textBoxCompanyAddress.Text = dr["CompanyAddress"].ToString();
+                            textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                            textBoxMobile.Text = dr["Mobile"].ToString();
+                            textBoxOther.Text = dr["Other"].ToString();
+                            textBoxEmail.Text = dr["Email"].ToString();
+                            //pictureBoxPhoto.Image =;
+
+                        }
+                        dr.Close();
+                        con.Close();
+
+                        DialogResult answer;
+                        answer = MessageBox.Show("Visitor Already Registered!Do You Want To Make New Appointment?", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if (answer == DialogResult.Yes)
+                        {
+                            AppointmentsForm appForm = new AppointmentsForm();
+                            appForm.PassValue = textBoxVisitorId.Text;
+                            appForm.ShowDialog();
+                            con.Close();
+                        }
+                    }
+                    con.Close();
+
+                  
                 }
 
 
-                catch
+                catch(Exception ex)
                 {
-                    MessageBox.Show("There was an Error! Please re-enter the data");
+                    MessageBox.Show(ex.Message);
                     textBoxVisitorId.Focus();
                 }
                 finally

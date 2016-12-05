@@ -286,6 +286,18 @@
             // 
             // textBoxDepartment
             // 
+            this.textBoxDepartment.AutoCompleteCustomSource.AddRange(new string[] {
+            "Marketing",
+            "HR",
+            "PDC",
+            "IT",
+            "Sourcing & Supply Chain",
+            "Planning",
+            "Operations",
+            "Finance",
+            "Research & Innovation(RnI)"});
+            this.textBoxDepartment.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxDepartment.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxDepartment.Location = new System.Drawing.Point(91, 141);
             this.textBoxDepartment.Name = "textBoxDepartment";
             this.textBoxDepartment.Size = new System.Drawing.Size(188, 20);
@@ -450,6 +462,7 @@
             this.dataGridViewEmployee.Name = "dataGridViewEmployee";
             this.dataGridViewEmployee.Size = new System.Drawing.Size(835, 160);
             this.dataGridViewEmployee.TabIndex = 20;
+            this.dataGridViewEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellClick);
             // 
             // photoOpenFileDialog
             // 

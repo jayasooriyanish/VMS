@@ -140,6 +140,7 @@
             this.buttonPendingRequestsForApproval.TabIndex = 18;
             this.buttonPendingRequestsForApproval.Text = "Pending Requests For Approval";
             this.buttonPendingRequestsForApproval.UseVisualStyleBackColor = false;
+            this.buttonPendingRequestsForApproval.Click += new System.EventHandler(this.buttonPendingRequestsForApproval_Click);
             // 
             // FormVisitsAndAppointmentsToManager
             // 

@@ -19,7 +19,7 @@ namespace VisitorManagementSystem
 
         private void buttonAppointments_Click(object sender, EventArgs e)
         {
-            FormAppointmentsToManager newApp = new FormAppointmentsToManager();
+            FormViewAppointmentsToManager newApp = new FormViewAppointmentsToManager();
             newApp.Show();
         }
 
@@ -42,6 +42,12 @@ namespace VisitorManagementSystem
         private void buttonHome_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonPendingRequestsForApproval_Click(object sender, EventArgs e)
+        {
+            PendingRequestsForm pdform = new PendingRequestsForm();
+            pdform.Show();
         }
     }
 }

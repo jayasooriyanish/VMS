@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace VisitorManagementSystem
 {
-    public partial class FormAppointmentsToManager : Form
+    public partial class FormViewAppointmentsToManager : Form
     {
-        public FormAppointmentsToManager()
+        SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
+
+        public FormViewAppointmentsToManager()
         {
             InitializeComponent();
         }
@@ -22,9 +25,42 @@ namespace VisitorManagementSystem
 
         }
 
+
+        //DataTable dt = new DataTable();
+        private void comboBoxSelectAppointments_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DataView dv = dt.DefaultView;
+            //dv.RowFilter = string.Format("");
+ 
+        }
+
         private void FormAppointmentsToManager_Load(object sender, EventArgs e)
         {
             comboBoxSelectAppointments.SelectedIndex = 0;
+
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from  Appointment";
+                cmd.ExecuteNonQuery();
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dataGridViewAppointmentsToManager.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
         }
 
         private void buttonAddNewAppointment_Click(object sender, EventArgs e)

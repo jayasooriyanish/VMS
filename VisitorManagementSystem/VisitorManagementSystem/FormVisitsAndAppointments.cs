@@ -24,7 +24,7 @@ namespace VisitorManagementSystem
 
         private void buttonAppointments_Click(object sender, EventArgs e)
         {
-            AppointmentsForm appointments = new AppointmentsForm();
+            FormViewAppointmentsToManager appointments = new FormViewAppointmentsToManager();
             appointments.ShowDialog();
         }
     }

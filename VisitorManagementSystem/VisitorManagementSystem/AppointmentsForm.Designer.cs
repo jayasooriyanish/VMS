@@ -97,7 +97,8 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonHome = new System.Windows.Forms.Button();
             this.textBoxAppointmentId = new System.Windows.Forms.TextBox();
-            this.checkBoxApproved = new System.Windows.Forms.CheckBox();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.labelStatus = new System.Windows.Forms.Label();
             this.groupBoxVisitorDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.groupBoxAppointmentDetails.SuspendLayout();
@@ -107,9 +108,10 @@
             // labelAppoinmentId
             // 
             this.labelAppoinmentId.AutoSize = true;
+            this.labelAppoinmentId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAppoinmentId.Location = new System.Drawing.Point(29, 30);
             this.labelAppoinmentId.Name = "labelAppoinmentId";
-            this.labelAppoinmentId.Size = new System.Drawing.Size(72, 13);
+            this.labelAppoinmentId.Size = new System.Drawing.Size(90, 16);
             this.labelAppoinmentId.TabIndex = 0;
             this.labelAppoinmentId.Text = "Appoitment Id";
             // 
@@ -464,7 +466,7 @@
             this.checkBoxCheckedIn.Location = new System.Drawing.Point(616, 135);
             this.checkBoxCheckedIn.Name = "checkBoxCheckedIn";
             this.checkBoxCheckedIn.Size = new System.Drawing.Size(94, 20);
-            this.checkBoxCheckedIn.TabIndex = 22;
+            this.checkBoxCheckedIn.TabIndex = 12;
             this.checkBoxCheckedIn.Text = "Checked In";
             this.checkBoxCheckedIn.UseVisualStyleBackColor = true;
             // 
@@ -475,7 +477,7 @@
             this.checkBoxCheckedOut.Location = new System.Drawing.Point(616, 167);
             this.checkBoxCheckedOut.Name = "checkBoxCheckedOut";
             this.checkBoxCheckedOut.Size = new System.Drawing.Size(104, 20);
-            this.checkBoxCheckedOut.TabIndex = 21;
+            this.checkBoxCheckedOut.TabIndex = 13;
             this.checkBoxCheckedOut.Text = "Checked Out";
             this.checkBoxCheckedOut.UseVisualStyleBackColor = true;
             // 
@@ -485,7 +487,7 @@
             this.checkBoxNeedVehicles.Location = new System.Drawing.Point(616, 66);
             this.checkBoxNeedVehicles.Name = "checkBoxNeedVehicles";
             this.checkBoxNeedVehicles.Size = new System.Drawing.Size(101, 17);
-            this.checkBoxNeedVehicles.TabIndex = 20;
+            this.checkBoxNeedVehicles.TabIndex = 9;
             this.checkBoxNeedVehicles.Text = "Need Vehicles?";
             this.checkBoxNeedVehicles.UseVisualStyleBackColor = true;
             // 
@@ -496,7 +498,7 @@
             this.checkBoxNeedAccomodation.Location = new System.Drawing.Point(616, 38);
             this.checkBoxNeedAccomodation.Name = "checkBoxNeedAccomodation";
             this.checkBoxNeedAccomodation.Size = new System.Drawing.Size(144, 19);
-            this.checkBoxNeedAccomodation.TabIndex = 19;
+            this.checkBoxNeedAccomodation.TabIndex = 8;
             this.checkBoxNeedAccomodation.Text = "Need Accomodation?";
             this.checkBoxNeedAccomodation.UseVisualStyleBackColor = true;
             // 
@@ -514,21 +516,22 @@
             this.textBoxEmployeeLastName.Location = new System.Drawing.Point(100, 234);
             this.textBoxEmployeeLastName.Name = "textBoxEmployeeLastName";
             this.textBoxEmployeeLastName.Size = new System.Drawing.Size(500, 20);
-            this.textBoxEmployeeLastName.TabIndex = 17;
+            this.textBoxEmployeeLastName.TabIndex = 7;
             // 
             // textBoxEmployeeFirstName
             // 
             this.textBoxEmployeeFirstName.Location = new System.Drawing.Point(100, 199);
             this.textBoxEmployeeFirstName.Name = "textBoxEmployeeFirstName";
             this.textBoxEmployeeFirstName.Size = new System.Drawing.Size(500, 20);
-            this.textBoxEmployeeFirstName.TabIndex = 16;
+            this.textBoxEmployeeFirstName.TabIndex = 6;
             // 
             // textBoxEmployeeId
             // 
             this.textBoxEmployeeId.Location = new System.Drawing.Point(100, 167);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(500, 20);
-            this.textBoxEmployeeId.TabIndex = 15;
+            this.textBoxEmployeeId.TabIndex = 5;
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
             // labelEmployeeFirstName
             // 
@@ -562,7 +565,7 @@
             this.textBoxPurpose.Location = new System.Drawing.Point(100, 104);
             this.textBoxPurpose.Name = "textBoxPurpose";
             this.textBoxPurpose.Size = new System.Drawing.Size(500, 20);
-            this.textBoxPurpose.TabIndex = 11;
+            this.textBoxPurpose.TabIndex = 4;
             // 
             // labelPurpose
             // 
@@ -597,7 +600,7 @@
             this.dateTimePickerToTime.Location = new System.Drawing.Point(357, 59);
             this.dateTimePickerToTime.Name = "dateTimePickerToTime";
             this.dateTimePickerToTime.Size = new System.Drawing.Size(243, 20);
-            this.dateTimePickerToTime.TabIndex = 7;
+            this.dateTimePickerToTime.TabIndex = 3;
             // 
             // dateTimePickerFromTime
             // 
@@ -605,7 +608,7 @@
             this.dateTimePickerFromTime.Location = new System.Drawing.Point(100, 60);
             this.dateTimePickerFromTime.Name = "dateTimePickerFromTime";
             this.dateTimePickerFromTime.Size = new System.Drawing.Size(234, 20);
-            this.dateTimePickerFromTime.TabIndex = 6;
+            this.dateTimePickerFromTime.TabIndex = 2;
             // 
             // labelTime
             // 
@@ -622,7 +625,7 @@
             this.dateTimePickerToDate.Location = new System.Drawing.Point(357, 20);
             this.dateTimePickerToDate.Name = "dateTimePickerToDate";
             this.dateTimePickerToDate.Size = new System.Drawing.Size(243, 20);
-            this.dateTimePickerToDate.TabIndex = 4;
+            this.dateTimePickerToDate.TabIndex = 1;
             // 
             // dateTimePickerFromDate
             // 
@@ -630,7 +633,7 @@
             this.dateTimePickerFromDate.Location = new System.Drawing.Point(100, 20);
             this.dateTimePickerFromDate.Name = "dateTimePickerFromDate";
             this.dateTimePickerFromDate.Size = new System.Drawing.Size(234, 20);
-            this.dateTimePickerFromDate.TabIndex = 3;
+            this.dateTimePickerFromDate.TabIndex = 0;
             // 
             // labelToDate
             // 
@@ -665,7 +668,7 @@
             this.buttonRequestApproval.Location = new System.Drawing.Point(6, 261);
             this.buttonRequestApproval.Name = "buttonRequestApproval";
             this.buttonRequestApproval.Size = new System.Drawing.Size(129, 45);
-            this.buttonRequestApproval.TabIndex = 4;
+            this.buttonRequestApproval.TabIndex = 1;
             this.buttonRequestApproval.Text = "Request Approval";
             this.buttonRequestApproval.UseVisualStyleBackColor = false;
             // 
@@ -675,7 +678,7 @@
             this.buttonCancel.Location = new System.Drawing.Point(6, 478);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(129, 41);
-            this.buttonCancel.TabIndex = 5;
+            this.buttonCancel.TabIndex = 4;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -686,7 +689,7 @@
             this.buttonExit.Location = new System.Drawing.Point(6, 541);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(129, 45);
-            this.buttonExit.TabIndex = 6;
+            this.buttonExit.TabIndex = 5;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
@@ -704,7 +707,7 @@
             this.groupBoxAction.Location = new System.Drawing.Point(791, 60);
             this.groupBoxAction.Name = "groupBoxAction";
             this.groupBoxAction.Size = new System.Drawing.Size(141, 592);
-            this.groupBoxAction.TabIndex = 4;
+            this.groupBoxAction.TabIndex = 2;
             this.groupBoxAction.TabStop = false;
             // 
             // buttonAddAppointments
@@ -724,7 +727,7 @@
             this.buttonConfirmVisit.Location = new System.Drawing.Point(6, 408);
             this.buttonConfirmVisit.Name = "buttonConfirmVisit";
             this.buttonConfirmVisit.Size = new System.Drawing.Size(129, 41);
-            this.buttonConfirmVisit.TabIndex = 7;
+            this.buttonConfirmVisit.TabIndex = 3;
             this.buttonConfirmVisit.Text = "Confirm Visit";
             this.buttonConfirmVisit.UseVisualStyleBackColor = false;
             this.buttonConfirmVisit.Click += new System.EventHandler(this.buttonConfirmVisit_Click);
@@ -735,7 +738,7 @@
             this.buttonArrangeFacilities.Location = new System.Drawing.Point(6, 348);
             this.buttonArrangeFacilities.Name = "buttonArrangeFacilities";
             this.buttonArrangeFacilities.Size = new System.Drawing.Size(129, 41);
-            this.buttonArrangeFacilities.TabIndex = 6;
+            this.buttonArrangeFacilities.TabIndex = 2;
             this.buttonArrangeFacilities.Text = "Arrange Facilities";
             this.buttonArrangeFacilities.UseVisualStyleBackColor = false;
             this.buttonArrangeFacilities.Click += new System.EventHandler(this.buttonArrangeFacilities_Click);
@@ -746,7 +749,7 @@
             this.buttonSave.Location = new System.Drawing.Point(6, 202);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(129, 41);
-            this.buttonSave.TabIndex = 8;
+            this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -757,27 +760,40 @@
             this.buttonHome.Location = new System.Drawing.Point(6, 19);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(129, 44);
-            this.buttonHome.TabIndex = 7;
+            this.buttonHome.TabIndex = 6;
             this.buttonHome.Text = "Home";
             this.buttonHome.UseVisualStyleBackColor = false;
+            this.buttonHome.Click += new System.EventHandler(this.buttonHome_Click);
             // 
             // textBoxAppointmentId
             // 
-            this.textBoxAppointmentId.Location = new System.Drawing.Point(112, 30);
+            this.textBoxAppointmentId.Location = new System.Drawing.Point(125, 29);
             this.textBoxAppointmentId.Name = "textBoxAppointmentId";
             this.textBoxAppointmentId.Size = new System.Drawing.Size(206, 20);
-            this.textBoxAppointmentId.TabIndex = 5;
+            this.textBoxAppointmentId.TabIndex = 1;
             // 
-            // checkBoxApproved
+            // comboBoxStatus
             // 
-            this.checkBoxApproved.AutoSize = true;
-            this.checkBoxApproved.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxApproved.Location = new System.Drawing.Point(661, 30);
-            this.checkBoxApproved.Name = "checkBoxApproved";
-            this.checkBoxApproved.Size = new System.Drawing.Size(87, 20);
-            this.checkBoxApproved.TabIndex = 7;
-            this.checkBoxApproved.Text = "Approved";
-            this.checkBoxApproved.UseVisualStyleBackColor = true;
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "None",
+            "Pending",
+            "Approved",
+            "Blocked"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(641, 27);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(144, 21);
+            this.comboBoxStatus.TabIndex = 6;
+            // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(598, 30);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(45, 16);
+            this.labelStatus.TabIndex = 7;
+            this.labelStatus.Text = "Status";
             // 
             // AppointmentsForm
             // 
@@ -785,7 +801,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(941, 670);
-            this.Controls.Add(this.checkBoxApproved);
+            this.Controls.Add(this.labelStatus);
+            this.Controls.Add(this.comboBoxStatus);
             this.Controls.Add(this.textBoxAppointmentId);
             this.Controls.Add(this.groupBoxAction);
             this.Controls.Add(this.groupBoxAppointmentDetails);
@@ -866,7 +883,6 @@
         private System.Windows.Forms.Button buttonHome;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxAppointmentId;
-        private System.Windows.Forms.CheckBox checkBoxApproved;
         private System.Windows.Forms.Button buttonConfirmVisit;
         private System.Windows.Forms.Button buttonArrangeFacilities;
         private System.Windows.Forms.CheckBox checkBoxNeedAccomodation;
@@ -877,5 +893,7 @@
         private System.Windows.Forms.Button buttonAddAppointments;
         private System.Windows.Forms.CheckBox checkBoxCheckedIn;
         private System.Windows.Forms.CheckBox checkBoxCheckedOut;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+        private System.Windows.Forms.Label labelStatus;
     }
 }

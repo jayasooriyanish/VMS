@@ -84,7 +84,6 @@ D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\De
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.MainFormToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.VisitorFormToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormAddNewAppointmentToManager.resources
-D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormAppointmentsToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormFacilitiesArrangementToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormMoreAppointmentDetailsToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormSearchVisitorToSecurity.resources
@@ -98,4 +97,5 @@ D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\De
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormSearchVisitorToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorToManager.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitConfirmationFromSearchToManager.resources
-D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitorRegisterFromSearchToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewAppointmentsToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormAppointmentsFromSearchToManager.resources

@@ -49,7 +49,7 @@
             this.buttonAppointments.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAppointments.Location = new System.Drawing.Point(109, 52);
             this.buttonAppointments.Name = "buttonAppointments";
-            this.buttonAppointments.Size = new System.Drawing.Size(157, 50);
+            this.buttonAppointments.Size = new System.Drawing.Size(214, 50);
             this.buttonAppointments.TabIndex = 0;
             this.buttonAppointments.Text = "Appointments";
             this.buttonAppointments.UseVisualStyleBackColor = false;
@@ -61,7 +61,7 @@
             this.buttonVisits.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVisits.Location = new System.Drawing.Point(109, 117);
             this.buttonVisits.Name = "buttonVisits";
-            this.buttonVisits.Size = new System.Drawing.Size(157, 49);
+            this.buttonVisits.Size = new System.Drawing.Size(214, 49);
             this.buttonVisits.TabIndex = 1;
             this.buttonVisits.Text = "Visits";
             this.buttonVisits.UseVisualStyleBackColor = false;
@@ -72,7 +72,7 @@
             this.buttonVisitList.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonVisitList.Location = new System.Drawing.Point(109, 181);
             this.buttonVisitList.Name = "buttonVisitList";
-            this.buttonVisitList.Size = new System.Drawing.Size(157, 49);
+            this.buttonVisitList.Size = new System.Drawing.Size(214, 49);
             this.buttonVisitList.TabIndex = 2;
             this.buttonVisitList.Text = "Visit List";
             this.buttonVisitList.UseVisualStyleBackColor = false;
@@ -110,7 +110,7 @@
             // buttonCancel
             // 
             this.buttonCancel.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonCancel.Location = new System.Drawing.Point(32, 252);
+            this.buttonCancel.Location = new System.Drawing.Point(55, 260);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
@@ -120,7 +120,7 @@
             // buttonHome
             // 
             this.buttonHome.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonHome.Location = new System.Drawing.Point(123, 252);
+            this.buttonHome.Location = new System.Drawing.Point(152, 260);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(75, 23);
             this.buttonHome.TabIndex = 7;
@@ -130,7 +130,7 @@
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.Color.GhostWhite;
-            this.buttonExit.Location = new System.Drawing.Point(216, 252);
+            this.buttonExit.Location = new System.Drawing.Point(248, 260);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 8;
@@ -142,7 +142,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(335, 318);
+            this.ClientSize = new System.Drawing.Size(381, 318);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonHome);
             this.Controls.Add(this.buttonCancel);

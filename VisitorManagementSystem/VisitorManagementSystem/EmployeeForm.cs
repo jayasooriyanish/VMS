@@ -14,6 +14,8 @@ namespace VisitorManagementSystem
     public partial class EmployeeForm : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
+        string employeeId;
+
         public EmployeeForm()
         {
             InitializeComponent();
@@ -42,10 +44,10 @@ namespace VisitorManagementSystem
                 //textBoxEmployeeId.Focus();
 
             }
-            catch
+            catch(Exception ex)
             {
 
-                MessageBox.Show("There was an error!");
+                MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -59,38 +61,82 @@ namespace VisitorManagementSystem
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Employee(EmployeeId,FirstName,LastName,Department,Designation,Address,DateOfBirth,Gender,NicNumber,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxEmployeeId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + textBoxDepartment.Text + "','" + textBoxDesignation.Text + "','" + textBoxPersonalAddress.Text + "','" + dateTimePickerDateOfBirth.Text.ToString() + "','" + comboBoxGender.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
+                
+                    con.Open();
+                    SqlCommand cmd2 = con.CreateCommand();
+                    cmd2.CommandType = CommandType.Text;
+                    cmd2.CommandText = "Select * from Employee where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                    cmd2.ExecuteNonQuery();
+                    
+                    Object EmployeeExist = cmd2.ExecuteScalar();
+                    con.Close();
 
-                textBoxEmployeeId.Clear();
-                textBoxFirstName.Clear();
-                textBoxLastName.Clear();
-                textBoxDepartment.Clear();
-                textBoxDesignation.Clear();
-                textBoxPersonalAddress.Clear();
-                comboBoxGender.SelectedIndex = 0;
-                maskedTextBoxNicNumber.Clear();
-                textBoxWorkPhone.Clear();
-                textBoxMobile.Clear();
-                textBoxOther.Clear();
-                textBoxEmail.Clear();
-                pictureBoxPhoto.Image = null;
+                    if (EmployeeExist == null)
+                    {
+                        con.Close();
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "Insert into Employee(EmployeeId,FirstName,LastName,Department,Designation,Address,DateOfBirth,Gender,NicNumber,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxEmployeeId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + textBoxDepartment.Text + "','" + textBoxDesignation.Text + "','" + textBoxPersonalAddress.Text + "','" + dateTimePickerDateOfBirth.Text.ToString() + "','" + comboBoxGender.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
+                        cmd.ExecuteNonQuery();
+                        con.Close();
 
-                disp_data();
+                        textBoxEmployeeId.Clear();
+                        textBoxFirstName.Clear();
+                        textBoxLastName.Clear();
+                        textBoxDepartment.Clear();
+                        textBoxDesignation.Clear();
+                        textBoxPersonalAddress.Clear();
+                        comboBoxGender.SelectedIndex = 0;
+                        maskedTextBoxNicNumber.Clear();
+                        textBoxWorkPhone.Clear();
+                        textBoxMobile.Clear();
+                        textBoxOther.Clear();
+                        textBoxEmail.Clear();
+                        pictureBoxPhoto.Image = null;
 
-                MessageBox.Show("Record Saved!");
-                textBoxEmployeeId.Focus();
+                        disp_data();
 
+                        MessageBox.Show("Record Saved!");
+                        textBoxEmployeeId.Focus();
+                    }
+
+                    else
+                    {
+
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select * from Employee where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                        //cmd.ExecuteNonQuery();
+
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            textBoxFirstName.Text = dr["FirstName"].ToString();
+                            textBoxLastName.Text = dr["LastName"].ToString();
+                            textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
+                            dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                            textBoxDesignation.Text = dr["Designation"].ToString();
+                            textBoxDepartment.Text = dr["Department"].ToString();
+                            comboBoxGender.Text = dr["Gender"].ToString();
+                            textBoxPersonalAddress.Text = dr["Address"].ToString();
+                            textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                            textBoxMobile.Text = dr["Mobile"].ToString();
+                            textBoxOther.Text = dr["Other"].ToString();
+                            textBoxEmail.Text = dr["Email"].ToString();
+                            //pictureBoxPhoto.Image =;
+
+                        }
+                        dr.Close();
+                        con.Close();
+                    }
 
 
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("There was an Error! Please re-enter the data");
+                MessageBox.Show(ex.Message);
                 textBoxEmployeeId.Focus();
             }
 
@@ -136,10 +182,10 @@ namespace VisitorManagementSystem
                     disp_data();
 
                 }
-                catch 
+                catch(Exception ex)
                 {
 
-                    MessageBox.Show("There was an error! Please Re-enter data!");
+                    MessageBox.Show(ex.Message);
                     textBoxEmployeeId.Focus();
                 }
             }
@@ -176,10 +222,10 @@ namespace VisitorManagementSystem
 
 
                 }
-                catch
+                catch(Exception ex)
                 {
 
-                    MessageBox.Show("An Error Occured!");
+                    MessageBox.Show(ex.Message);
                 }
                 finally
                 {
@@ -196,18 +242,49 @@ namespace VisitorManagementSystem
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = "Select * from Employee where FirstName='" + textBoxFirstName.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "' OR LastName='"+textBoxLastName.Text+"'";
                     cmd.ExecuteNonQuery();
+                    Object EmployeeExist = cmd.ExecuteScalar();
+
+                     if (EmployeeExist != null)
+                    {
                     DataTable dt = new DataTable();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(dt);
                     dataGridViewEmployee.DataSource = dt;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    while (dr.Read())
+                    {
+                        textBoxFirstName.Text = dr["FirstName"].ToString();
+                        textBoxLastName.Text = dr["LastName"].ToString();
+                        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
+                        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                        textBoxDesignation.Text = dr["Designation"].ToString();
+                        textBoxDepartment.Text = dr["Department"].ToString();
+                        comboBoxGender.Text = dr["Gender"].ToString();
+                        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
+                        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                        textBoxMobile.Text = dr["Mobile"].ToString();
+                        textBoxOther.Text = dr["Other"].ToString();
+                        textBoxEmail.Text = dr["Email"].ToString();
+                        //pictureBoxPhoto.Image =;
+
+                    }
+                    dr.Close();
                     con.Close();
+                    }
+                     else
+                     {
+                         MessageBox.Show("Employee Not Found!Enter Employee Details To Register New Employee.");
+                         maskedTextBoxNicNumber.Clear();
+                         textBoxEmployeeId.Focus();
+                     }
+                     con.Close();
 
                     textBoxEmployeeId.Focus();
 
                 }
-                catch 
+                catch(Exception ex) 
                 {
-                    MessageBox.Show("Employee you searched not found.Please check the data and enter again!");  
+                    MessageBox.Show(ex.Message);  
                     
                 }
             }
@@ -235,9 +312,9 @@ namespace VisitorManagementSystem
                     disp_data();
 
                 }
-                catch 
+                catch(Exception ex) 
                 {
-                    MessageBox.Show("There was an error!");
+                    MessageBox.Show(ex.Message);
                     textBoxEmployeeId.Focus();
                     
                 }
@@ -268,10 +345,10 @@ namespace VisitorManagementSystem
                     textBoxEmployeeId.Focus();
 
                 }
-                catch 
+                catch(Exception ex) 
                 {
 
-                    MessageBox.Show("Error!");
+                    MessageBox.Show(ex.Message);
                 }
 
             }
@@ -280,17 +357,12 @@ namespace VisitorManagementSystem
             {
                 try
                 {
-                    //con.Open();
-                    //SqlCommand cmd = con.CreateCommand();
-                    //cmd.CommandType = CommandType.Text;
-                    //cmd.CommandText = "edit from Employee where EmployeeId='" + textBoxEmployeeId.Text + "' OR NicNumber='"+maskedTextBoxNicNumber.Text+"'";
-                    //cmd.ExecuteNonQuery();
-                    //con.Close();
+                    
                 }
-                catch 
+                catch(Exception ex) 
                 {
 
-                    MessageBox.Show("Error!");
+                    MessageBox.Show(ex.Message);
                 }
 
             }
@@ -301,6 +373,46 @@ namespace VisitorManagementSystem
                 if (photoOpenFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     pictureBoxPhoto.Image = Image.FromFile(photoOpenFileDialog.FileName);
+                }
+            }
+
+            private void dataGridViewEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+            {
+                try
+                {
+                    con.Open();
+                    employeeId = dataGridViewEmployee.Rows[e.RowIndex].Cells["EmployeeId"].Value.ToString();
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "Select * from Employee where EmployeeId='" + employeeId + "'";
+                    cmd.ExecuteNonQuery();
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
+                        textBoxFirstName.Text = dr["FirstName"].ToString();
+                        textBoxLastName.Text = dr["LastName"].ToString();
+                        maskedTextBoxNicNumber.Text = dr["NicNumber"].ToString();
+                        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();                        
+                        textBoxDesignation.Text = dr["Designation"].ToString();
+                        textBoxDepartment.Text = dr["Department"].ToString();
+                        comboBoxGender.Text = dr["Gender"].ToString();
+                        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
+                        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                        textBoxMobile.Text = dr["Mobile"].ToString();
+                        textBoxOther.Text = dr["Other"].ToString();
+                        textBoxEmail.Text = dr["Email"].ToString();
+                        //photo
+
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
