@@ -15,6 +15,19 @@ namespace VisitorManagementSystem
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         private string id;
+        //string appointmentId;
+        String AId = "SILAPP0";
+
+        private void GenerateAutoId()
+        {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Count(appointmentId) from Appointment", con);
+            int i = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            i++;
+            textBoxAppointmentId.Text = AId + i.ToString();
+        }
+
 
 
 
@@ -31,8 +44,9 @@ namespace VisitorManagementSystem
 
         private void AppointmentsForm_Load(object sender, EventArgs e)
         {
+            GenerateAutoId();
             groupBoxAppointmentDetails.Enabled = false;
-            buttonConfirmVisit.Enabled = false;
+            //buttonConfirmVisit.Enabled = false;
             buttonArrangeFacilities.Enabled = false;
             buttonRequestApproval.Enabled = false;
 
@@ -91,6 +105,7 @@ namespace VisitorManagementSystem
         private void buttonConfirmVisit_Click(object sender, EventArgs e)
         {
             FormVisitConfirmation newConfirmationForm = new FormVisitConfirmation();
+            newConfirmationForm.PassEmail = textBoxEmail.Text;
             newConfirmationForm.Show();
         }
 
@@ -107,7 +122,7 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','"+textBoxFirstName.Text+"','"+textBoxLastName.Text+"','"+textBoxEmployeeId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime,Status) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','"+textBoxFirstName.Text+"','"+textBoxLastName.Text+"','"+textBoxEmployeeId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "','"+comboBoxStatus.Text+"')";
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -124,8 +139,10 @@ namespace VisitorManagementSystem
         private void buttonAddAppointments_Click(object sender, EventArgs e)
         {
             groupBoxAppointmentDetails.Enabled = true;
+            GenerateAutoId();
             buttonRequestApproval.Enabled = true;
             dateTimePickerFromDate.Focus();
+            comboBoxStatus.SelectedIndex = 1;
             
         }
 

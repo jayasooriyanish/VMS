@@ -15,6 +15,19 @@ namespace VisitorManagementSystem
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         string employeeId;
+        String EId = "SILEMP0";
+
+        private void GenerateAutoId()
+        {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Count(EmployeeId) from Employee", con);
+            int i = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            i++;
+            textBoxEmployeeId.Text = EId + i.ToString();
+        }
+
+
 
         public EmployeeForm()
         {
@@ -28,7 +41,7 @@ namespace VisitorManagementSystem
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            
+            GenerateAutoId();
             comboBoxGender.SelectedIndex = 0;
             try
             {
@@ -53,7 +66,7 @@ namespace VisitorManagementSystem
             {
                 con.Close();
             }
-            textBoxEmployeeId.Focus();
+            textBoxFirstName.Focus();
 
         }
 
@@ -80,8 +93,8 @@ namespace VisitorManagementSystem
                         cmd.CommandText = "Insert into Employee(EmployeeId,FirstName,LastName,Department,Designation,Address,DateOfBirth,Gender,NicNumber,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxEmployeeId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + textBoxDepartment.Text + "','" + textBoxDesignation.Text + "','" + textBoxPersonalAddress.Text + "','" + dateTimePickerDateOfBirth.Text.ToString() + "','" + comboBoxGender.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
                         cmd.ExecuteNonQuery();
                         con.Close();
-
-                        textBoxEmployeeId.Clear();
+                        GenerateAutoId();
+                        
                         textBoxFirstName.Clear();
                         textBoxLastName.Clear();
                         textBoxDepartment.Clear();
@@ -98,7 +111,7 @@ namespace VisitorManagementSystem
                         disp_data();
 
                         MessageBox.Show("Record Saved!");
-                        textBoxEmployeeId.Focus();
+                        textBoxFirstName.Focus();
                     }
 
                     else
@@ -137,7 +150,8 @@ namespace VisitorManagementSystem
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                textBoxEmployeeId.Focus();
+                GenerateAutoId();
+                textBoxFirstName.Focus();
             }
 
             finally
@@ -164,7 +178,7 @@ namespace VisitorManagementSystem
             {
                 try
                 {
-                    textBoxEmployeeId.Clear();
+                    GenerateAutoId();
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxDepartment.Clear();
@@ -177,7 +191,7 @@ namespace VisitorManagementSystem
                     textBoxOther.Clear();
                     textBoxEmail.Clear();
                     pictureBoxPhoto.Image = null;
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
 
                     disp_data();
 
@@ -186,7 +200,8 @@ namespace VisitorManagementSystem
                 {
 
                     MessageBox.Show(ex.Message);
-                    textBoxEmployeeId.Focus();
+                    GenerateAutoId();
+                    textBoxFirstName.Focus();
                 }
             }
 
@@ -201,7 +216,7 @@ namespace VisitorManagementSystem
                     cmd.ExecuteNonQuery();
                     con.Close();
 
-                    textBoxEmployeeId.Clear();
+                    GenerateAutoId();
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxDepartment.Clear();
@@ -216,7 +231,7 @@ namespace VisitorManagementSystem
                     pictureBoxPhoto.Image = null;
 
                     MessageBox.Show("Record Deleted!");
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
 
                     disp_data();
 
@@ -274,12 +289,14 @@ namespace VisitorManagementSystem
                      else
                      {
                          MessageBox.Show("Employee Not Found!Enter Employee Details To Register New Employee.");
+                         con.Close();
                          maskedTextBoxNicNumber.Clear();
-                         textBoxEmployeeId.Focus();
+                         GenerateAutoId();
+                         textBoxFirstName.Focus();
                      }
                      con.Close();
 
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
 
                 }
                 catch(Exception ex) 
@@ -293,7 +310,7 @@ namespace VisitorManagementSystem
             {
                 try
                 {
-                    textBoxEmployeeId.Clear();
+                    GenerateAutoId();
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxDepartment.Clear();
@@ -307,7 +324,7 @@ namespace VisitorManagementSystem
                     textBoxEmail.Clear();
                     pictureBoxPhoto.Image = null;
 
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
 
                     disp_data();
 
@@ -315,7 +332,7 @@ namespace VisitorManagementSystem
                 catch(Exception ex) 
                 {
                     MessageBox.Show(ex.Message);
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
                     
                 }
 
@@ -328,7 +345,7 @@ namespace VisitorManagementSystem
                 {
                     disp_data();
 
-                    textBoxEmployeeId.Clear();
+                    GenerateAutoId();
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxDepartment.Clear();
@@ -342,7 +359,7 @@ namespace VisitorManagementSystem
                     textBoxEmail.Clear();
                     pictureBoxPhoto.Image = null;
 
-                    textBoxEmployeeId.Focus();
+                    textBoxFirstName.Focus();
 
                 }
                 catch(Exception ex) 

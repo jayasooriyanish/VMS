@@ -16,5 +16,10 @@ namespace VisitorManagementSystem
         {
             InitializeComponent();
         }
+
+        private void FormVisitConfirmationFromSearchToManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

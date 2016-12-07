@@ -30,9 +30,8 @@ namespace VisitorManagementSystem
 
         private void FormVisitorRegisterFromSearchToSecurity_Load(object sender, EventArgs e)
         {
-            
-            maskedTextBoxNicNumber.Text = id;
-
+           
+            maskedTextBoxNicNumber.Text = id;            
 
             try
             {

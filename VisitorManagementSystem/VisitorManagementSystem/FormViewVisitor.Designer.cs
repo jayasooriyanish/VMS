@@ -52,6 +52,7 @@
             this.dataGridViewViewVisitor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewViewVisitor.Location = new System.Drawing.Point(12, 96);
             this.dataGridViewViewVisitor.Name = "dataGridViewViewVisitor";
+            this.dataGridViewViewVisitor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewViewVisitor.Size = new System.Drawing.Size(811, 451);
             this.dataGridViewViewVisitor.TabIndex = 0;
             this.dataGridViewViewVisitor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewViewVisitor_CellContentClick);

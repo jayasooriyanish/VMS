@@ -126,6 +126,7 @@
             this.Controls.Add(this.labelAppointmentId);
             this.Name = "FormVisitConfirmationFromSearchToManager";
             this.Text = "Visit Confirmation";
+            this.Load += new System.EventHandler(this.FormVisitConfirmationFromSearchToManager_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,8 +24,23 @@ namespace VisitorManagementSystem
 
         private void buttonAppointments_Click(object sender, EventArgs e)
         {
-            FormViewAppointmentsToManager appointments = new FormViewAppointmentsToManager();
+          FormViewAppointmentsToEmployee appointments = new FormViewAppointmentsToEmployee();
             appointments.ShowDialog();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

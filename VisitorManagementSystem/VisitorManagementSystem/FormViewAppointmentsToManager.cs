@@ -43,7 +43,7 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from  Appointment";
+                cmd.CommandText = "select * from Appointment";
                 cmd.ExecuteNonQuery();
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -81,7 +81,21 @@ namespace VisitorManagementSystem
 
         private void buttonMoreDetails_Click(object sender, EventArgs e)
         {
-            FormMoreAppointmentDetailsToManager more = new FormMoreAppointmentDetailsToManager();
+            FormMoreAppointmentDetailsToManager more = new FormMoreAppointmentDetailsToManager(dataGridViewAppointmentsToManager.SelectedRows[0].Cells[0].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[5].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[7].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[6].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[8].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[4].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[9].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[10].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[11].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[14].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[15].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[16].Value.ToString(),               
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[1].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[12].Value.ToString(),
+                dataGridViewAppointmentsToManager.SelectedRows[0].Cells[13].Value.ToString());
             more.Show();
         }
     }

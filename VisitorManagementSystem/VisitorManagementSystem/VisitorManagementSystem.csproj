@@ -80,6 +80,18 @@
     <Compile Include="FormAppointmentsApprovalRequest.Designer.cs">
       <DependentUpon>FormAppointmentsApprovalRequest.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMoreAppointmentDetailsToEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMoreAppointmentDetailsToEmployee.Designer.cs">
+      <DependentUpon>FormMoreAppointmentDetailsToEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewAppointmentsToEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewAppointmentsToEmployee.Designer.cs">
+      <DependentUpon>FormViewAppointmentsToEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormViewAppointmentsToManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,11 +128,11 @@
     <Compile Include="FormMoreAppointmentDetailsToManager.Designer.cs">
       <DependentUpon>FormMoreAppointmentDetailsToManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPendingRequestsForApproval.cs">
+    <Compile Include="FormPendingRequestsMoreDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPendingRequestsForApproval.Designer.cs">
-      <DependentUpon>FormPendingRequestsForApproval.cs</DependentUpon>
+    <Compile Include="FormPendingRequestsMoreDetails.Designer.cs">
+      <DependentUpon>FormPendingRequestsMoreDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="FormProceedToCheckin.cs">
       <SubType>Form</SubType>
@@ -328,6 +340,12 @@
     <EmbeddedResource Include="FormAppointmentsApprovalRequest.resx">
       <DependentUpon>FormAppointmentsApprovalRequest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMoreAppointmentDetailsToEmployee.resx">
+      <DependentUpon>FormMoreAppointmentDetailsToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewAppointmentsToEmployee.resx">
+      <DependentUpon>FormViewAppointmentsToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormViewAppointmentsToManager.resx">
       <DependentUpon>FormViewAppointmentsToManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,8 +364,8 @@
     <EmbeddedResource Include="FormMoreAppointmentDetailsToManager.resx">
       <DependentUpon>FormMoreAppointmentDetailsToManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPendingRequestsForApproval.resx">
-      <DependentUpon>FormPendingRequestsForApproval.cs</DependentUpon>
+    <EmbeddedResource Include="FormPendingRequestsMoreDetails.resx">
+      <DependentUpon>FormPendingRequestsMoreDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormProceedToCheckin.resx">
       <DependentUpon>FormProceedToCheckin.cs</DependentUpon>

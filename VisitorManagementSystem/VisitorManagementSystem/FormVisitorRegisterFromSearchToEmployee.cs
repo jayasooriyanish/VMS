@@ -15,6 +15,18 @@ namespace VisitorManagementSystem
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         private string id;
+        String AId = "SILAPP0";
+
+        private void GenerateAutoId()
+        {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Count(appointmentId) from Appointment", con);
+            int i = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            i++;
+            textBoxAppointmentId.Text = AId + i.ToString();
+        }
+
 
         public string PassValue
         {
@@ -31,6 +43,7 @@ namespace VisitorManagementSystem
         {
             groupBoxAppointments.Enabled = false;
             maskedTextBoxNicNumber.Text = id;
+            comboBoxStatus.SelectedIndex = 1;
             
 
             try
@@ -64,8 +77,7 @@ namespace VisitorManagementSystem
                         textBoxEmail.Text = dr["Email"].ToString();
                         //pictureBoxPhoto.Image = dr["Photo"].ToString();
 
-                        textBoxVisitorId.Focus();
-
+                        
                     }
                 }
 
@@ -92,6 +104,7 @@ namespace VisitorManagementSystem
         private void buttonAddAppointment_Click(object sender, EventArgs e)
         {
             groupBoxAppointments.Enabled = true;
+            GenerateAutoId();
             dateTimePickerFromDate.Focus();
         }
 
@@ -102,7 +115,7 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxApproved.Checked + "','"+textBoxVisitorId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxCheckedIn.Checked + "','"+textBoxVisitorId.Text+"','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
 
@@ -120,14 +133,14 @@ namespace VisitorManagementSystem
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxApproved.Checked + "','" + textBoxVisitorId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
-                cmd.ExecuteNonQuery();
-                con.Close();
+                //con.Open();
+                //SqlCommand cmd = con.CreateCommand();
+                //cmd.CommandType = CommandType.Text;
+                //cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,Approved,VisitorId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + checkBoxCheckedIn.Checked + "','" + textBoxVisitorId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                //cmd.ExecuteNonQuery();
+                //con.Close();
 
-                MessageBox.Show("Record Saved!");
+                //MessageBox.Show("Record Saved!");
 
                 //below code for sending notification for mngmnt approval
 
@@ -141,7 +154,7 @@ namespace VisitorManagementSystem
 
         private void buttonConfirmVisit_Click(object sender, EventArgs e)
         {
-            FormVisitConfirmation newconfirm = new FormVisitConfirmation();
+            FormVisitConfirmation newconfirm = new FormVisitConfirmation();            
             newconfirm.Show();
         }
 
@@ -173,6 +186,24 @@ namespace VisitorManagementSystem
         private void buttonDelete_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            dateTimePickerFromDate.Value = DateTime.Now;
+            dateTimePickerToDate.Value = DateTime.Now;
+            dateTimePickerFromTime.Value = DateTime.Now;
+            dateTimePickerToTime.Value = DateTime.Now;
+            textBoxPurpose.Clear();
+            textBoxEmployeeId.Clear();
+            textBoxEmployeeFirstName.Clear();
+            textBoxEmployeeLastName.Clear();
+            checkBoxNeedVehicles.Checked = false;
+            checkBoxNeedAccomodation.Checked = false;
+            checkBoxCheckedIn.Checked = false;
+            checkBoxCheckedOut.Checked = false;
+
+            GenerateAutoId();
         }
     }
 }

@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace VisitorManagementSystem
 {
-    public partial class FormMoreAppointmentDetailsToManager : Form
+    public partial class FormMoreAppointmentDetailsToEmployee : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         String AId = "SILAPP0";
@@ -27,7 +27,7 @@ namespace VisitorManagementSystem
         }
 
 
-        public FormMoreAppointmentDetailsToManager(string appId, string fromDate, string toDate, string fromTime, string toTime, string purpose, string eId, string eFName, string eLName, string status, string checkedIn, string checkedOut, string visitorId, string accomodation, string vehicles)
+        public FormMoreAppointmentDetailsToEmployee(string appId, string fromDate, string toDate, string fromTime, string toTime, string purpose, string eId, string eFName, string eLName, string status, string checkedIn, string checkedOut, string visitorId, string vehicles, string accomodation)
         {
             InitializeComponent();
 
@@ -39,33 +39,17 @@ namespace VisitorManagementSystem
             textBoxPurpose.Text = purpose;
             textBoxEmployeeId.Text = eId;
             textBoxEmployeeFirstName.Text = eFName;
-            textBoxEmployeeLastName.Text = eLName;
-            textBoxVisitorId.Text = visitorId;
+            textBoxEmployeeLastName.Text = eLName;            
             //checkBoxNeedAccomodation.Text = accomodation;
             //checkBoxNeedVehicles.Text = vehicles;
+            comboBoxStatus.Text = status;
             //checkBoxCheckedIn.Text = checkedIn;
             //checkBoxCheckedOut.Text = checkedOut;
-
-            
-
-        }
-
-        private void buttonAddNewAppointment_Click(object sender, EventArgs e)
-        {
-            GenerateAutoId();
-            dateTimePickerFromDate.Value = DateTime.Now;
-            dateTimePickerToDate.Value = DateTime.Now;
-            dateTimePickerFromTime.Value = DateTime.Now;
-            dateTimePickerToTime.Value = DateTime.Now;
-            textBoxPurpose.Clear();
-            textBoxEmployeeId.Clear();
-            textBoxEmployeeFirstName.Clear();
-            textBoxEmployeeLastName.Clear();
-            dateTimePickerFromDate.Focus();
+            textBoxVisitorId.Text = visitorId;
 
         }
 
-        private void FormMoreAppointmentDetailsToManager_Load(object sender, EventArgs e)
+        private void FormMoreAppointmentDetailsToEmployee_Load(object sender, EventArgs e)
         {
             try
             {
@@ -103,6 +87,33 @@ namespace VisitorManagementSystem
                 con.Close();
 
             }
+
+        }
+
+        private void buttonAddNewAppointment_Click(object sender, EventArgs e)
+        {
+            GenerateAutoId();
+            dateTimePickerFromDate.Value = DateTime.Now;
+            dateTimePickerToDate.Value = DateTime.Now;
+            dateTimePickerFromTime.Value = DateTime.Now;
+            dateTimePickerToTime.Value = DateTime.Now;
+            textBoxPurpose.Clear();
+            textBoxEmployeeId.Clear();
+            textBoxEmployeeFirstName.Clear();
+            textBoxEmployeeLastName.Clear();
+            dateTimePickerFromDate.Focus();
+            comboBoxStatus.SelectedIndex = 1;
+
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -124,39 +135,6 @@ namespace VisitorManagementSystem
 
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void buttonApprove_Click(object sender, EventArgs e)
-        {
-        //    try
-        //    {
-        //        comboBoxStatus.SelectedIndex = 2;
-        //        con.Open();
-        //        SqlCommand cmd = con.CreateCommand();
-        //        cmd.CommandType = CommandType.Text;
-        //        cmd.CommandText = "Update Appointment Set Appointment.Status ='" + comboBoxStatus.Text + "' where AppointmentId='"+textBoxAppointmentId.Text+"'";
-        //        cmd.ExecuteNonQuery();
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-
-        //}
-
-        private void buttonBlock_Click(object sender, EventArgs e)
-        {
-            //comboBoxStatus.SelectedIndex = 3;
-            
-            //con.Open();
-            //SqlCommand cmd = con.CreateCommand();
-            //cmd.CommandType = CommandType.Text;
-            //cmd.CommandText = "Update Appointment(Status) values ('" + comboBoxStatus.Text + "')";
-            //cmd.ExecuteNonQuery();
-            //con.Close();
-
         }
 
         private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)

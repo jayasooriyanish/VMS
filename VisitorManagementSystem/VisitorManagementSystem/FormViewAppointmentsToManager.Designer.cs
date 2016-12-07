@@ -35,7 +35,6 @@
             this.dateTimePickerFromDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerToDate = new System.Windows.Forms.DateTimePicker();
             this.buttonMoreDetails = new System.Windows.Forms.Button();
-            this.buttonAddNewAppointment = new System.Windows.Forms.Button();
             this.labelClickToSelect = new System.Windows.Forms.Label();
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelSelectAppointments = new System.Windows.Forms.Label();
@@ -50,6 +49,7 @@
             this.dataGridViewAppointmentsToManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAppointmentsToManager.Location = new System.Drawing.Point(24, 86);
             this.dataGridViewAppointmentsToManager.Name = "dataGridViewAppointmentsToManager";
+            this.dataGridViewAppointmentsToManager.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAppointmentsToManager.Size = new System.Drawing.Size(744, 407);
             this.dataGridViewAppointmentsToManager.TabIndex = 0;
             // 
@@ -98,23 +98,13 @@
             // 
             // buttonMoreDetails
             // 
-            this.buttonMoreDetails.Location = new System.Drawing.Point(415, 499);
+            this.buttonMoreDetails.Location = new System.Drawing.Point(560, 499);
             this.buttonMoreDetails.Name = "buttonMoreDetails";
             this.buttonMoreDetails.Size = new System.Drawing.Size(93, 32);
             this.buttonMoreDetails.TabIndex = 6;
             this.buttonMoreDetails.Text = "More Details";
             this.buttonMoreDetails.UseVisualStyleBackColor = true;
             this.buttonMoreDetails.Click += new System.EventHandler(this.buttonMoreDetails_Click);
-            // 
-            // buttonAddNewAppointment
-            // 
-            this.buttonAddNewAppointment.Location = new System.Drawing.Point(531, 499);
-            this.buttonAddNewAppointment.Name = "buttonAddNewAppointment";
-            this.buttonAddNewAppointment.Size = new System.Drawing.Size(121, 32);
-            this.buttonAddNewAppointment.TabIndex = 7;
-            this.buttonAddNewAppointment.Text = "Add New Appointment";
-            this.buttonAddNewAppointment.UseVisualStyleBackColor = true;
-            this.buttonAddNewAppointment.Click += new System.EventHandler(this.buttonAddNewAppointment_Click);
             // 
             // labelClickToSelect
             // 
@@ -188,7 +178,6 @@
             this.Controls.Add(this.labelSelectAppointments);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.labelClickToSelect);
-            this.Controls.Add(this.buttonAddNewAppointment);
             this.Controls.Add(this.buttonMoreDetails);
             this.Controls.Add(this.dateTimePickerToDate);
             this.Controls.Add(this.dateTimePickerFromDate);
@@ -214,7 +203,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerFromDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerToDate;
         private System.Windows.Forms.Button buttonMoreDetails;
-        private System.Windows.Forms.Button buttonAddNewAppointment;
         private System.Windows.Forms.Label labelClickToSelect;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelSelectAppointments;

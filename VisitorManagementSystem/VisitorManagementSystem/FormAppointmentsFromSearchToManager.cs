@@ -16,6 +16,18 @@ namespace VisitorManagementSystem
 
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         private string id;
+        String AId = "SILAPP0";
+
+        private void GenerateAutoId()
+        {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Count(appointmentId) from Appointment", con);
+            int i = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            i++;
+            textBoxAppointmentId.Text = AId + i.ToString();
+        }
+
 
         public string PassValue
         {
@@ -42,12 +54,14 @@ namespace VisitorManagementSystem
 
         private void buttonConfirmVisit_Click(object sender, EventArgs e)
         {
-            FormVisitConfirmationFromSearchToManager confirm = new FormVisitConfirmationFromSearchToManager();
+            FormVisitConfirmation confirm = new FormVisitConfirmation();
+            confirm.PassEmail = textBoxEmail.Text;
             confirm.Show();
         }
 
         private void FormVisitorRegisterFromSearchToManager_Load(object sender, EventArgs e)
         {
+            GenerateAutoId();
             textBoxVisitorId.Text = id;
 
             try
@@ -98,6 +112,17 @@ namespace VisitorManagementSystem
         private void buttonAddAppointment_Click(object sender, EventArgs e)
         {
             groupBoxAppointments.Enabled = true;
+            GenerateAutoId();
+            dateTimePickerFromDate.Value = DateTime.Now;
+            dateTimePickerFromTime.Value = DateTime.Now;
+            dateTimePickerToDate.Value = DateTime.Now;
+            dateTimePickerToTime.Value = DateTime.Now;
+            textBoxPurpose.Clear();
+            textBoxEmployeeId.Clear();
+            textBoxEmployeeFirstName.Clear();
+            textBoxEmployeeLastName.Clear();
+            checkBoxNeedAccomodation.Checked = false;
+            checkBoxNeedVehicles.Checked = false;
             dateTimePickerFromDate.Focus();
         }
 
@@ -114,6 +139,8 @@ namespace VisitorManagementSystem
                 con.Close();
 
                 MessageBox.Show("Record Saved!");
+                comboBoxStatus.SelectedIndex = 2;
+
 
             }
             catch (Exception ex)

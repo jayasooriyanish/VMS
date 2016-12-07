@@ -39,6 +39,7 @@
             this.labelToDate = new System.Windows.Forms.Label();
             this.labelFromDate = new System.Windows.Forms.Label();
             this.labelSelectDate = new System.Windows.Forms.Label();
+            this.buttonMoreDetails = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendingRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -142,12 +143,23 @@
             this.labelSelectDate.TabIndex = 15;
             this.labelSelectDate.Text = "Select Date";
             // 
+            // buttonMoreDetails
+            // 
+            this.buttonMoreDetails.Location = new System.Drawing.Point(432, 494);
+            this.buttonMoreDetails.Name = "buttonMoreDetails";
+            this.buttonMoreDetails.Size = new System.Drawing.Size(75, 23);
+            this.buttonMoreDetails.TabIndex = 25;
+            this.buttonMoreDetails.Text = "More Details";
+            this.buttonMoreDetails.UseVisualStyleBackColor = true;
+            this.buttonMoreDetails.Click += new System.EventHandler(this.buttonMoreDetails_Click);
+            // 
             // PendingRequestsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(888, 541);
+            this.Controls.Add(this.buttonMoreDetails);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.comboBoxSelectRequest);
@@ -161,6 +173,7 @@
             this.Controls.Add(this.dataGridViewPendingRequests);
             this.Name = "PendingRequestsForm";
             this.Text = "Pending Requests";
+            this.Load += new System.EventHandler(this.PendingRequestsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPendingRequests)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,5 +193,6 @@
         private System.Windows.Forms.Label labelToDate;
         private System.Windows.Forms.Label labelFromDate;
         private System.Windows.Forms.Label labelSelectDate;
+        private System.Windows.Forms.Button buttonMoreDetails;
     }
 }

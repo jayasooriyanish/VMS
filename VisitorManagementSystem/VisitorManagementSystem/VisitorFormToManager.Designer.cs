@@ -47,7 +47,7 @@
             // 
             this.pictureBoxViewVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBoxViewVisitor.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxViewVisitor.Image")));
-            this.pictureBoxViewVisitor.Location = new System.Drawing.Point(63, 165);
+            this.pictureBoxViewVisitor.Location = new System.Drawing.Point(43, 169);
             this.pictureBoxViewVisitor.Name = "pictureBoxViewVisitor";
             this.pictureBoxViewVisitor.Size = new System.Drawing.Size(51, 50);
             this.pictureBoxViewVisitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -58,7 +58,7 @@
             // 
             this.pictureBoxRegisterVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBoxRegisterVisitor.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxRegisterVisitor.Image")));
-            this.pictureBoxRegisterVisitor.Location = new System.Drawing.Point(63, 109);
+            this.pictureBoxRegisterVisitor.Location = new System.Drawing.Point(43, 113);
             this.pictureBoxRegisterVisitor.Name = "pictureBoxRegisterVisitor";
             this.pictureBoxRegisterVisitor.Size = new System.Drawing.Size(51, 49);
             this.pictureBoxRegisterVisitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -69,7 +69,7 @@
             // 
             this.pictureBoxSearchVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.pictureBoxSearchVisitor.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSearchVisitor.Image")));
-            this.pictureBoxSearchVisitor.Location = new System.Drawing.Point(63, 53);
+            this.pictureBoxSearchVisitor.Location = new System.Drawing.Point(43, 57);
             this.pictureBoxSearchVisitor.Name = "pictureBoxSearchVisitor";
             this.pictureBoxSearchVisitor.Size = new System.Drawing.Size(51, 50);
             this.pictureBoxSearchVisitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -80,7 +80,7 @@
             // 
             this.buttonExit.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(233, 244);
+            this.buttonExit.Location = new System.Drawing.Point(248, 244);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 23;
@@ -91,7 +91,7 @@
             // 
             this.buttonHome.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonHome.Location = new System.Drawing.Point(142, 244);
+            this.buttonHome.Location = new System.Drawing.Point(145, 244);
             this.buttonHome.Name = "buttonHome";
             this.buttonHome.Size = new System.Drawing.Size(75, 23);
             this.buttonHome.TabIndex = 22;
@@ -102,7 +102,7 @@
             // 
             this.buttonCancel.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(49, 244);
+            this.buttonCancel.Location = new System.Drawing.Point(43, 244);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 21;
@@ -113,9 +113,9 @@
             // 
             this.buttonSearchVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonSearchVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchVisitor.Location = new System.Drawing.Point(120, 53);
+            this.buttonSearchVisitor.Location = new System.Drawing.Point(100, 57);
             this.buttonSearchVisitor.Name = "buttonSearchVisitor";
-            this.buttonSearchVisitor.Size = new System.Drawing.Size(179, 50);
+            this.buttonSearchVisitor.Size = new System.Drawing.Size(223, 50);
             this.buttonSearchVisitor.TabIndex = 20;
             this.buttonSearchVisitor.Text = "Search Visitor";
             this.buttonSearchVisitor.UseVisualStyleBackColor = false;
@@ -125,9 +125,9 @@
             // 
             this.buttonRegisterVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonRegisterVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRegisterVisitor.Location = new System.Drawing.Point(120, 109);
+            this.buttonRegisterVisitor.Location = new System.Drawing.Point(100, 113);
             this.buttonRegisterVisitor.Name = "buttonRegisterVisitor";
-            this.buttonRegisterVisitor.Size = new System.Drawing.Size(179, 49);
+            this.buttonRegisterVisitor.Size = new System.Drawing.Size(223, 49);
             this.buttonRegisterVisitor.TabIndex = 19;
             this.buttonRegisterVisitor.Text = "Register Visitor";
             this.buttonRegisterVisitor.UseVisualStyleBackColor = false;
@@ -137,9 +137,9 @@
             // 
             this.buttonViewVisitor.BackColor = System.Drawing.SystemColors.Menu;
             this.buttonViewVisitor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonViewVisitor.Location = new System.Drawing.Point(120, 164);
+            this.buttonViewVisitor.Location = new System.Drawing.Point(100, 168);
             this.buttonViewVisitor.Name = "buttonViewVisitor";
-            this.buttonViewVisitor.Size = new System.Drawing.Size(179, 51);
+            this.buttonViewVisitor.Size = new System.Drawing.Size(223, 51);
             this.buttonViewVisitor.TabIndex = 18;
             this.buttonViewVisitor.Text = "View Visitor";
             this.buttonViewVisitor.UseVisualStyleBackColor = false;

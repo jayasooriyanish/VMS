@@ -16,8 +16,17 @@ namespace VisitorManagementSystem
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         string visitorId;
+        String VisitorId = "SILVI";
 
-        String VisitorId = "VI";
+        private void GenerateAutoId()
+        {
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("Select Count(visitorId) from Visitor", con);
+            int i = Convert.ToInt32(cmd1.ExecuteScalar());
+            con.Close();
+            i++;
+            textBoxVisitorId.Text = VisitorId + i.ToString();
+        }
 
         public VisitorRegisterForm()
         {
@@ -28,14 +37,13 @@ namespace VisitorManagementSystem
         
         private void VisitorRegisterForm_Load(object sender, EventArgs e)
         {
-
+            textBoxFirstName.Focus(); 
             comboBoxCategory.SelectedIndex = 0;
             comboBoxGender.SelectedIndex = 0;
 
-            //GenerateAutoId();
-
+            GenerateAutoId();
+               
             
-
             try
             {
             con.Open();
@@ -47,7 +55,7 @@ namespace VisitorManagementSystem
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
             dataGridView1.DataSource = dt;
-            textBoxVisitorId.Focus();
+            
 
             
 
@@ -65,15 +73,7 @@ namespace VisitorManagementSystem
             
         }
 
-        private void GenerateAutoId()
-        {
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Select Count(visitorId) from Visitor", con);
-            int i = Convert.ToInt32(cmd.ExecuteScalar());
-            con.Close();
-            i++;
-            textBoxVisitorId.Text = VisitorId + i.ToString();
-        }
+        
 
 
 
@@ -98,22 +98,19 @@ namespace VisitorManagementSystem
                         con.Open();
                         SqlCommand cmd = con.CreateCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image.ToString() + "')";
+                        cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "')";
                         cmd.ExecuteNonQuery();
                         con.Close();
+                        GenerateAutoId();
                         
-                        //GenerateAutoId();  
-
+                       
                         comboBoxCategory.SelectedIndex = 0;
-                        comboBoxGender.SelectedIndex = 0;
-                        textBoxVisitorId.Text = "";
+                        comboBoxGender.SelectedIndex = 0;                        
                         textBoxFirstName.Text = "";
                         textBoxLastName.Text = "";
                         textBoxOrganization.Text = "";
-                        textBoxDesignation.Text = "";
-                        //comboBoxCategory.Text = "";
-                        maskedTextBoxNicNumber.Text = "";
-                        //comboBoxGender.Text = "";
+                        textBoxDesignation.Text = "";                        
+                        maskedTextBoxNicNumber.Text = "";                        
                         textBoxPersonalAddress.Text = "";
                         textBoxCompanyAddress.Text = "";
                         textBoxEmail.Text = "";
@@ -124,7 +121,7 @@ namespace VisitorManagementSystem
 
 
                         MessageBox.Show("Record Saved!");
-                        textBoxVisitorId.Focus();
+                        textBoxFirstName.Focus();
 
                         disp_data();
                         con.Close();
@@ -230,15 +227,12 @@ namespace VisitorManagementSystem
                 try
                 {
                     comboBoxCategory.SelectedIndex = 0;
-                    comboBoxGender.SelectedIndex = 0;
-                    textBoxVisitorId.Text = "";
+                    comboBoxGender.SelectedIndex = 0;                    
                     textBoxFirstName.Text = "";
                     textBoxLastName.Text = "";
                     textBoxOrganization.Text = "";
-                    textBoxDesignation.Text = "";
-                    //comboBoxCategory.Text = "";
-                    maskedTextBoxNicNumber.Text = "";
-                    //comboBoxGender.Text = "";
+                    textBoxDesignation.Text = "";                    
+                    maskedTextBoxNicNumber.Text = "";                    
                     textBoxPersonalAddress.Text = "";
                     textBoxCompanyAddress.Text = "";
                     textBoxEmail.Text = "";
@@ -247,7 +241,8 @@ namespace VisitorManagementSystem
                     textBoxOther.Text = "";
                     pictureBoxPhoto.Image = null;
 
-                    textBoxVisitorId.Focus();
+                    GenerateAutoId();
+                    textBoxFirstName.Focus();
 
                     disp_data();
                 }
@@ -255,7 +250,7 @@ namespace VisitorManagementSystem
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    textBoxVisitorId.Focus();
+                    
                 }
             }
 
@@ -272,14 +267,12 @@ namespace VisitorManagementSystem
 
                     comboBoxCategory.SelectedIndex = 0;
                     comboBoxGender.SelectedIndex = 0;
-                    textBoxVisitorId.Text = "";
+                    
                     textBoxFirstName.Text = "";
                     textBoxLastName.Text = "";
                     textBoxOrganization.Text = "";
-                    textBoxDesignation.Text = "";
-                    //comboBoxCategory.Text = "";
-                    maskedTextBoxNicNumber.Text = "";
-                    //comboBoxGender.Text = "";
+                    textBoxDesignation.Text = "";                    
+                    maskedTextBoxNicNumber.Text = "";                    
                     textBoxPersonalAddress.Text = "";
                     textBoxCompanyAddress.Text = "";
                     textBoxEmail.Text = "";
@@ -290,15 +283,19 @@ namespace VisitorManagementSystem
 
 
                     MessageBox.Show("Record Deleted!");
-                    textBoxVisitorId.Focus();
+                    textBoxFirstName.Focus();
 
                     disp_data();
+                    GenerateAutoId();
+                    textBoxFirstName.Focus();
 
                 }
                 catch (Exception ex)
                 {
 
                     MessageBox.Show(ex.Message);
+                    GenerateAutoId();
+                    textBoxFirstName.Focus();
                 }
                 finally
                 {
@@ -324,10 +321,8 @@ namespace VisitorManagementSystem
                     textBoxFirstName.Text = "";
                     textBoxLastName.Text = "";
                     textBoxOrganization.Text = "";
-                    textBoxDesignation.Text = "";
-                    //comboBoxCategory.Text = "";
-                    maskedTextBoxNicNumber.Text = "";
-                    //comboBoxGender.Text = "";
+                    textBoxDesignation.Text = "";                    
+                    maskedTextBoxNicNumber.Text = "";                    
                     textBoxPersonalAddress.Text = "";
                     textBoxCompanyAddress.Text = "";
                     textBoxEmail.Text = "";
@@ -336,7 +331,8 @@ namespace VisitorManagementSystem
                     textBoxOther.Text = "";
                     pictureBoxPhoto.Image = null;
 
-                    textBoxVisitorId.Focus();
+                    GenerateAutoId();
+                    textBoxFirstName.Focus();
 
                     disp_data();
                 }
@@ -344,7 +340,7 @@ namespace VisitorManagementSystem
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    textBoxVisitorId.Focus();
+                    
                 }
 
             }
@@ -394,12 +390,16 @@ namespace VisitorManagementSystem
                     else
                     {
                         MessageBox.Show("Visitor Not Found!Enter Visitor Details To Register New visitor.");
-                        maskedTextBoxNicNumber.Clear();
-                        textBoxVisitorId.Focus();
+                        con.Close();
+                        GenerateAutoId();
+                        maskedTextBoxNicNumber.Clear();                        
+                        textBoxFirstName.Focus();
+                        con.Close();
                     }
-                    con.Close();
+                    
 
-                    textBoxVisitorId.Focus();
+                    
+                    con.Close();
 
                 }
                 catch (Exception ex)
@@ -414,14 +414,12 @@ namespace VisitorManagementSystem
                 disp_data();
                 comboBoxCategory.SelectedIndex = 0;
                 comboBoxGender.SelectedIndex = 0;
-                textBoxVisitorId.Text = "";
+                
                 textBoxFirstName.Text = "";
                 textBoxLastName.Text = "";
                 textBoxOrganization.Text = "";
-                textBoxDesignation.Text = "";
-                //comboBoxCategory.Text = "";
-                maskedTextBoxNicNumber.Text = "";
-                //comboBoxGender.Text = "";
+                textBoxDesignation.Text = "";                
+                maskedTextBoxNicNumber.Text = "";                
                 textBoxPersonalAddress.Text = "";
                 textBoxCompanyAddress.Text = "";
                 textBoxEmail.Text = "";
@@ -430,7 +428,9 @@ namespace VisitorManagementSystem
                 textBoxOther.Text = "";
                 pictureBoxPhoto.Image = null;
 
-                textBoxVisitorId.Focus();
+                GenerateAutoId();
+                textBoxFirstName.Focus();
+                
             }
 
             
@@ -495,20 +495,20 @@ namespace VisitorManagementSystem
 
                     if (VisitorExist == null)
                     {
+                        
                         con.Close();
                         con.Open();
                         SqlCommand cmd = con.CreateCommand();
                         cmd.CommandType = CommandType.Text;
-                        cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email,Photo) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "','" + pictureBoxPhoto.Image + "')";
+                        cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "')";
                         cmd.ExecuteNonQuery();
                         con.Close();
-                        //GenerateAutoId(); 
-
                         
-                        MessageBox.Show("Record Saved!");
-                        //    textBoxVisitorId.Focus();
 
                         disp_data();
+                        MessageBox.Show("Record Saved!");
+                        
+                        
                         con.Close();
 
 
@@ -568,7 +568,7 @@ namespace VisitorManagementSystem
                 catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    textBoxVisitorId.Focus();
+                    
                 }
                 finally
                 {
@@ -588,10 +588,10 @@ namespace VisitorManagementSystem
 
 
                 }
-                catch 
+                catch(Exception ex) 
                 {
                     
-                    MessageBox.Show("ERROR!");
+                    MessageBox.Show(ex.Message);
                 }
             }
 
@@ -608,28 +608,7 @@ namespace VisitorManagementSystem
 
             //private void VisitorRegisterForm_LoadForSearchVisitor(object sender, EventArgs e)
             //{
-            //    try
-            //    {
-            //        con.Open();
-            //        SqlCommand cmd = con.CreateCommand();
-            //        cmd.CommandType = CommandType.Text;
-            //        cmd.CommandText = "select from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
-            //        cmd.ExecuteNonQuery();
-            //        con.Close();
-
-            //        disp_data();
-
-            //    }
-            //    catch (Exception ex)
-            //    {
-
-            //        throw ex;
-            //    }
-            //    finally
-            //    {
-            //        con.Close();
-            //    }
- 
+            
             //}
 
         }

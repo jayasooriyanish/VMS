@@ -36,6 +36,8 @@
             this.buttonInformVisitor = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
+            this.textBoxEmail = new System.Windows.Forms.TextBox();
+            this.labelEmail = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAppointmentId
@@ -89,6 +91,7 @@
             this.buttonInformVisitor.TabIndex = 5;
             this.buttonInformVisitor.Text = "Inform Visitor";
             this.buttonInformVisitor.UseVisualStyleBackColor = false;
+            this.buttonInformVisitor.Click += new System.EventHandler(this.buttonInformVisitor_Click);
             // 
             // buttonCancel
             // 
@@ -110,12 +113,30 @@
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
             // 
+            // textBoxEmail
+            // 
+            this.textBoxEmail.Location = new System.Drawing.Point(106, 98);
+            this.textBoxEmail.Name = "textBoxEmail";
+            this.textBoxEmail.Size = new System.Drawing.Size(139, 20);
+            this.textBoxEmail.TabIndex = 9;
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(22, 101);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(32, 13);
+            this.labelEmail.TabIndex = 8;
+            this.labelEmail.Text = "Email";
+            // 
             // FormVisitConfirmation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.textBoxEmail);
+            this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonInformVisitor);
@@ -126,6 +147,7 @@
             this.Controls.Add(this.labelAppointmentId);
             this.Name = "FormVisitConfirmation";
             this.Text = "Visit Confirmation";
+            this.Load += new System.EventHandler(this.FormVisitConfirmation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +163,7 @@
         private System.Windows.Forms.Button buttonInformVisitor;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonExit;
+        private System.Windows.Forms.TextBox textBoxEmail;
+        private System.Windows.Forms.Label labelEmail;
     }
 }
