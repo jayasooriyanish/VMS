@@ -36,8 +36,6 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.comboBoxSelectAppointments = new System.Windows.Forms.ComboBox();
-            this.labelSelectAppointments = new System.Windows.Forms.Label();
             this.labelClickToSelect = new System.Windows.Forms.Label();
             this.dateTimePickerToDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerFromDate = new System.Windows.Forms.DateTimePicker();
@@ -128,30 +126,6 @@
             this.textBoxSearch.Size = new System.Drawing.Size(143, 20);
             this.textBoxSearch.TabIndex = 39;
             // 
-            // comboBoxSelectAppointments
-            // 
-            this.comboBoxSelectAppointments.FormattingEnabled = true;
-            this.comboBoxSelectAppointments.Items.AddRange(new object[] {
-            "All",
-            "Approved",
-            "Blocked",
-            "Pending Requests",
-            "Checked In",
-            "Checked Out"});
-            this.comboBoxSelectAppointments.Location = new System.Drawing.Point(443, 46);
-            this.comboBoxSelectAppointments.Name = "comboBoxSelectAppointments";
-            this.comboBoxSelectAppointments.Size = new System.Drawing.Size(143, 21);
-            this.comboBoxSelectAppointments.TabIndex = 38;
-            // 
-            // labelSelectAppointments
-            // 
-            this.labelSelectAppointments.AutoSize = true;
-            this.labelSelectAppointments.Location = new System.Drawing.Point(333, 49);
-            this.labelSelectAppointments.Name = "labelSelectAppointments";
-            this.labelSelectAppointments.Size = new System.Drawing.Size(104, 13);
-            this.labelSelectAppointments.TabIndex = 37;
-            this.labelSelectAppointments.Text = "Select Appointments";
-            // 
             // labelClickToSelect
             // 
             this.labelClickToSelect.AutoSize = true;
@@ -213,8 +187,6 @@
             this.ClientSize = new System.Drawing.Size(835, 602);
             this.Controls.Add(this.labelSearch);
             this.Controls.Add(this.textBoxSearch);
-            this.Controls.Add(this.comboBoxSelectAppointments);
-            this.Controls.Add(this.labelSelectAppointments);
             this.Controls.Add(this.labelClickToSelect);
             this.Controls.Add(this.dateTimePickerToDate);
             this.Controls.Add(this.dateTimePickerFromDate);
@@ -246,8 +218,6 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
-        private System.Windows.Forms.ComboBox comboBoxSelectAppointments;
-        private System.Windows.Forms.Label labelSelectAppointments;
         private System.Windows.Forms.Label labelClickToSelect;
         private System.Windows.Forms.DateTimePicker dateTimePickerToDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerFromDate;

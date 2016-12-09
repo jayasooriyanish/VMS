@@ -48,6 +48,7 @@
             this.dataGridViewPendingRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPendingRequests.Location = new System.Drawing.Point(12, 107);
             this.dataGridViewPendingRequests.Name = "dataGridViewPendingRequests";
+            this.dataGridViewPendingRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPendingRequests.Size = new System.Drawing.Size(864, 367);
             this.dataGridViewPendingRequests.TabIndex = 0;
             // 

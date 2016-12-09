@@ -38,6 +38,10 @@
             this.labelAppointmentId = new System.Windows.Forms.Label();
             this.textBoxAppointmentId = new System.Windows.Forms.TextBox();
             this.groupBoxAppointmentDetails = new System.Windows.Forms.GroupBox();
+            this.labelEmployeeLastName = new System.Windows.Forms.Label();
+            this.textBoxEmployeeLastName = new System.Windows.Forms.TextBox();
+            this.checkBoxNeedAccomodation = new System.Windows.Forms.CheckBox();
+            this.checkBoxNeedVehicles = new System.Windows.Forms.CheckBox();
             this.labelEmployeeFirstName = new System.Windows.Forms.Label();
             this.textBoxEmployeeId = new System.Windows.Forms.TextBox();
             this.labelEmployeeId = new System.Windows.Forms.Label();
@@ -92,10 +96,6 @@
             this.checkBoxCheckedOut = new System.Windows.Forms.CheckBox();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.labelEmployeeLastName = new System.Windows.Forms.Label();
-            this.textBoxEmployeeLastName = new System.Windows.Forms.TextBox();
-            this.checkBoxNeedAccomodation = new System.Windows.Forms.CheckBox();
-            this.checkBoxNeedVehicles = new System.Windows.Forms.CheckBox();
             this.panelAction.SuspendLayout();
             this.groupBoxAppointmentDetails.SuspendLayout();
             this.panelVisitorDetails.SuspendLayout();
@@ -221,6 +221,44 @@
             this.groupBoxAppointmentDetails.TabStop = false;
             this.groupBoxAppointmentDetails.Text = "Appointment Details";
             // 
+            // labelEmployeeLastName
+            // 
+            this.labelEmployeeLastName.AutoSize = true;
+            this.labelEmployeeLastName.Location = new System.Drawing.Point(23, 189);
+            this.labelEmployeeLastName.Name = "labelEmployeeLastName";
+            this.labelEmployeeLastName.Size = new System.Drawing.Size(58, 13);
+            this.labelEmployeeLastName.TabIndex = 49;
+            this.labelEmployeeLastName.Text = "Last Name";
+            // 
+            // textBoxEmployeeLastName
+            // 
+            this.textBoxEmployeeLastName.Location = new System.Drawing.Point(143, 186);
+            this.textBoxEmployeeLastName.Name = "textBoxEmployeeLastName";
+            this.textBoxEmployeeLastName.Size = new System.Drawing.Size(623, 20);
+            this.textBoxEmployeeLastName.TabIndex = 48;
+            // 
+            // checkBoxNeedAccomodation
+            // 
+            this.checkBoxNeedAccomodation.AutoSize = true;
+            this.checkBoxNeedAccomodation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNeedAccomodation.Location = new System.Drawing.Point(321, 222);
+            this.checkBoxNeedAccomodation.Name = "checkBoxNeedAccomodation";
+            this.checkBoxNeedAccomodation.Size = new System.Drawing.Size(158, 20);
+            this.checkBoxNeedAccomodation.TabIndex = 46;
+            this.checkBoxNeedAccomodation.Text = "Need Accomodation?";
+            this.checkBoxNeedAccomodation.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxNeedVehicles
+            // 
+            this.checkBoxNeedVehicles.AutoSize = true;
+            this.checkBoxNeedVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxNeedVehicles.Location = new System.Drawing.Point(503, 222);
+            this.checkBoxNeedVehicles.Name = "checkBoxNeedVehicles";
+            this.checkBoxNeedVehicles.Size = new System.Drawing.Size(123, 20);
+            this.checkBoxNeedVehicles.TabIndex = 47;
+            this.checkBoxNeedVehicles.Text = "Need Vehicles?";
+            this.checkBoxNeedVehicles.UseVisualStyleBackColor = true;
+            // 
             // labelEmployeeFirstName
             // 
             this.labelEmployeeFirstName.AutoSize = true;
@@ -232,6 +270,15 @@
             // 
             // textBoxEmployeeId
             // 
+            this.textBoxEmployeeId.AutoCompleteCustomSource.AddRange(new string[] {
+            "SILEMP01",
+            "SILEMP02",
+            "SILEMP03",
+            "SILEMP04",
+            "SILEMP05",
+            "SILEMP06"});
+            this.textBoxEmployeeId.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBoxEmployeeId.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxEmployeeId.Location = new System.Drawing.Point(143, 128);
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(623, 20);
@@ -712,44 +759,6 @@
             this.labelStatus.Size = new System.Drawing.Size(45, 16);
             this.labelStatus.TabIndex = 32;
             this.labelStatus.Text = "Status";
-            // 
-            // labelEmployeeLastName
-            // 
-            this.labelEmployeeLastName.AutoSize = true;
-            this.labelEmployeeLastName.Location = new System.Drawing.Point(23, 189);
-            this.labelEmployeeLastName.Name = "labelEmployeeLastName";
-            this.labelEmployeeLastName.Size = new System.Drawing.Size(58, 13);
-            this.labelEmployeeLastName.TabIndex = 49;
-            this.labelEmployeeLastName.Text = "Last Name";
-            // 
-            // textBoxEmployeeLastName
-            // 
-            this.textBoxEmployeeLastName.Location = new System.Drawing.Point(143, 186);
-            this.textBoxEmployeeLastName.Name = "textBoxEmployeeLastName";
-            this.textBoxEmployeeLastName.Size = new System.Drawing.Size(623, 20);
-            this.textBoxEmployeeLastName.TabIndex = 48;
-            // 
-            // checkBoxNeedAccomodation
-            // 
-            this.checkBoxNeedAccomodation.AutoSize = true;
-            this.checkBoxNeedAccomodation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNeedAccomodation.Location = new System.Drawing.Point(321, 222);
-            this.checkBoxNeedAccomodation.Name = "checkBoxNeedAccomodation";
-            this.checkBoxNeedAccomodation.Size = new System.Drawing.Size(158, 20);
-            this.checkBoxNeedAccomodation.TabIndex = 46;
-            this.checkBoxNeedAccomodation.Text = "Need Accomodation?";
-            this.checkBoxNeedAccomodation.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxNeedVehicles
-            // 
-            this.checkBoxNeedVehicles.AutoSize = true;
-            this.checkBoxNeedVehicles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxNeedVehicles.Location = new System.Drawing.Point(503, 222);
-            this.checkBoxNeedVehicles.Name = "checkBoxNeedVehicles";
-            this.checkBoxNeedVehicles.Size = new System.Drawing.Size(123, 20);
-            this.checkBoxNeedVehicles.TabIndex = 47;
-            this.checkBoxNeedVehicles.Text = "Need Vehicles?";
-            this.checkBoxNeedVehicles.UseVisualStyleBackColor = true;
             // 
             // FormMoreAppointmentDetailsToManager
             // 

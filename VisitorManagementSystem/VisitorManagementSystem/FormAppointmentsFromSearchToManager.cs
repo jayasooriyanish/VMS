@@ -17,6 +17,7 @@ namespace VisitorManagementSystem
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
         private string id;
         String AId = "SILAPP0";
+        int[] barCode;
 
         private void GenerateAutoId()
         {
@@ -63,6 +64,9 @@ namespace VisitorManagementSystem
         {
             GenerateAutoId();
             textBoxVisitorId.Text = id;
+            comboBoxStatus.SelectedIndex = 0;
+
+            barCode = new int[5] { 0, 0, 0, 0, 0 };
 
             try
             {
@@ -105,6 +109,7 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
 
         }
@@ -113,6 +118,7 @@ namespace VisitorManagementSystem
         {
             groupBoxAppointments.Enabled = true;
             GenerateAutoId();
+            comboBoxStatus.SelectedIndex = 0;
             dateTimePickerFromDate.Value = DateTime.Now;
             dateTimePickerFromTime.Value = DateTime.Now;
             dateTimePickerToDate.Value = DateTime.Now;
@@ -134,12 +140,12 @@ namespace VisitorManagementSystem
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','"+textBoxFirstName.Text+"',"+textBoxLastName.Text+",'" + textBoxEmployeeId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "')";
+                cmd.CommandText = "Insert into Appointment(AppointmentId,FromDate,FromTime,Purpose,VisitorId,VisitorFirstName,VisitorLastName,EmployeeId,FirstName,LastName,NeedAccomodation,NeedVehicles,ToDate,ToTime,Status) values('" + textBoxAppointmentId.Text + "','" + dateTimePickerFromDate.Text.ToString() + "','" + dateTimePickerFromTime.Text.ToString() + "','" + textBoxPurpose.Text + "','" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + textBoxEmployeeId.Text + "','" + textBoxEmployeeFirstName.Text + "','" + textBoxEmployeeLastName.Text + "','" + checkBoxNeedAccomodation.Checked + "','" + checkBoxNeedVehicles.Checked + "','" + dateTimePickerToDate.Text.ToString() + "','" + dateTimePickerToTime.Text.ToString() + "','" + comboBoxStatus.Text + "')";
                 cmd.ExecuteNonQuery();
                 con.Close();
 
                 MessageBox.Show("Record Saved!");
-                comboBoxStatus.SelectedIndex = 2;
+                comboBoxStatus.SelectedIndex = 0;
 
 
             }
@@ -147,6 +153,7 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
         }
 
@@ -168,6 +175,7 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
 
         }
@@ -186,6 +194,8 @@ namespace VisitorManagementSystem
             checkBoxNeedAccomodation.Checked = false;
             checkBoxCheckedIn.Checked = false;
             checkBoxCheckedOut.Checked = false;
+            comboBoxStatus.SelectedIndex = 0;
+
             
         }
 
@@ -219,6 +229,71 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void checkBoxA1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+            if (c.Checked == true)
+            {
+                barCode[0] = 1;
+            }
+            else
+            {
+                barCode[0] = 0;
+            }
+        }
+
+        private void checkBoxA2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+            if (c.Checked == true)
+            {
+                barCode[1] = 1;
+            }
+            else
+            {
+                barCode[1] = 0;
+            }
+        }
+
+        private void checkBoxA3_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+            if (c.Checked == true)
+            {
+                barCode[2] = 1;
+            }
+            else
+            {
+                barCode[2] = 0;
+            }
+        }
+
+        private void checkBoxA4_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+            if (c.Checked == true)
+            {
+                barCode[3] = 1;
+            }
+            else
+            {
+                barCode[3] = 0;
+            }
+        }
+
+        private void checkBoxA5_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox c = (CheckBox)sender;
+            if (c.Checked == true)
+            {
+                barCode[4] = 1;
+            }
+            else
+            {
+                barCode[4] = 0;
             }
         }
     }

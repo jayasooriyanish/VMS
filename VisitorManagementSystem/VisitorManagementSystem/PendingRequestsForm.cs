@@ -24,7 +24,21 @@ namespace VisitorManagementSystem
 
         private void buttonMoreDetails_Click(object sender, EventArgs e)
         {
-            FormPendingRequestsMoreDetails more = new FormPendingRequestsMoreDetails();
+            FormPendingRequestsMoreDetails more = new FormPendingRequestsMoreDetails(dataGridViewPendingRequests.SelectedRows[0].Cells[0].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[5].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[7].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[6].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[8].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[4].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[9].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[10].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[11].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[14].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[15].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[16].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[1].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[12].Value.ToString(),
+                dataGridViewPendingRequests.SelectedRows[0].Cells[13].Value.ToString());
             more.Show();
         }
 

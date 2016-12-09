@@ -123,28 +123,29 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
 
         }
 
         private void buttonApprove_Click(object sender, EventArgs e)
         {
-        //    try
-        //    {
-        //        comboBoxStatus.SelectedIndex = 2;
-        //        con.Open();
-        //        SqlCommand cmd = con.CreateCommand();
-        //        cmd.CommandType = CommandType.Text;
-        //        cmd.CommandText = "Update Appointment Set Appointment.Status ='" + comboBoxStatus.Text + "' where AppointmentId='"+textBoxAppointmentId.Text+"'";
-        //        cmd.ExecuteNonQuery();
-        //        con.Close();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
+            //try
+            //{
+            //    comboBoxStatus.SelectedIndex = 2;
+            //    con.Open();
+            //    SqlCommand cmd = con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "Update Appointment Set Appointment.Status ='" + comboBoxStatus.Text + "' where AppointmentId='" + textBoxAppointmentId.Text + "'";
+            //    cmd.ExecuteNonQuery();
+            //    con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
-        //}
+        }
 
         private void buttonBlock_Click(object sender, EventArgs e)
         {
@@ -184,6 +185,7 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
         }
     }
