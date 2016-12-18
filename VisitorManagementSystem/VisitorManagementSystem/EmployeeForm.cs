@@ -14,8 +14,8 @@ namespace VisitorManagementSystem
     public partial class EmployeeForm : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=NISH\SQLSERVER;Initial Catalog=VMS;Integrated Security=True");
-        string employeeId;
-        String EId = "SILEMP0";
+        //string employeeId;
+        String EId = "SILEMP";
 
         private void GenerateAutoId()
         {
@@ -43,29 +43,29 @@ namespace VisitorManagementSystem
         {
             GenerateAutoId();
             comboBoxGender.SelectedIndex = 0;
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Employee";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridViewEmployee.DataSource = dt;
-                //textBoxEmployeeId.Focus();
+            //try
+            //{
+            //    con.Open();
+            //    SqlCommand cmd = con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "select * from Employee";
+            //    cmd.ExecuteNonQuery();
+            //    //DataTable dt = new DataTable();
+            //    //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    //da.Fill(dt);
+            //    //dataGridViewEmployee.DataSource = dt;
+            //    //textBoxEmployeeId.Focus();
 
-            }
-            catch(Exception ex)
-            {
+            //}
+            //catch(Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+            //    MessageBox.Show(ex.Message);
+            //}
+            //finally
+            //{
+            //    con.Close();
+            //}
             textBoxFirstName.Focus();
 
         }
@@ -108,7 +108,7 @@ namespace VisitorManagementSystem
                         textBoxEmail.Clear();
                         pictureBoxPhoto.Image = null;
 
-                        disp_data();
+                        
 
                         MessageBox.Show("Record Saved!");
                         textBoxFirstName.Focus();
@@ -162,148 +162,148 @@ namespace VisitorManagementSystem
 
             public void disp_data()
             {
-            con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select * from Employee";
-                cmd.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dataGridViewEmployee.DataSource = dt;
-                con.Close();
+            //con.Open();
+            //    SqlCommand cmd = con.CreateCommand();
+            //    cmd.CommandType = CommandType.Text;
+            //    cmd.CommandText = "Select * from Employee";
+            //    cmd.ExecuteNonQuery();
+            //    DataTable dt = new DataTable();
+            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //    da.Fill(dt);
+            //    dataGridViewEmployee.DataSource = dt;
+            //    con.Close();
             }
 
             private void buttonAddEmployee_Click(object sender, EventArgs e)
             {
-                try
-                {
-                    GenerateAutoId();
-                    textBoxFirstName.Clear();
-                    textBoxLastName.Clear();
-                    textBoxDepartment.Clear();
-                    textBoxDesignation.Clear();
-                    textBoxPersonalAddress.Clear();
-                    comboBoxGender.SelectedIndex = 0;
-                    maskedTextBoxNicNumber.Clear();
-                    textBoxWorkPhone.Clear();
-                    textBoxMobile.Clear();
-                    textBoxOther.Clear();
-                    textBoxEmail.Clear();
-                    pictureBoxPhoto.Image = null;
-                    textBoxFirstName.Focus();
+                //try
+                //{
+                //    GenerateAutoId();
+                //    textBoxFirstName.Clear();
+                //    textBoxLastName.Clear();
+                //    textBoxDepartment.Clear();
+                //    textBoxDesignation.Clear();
+                //    textBoxPersonalAddress.Clear();
+                //    comboBoxGender.SelectedIndex = 0;
+                //    maskedTextBoxNicNumber.Clear();
+                //    textBoxWorkPhone.Clear();
+                //    textBoxMobile.Clear();
+                //    textBoxOther.Clear();
+                //    textBoxEmail.Clear();
+                //    pictureBoxPhoto.Image = null;
+                //    textBoxFirstName.Focus();
 
-                    disp_data();
+                //    //disp_data();
 
-                }
-                catch(Exception ex)
-                {
+                //}
+                //catch(Exception ex)
+                //{
 
-                    MessageBox.Show(ex.Message);
-                    GenerateAutoId();
-                    textBoxFirstName.Focus();
-                }
+                //    MessageBox.Show(ex.Message);
+                //    GenerateAutoId();
+                //    textBoxFirstName.Focus();
+                //}
             }
 
             private void buttonDelete_Click(object sender, EventArgs e)
             {
-                try
-                {
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "delete from Employee where EmployeeId='" + textBoxEmployeeId.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "'  OR FirstName='" + textBoxFirstName.Text + "' OR LastName='" + textBoxLastName.Text + "'";
-                    cmd.ExecuteNonQuery();
-                    con.Close();
+                //try
+                //{
+                //    con.Open();
+                //    SqlCommand cmd = con.CreateCommand();
+                //    cmd.CommandType = CommandType.Text;
+                //    cmd.CommandText = "delete from Employee where EmployeeId='" + textBoxEmployeeId.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "'  OR FirstName='" + textBoxFirstName.Text + "' OR LastName='" + textBoxLastName.Text + "'";
+                //    cmd.ExecuteNonQuery();
+                //    con.Close();
 
-                    GenerateAutoId();
-                    textBoxFirstName.Clear();
-                    textBoxLastName.Clear();
-                    textBoxDepartment.Clear();
-                    textBoxDesignation.Clear();
-                    textBoxPersonalAddress.Clear();
-                    comboBoxGender.SelectedIndex = 0;
-                    maskedTextBoxNicNumber.Clear();
-                    textBoxWorkPhone.Clear();
-                    textBoxMobile.Clear();
-                    textBoxOther.Clear();
-                    textBoxEmail.Clear();
-                    pictureBoxPhoto.Image = null;
+                //    GenerateAutoId();
+                //    textBoxFirstName.Clear();
+                //    textBoxLastName.Clear();
+                //    textBoxDepartment.Clear();
+                //    textBoxDesignation.Clear();
+                //    textBoxPersonalAddress.Clear();
+                //    comboBoxGender.SelectedIndex = 0;
+                //    maskedTextBoxNicNumber.Clear();
+                //    textBoxWorkPhone.Clear();
+                //    textBoxMobile.Clear();
+                //    textBoxOther.Clear();
+                //    textBoxEmail.Clear();
+                //    pictureBoxPhoto.Image = null;
 
-                    MessageBox.Show("Record Deleted!");
-                    textBoxFirstName.Focus();
+                //    MessageBox.Show("Record Deleted!");
+                //    textBoxFirstName.Focus();
 
-                    disp_data();
+                //    //disp_data();
 
 
-                }
-                catch(Exception ex)
-                {
+                //}
+                //catch(Exception ex)
+                //{
 
-                    MessageBox.Show(ex.Message);
-                }
-                finally
-                {
-                    con.Close();
-                }
+                //    MessageBox.Show(ex.Message);
+                //}
+                //finally
+                //{
+                //    con.Close();
+                //}
             }
 
             private void buttonSearch_Click(object sender, EventArgs e)
             {
-                try
-                {
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Select * from Employee where FirstName='" + textBoxFirstName.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "' OR LastName='"+textBoxLastName.Text+"'";
-                    cmd.ExecuteNonQuery();
-                    Object EmployeeExist = cmd.ExecuteScalar();
+                //try
+                //{
+                //    con.Open();
+                //    SqlCommand cmd = con.CreateCommand();
+                //    cmd.CommandType = CommandType.Text;
+                //    cmd.CommandText = "Select * from Employee where FirstName='" + textBoxFirstName.Text + "' OR NicNumber='" + maskedTextBoxNicNumber.Text + "' OR LastName='"+textBoxLastName.Text+"'";
+                //    cmd.ExecuteNonQuery();
+                //    Object EmployeeExist = cmd.ExecuteScalar();
 
-                     if (EmployeeExist != null)
-                    {
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dataGridViewEmployee.DataSource = dt;
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
-                    {
-                        textBoxFirstName.Text = dr["FirstName"].ToString();
-                        textBoxLastName.Text = dr["LastName"].ToString();
-                        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
-                        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
-                        textBoxDesignation.Text = dr["Designation"].ToString();
-                        textBoxDepartment.Text = dr["Department"].ToString();
-                        comboBoxGender.Text = dr["Gender"].ToString();
-                        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
-                        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
-                        textBoxMobile.Text = dr["Mobile"].ToString();
-                        textBoxOther.Text = dr["Other"].ToString();
-                        textBoxEmail.Text = dr["Email"].ToString();
-                        //pictureBoxPhoto.Image =;
+                //     if (EmployeeExist != null)
+                //    {
+                //    DataTable dt = new DataTable();
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    da.Fill(dt);
+                //    //dataGridViewEmployee.DataSource = dt;
+                //    SqlDataReader dr = cmd.ExecuteReader();
+                //    while (dr.Read())
+                //    {
+                //        textBoxFirstName.Text = dr["FirstName"].ToString();
+                //        textBoxLastName.Text = dr["LastName"].ToString();
+                //        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
+                //        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                //        textBoxDesignation.Text = dr["Designation"].ToString();
+                //        textBoxDepartment.Text = dr["Department"].ToString();
+                //        comboBoxGender.Text = dr["Gender"].ToString();
+                //        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
+                //        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                //        textBoxMobile.Text = dr["Mobile"].ToString();
+                //        textBoxOther.Text = dr["Other"].ToString();
+                //        textBoxEmail.Text = dr["Email"].ToString();
+                //        //pictureBoxPhoto.Image =;
 
-                    }
-                    dr.Close();
-                    con.Close();
-                    }
-                     else
-                     {
-                         MessageBox.Show("Employee Not Found!Enter Employee Details To Register New Employee.");
-                         con.Close();
-                         maskedTextBoxNicNumber.Clear();
-                         GenerateAutoId();
-                         textBoxFirstName.Focus();
-                     }
-                     con.Close();
+                //    }
+                //    dr.Close();
+                //    con.Close();
+                //    }
+                //     else
+                //     {
+                //         MessageBox.Show("Employee Not Found!Enter Employee Details To Register New Employee.");
+                //         con.Close();
+                //         maskedTextBoxNicNumber.Clear();
+                //         GenerateAutoId();
+                //         textBoxFirstName.Focus();
+                //     }
+                //     con.Close();
 
-                    textBoxFirstName.Focus();
+                //    textBoxFirstName.Focus();
 
-                }
-                catch(Exception ex) 
-                {
-                    MessageBox.Show(ex.Message);  
+                //}
+                //catch(Exception ex) 
+                //{
+                //    MessageBox.Show(ex.Message);  
                     
-                }
+                //}
             }
 
             private void buttonCancel_Click(object sender, EventArgs e)
@@ -326,7 +326,7 @@ namespace VisitorManagementSystem
 
                     textBoxFirstName.Focus();
 
-                    disp_data();
+                    //disp_data();
 
                 }
                 catch(Exception ex) 
@@ -341,46 +341,46 @@ namespace VisitorManagementSystem
             private void buttonViewAll_Click(object sender, EventArgs e)
             {
                 
-                try
-                {
-                    disp_data();
+                //try
+                //{
+                //    //disp_data();
 
-                    GenerateAutoId();
-                    textBoxFirstName.Clear();
-                    textBoxLastName.Clear();
-                    textBoxDepartment.Clear();
-                    textBoxDesignation.Clear();
-                    textBoxPersonalAddress.Clear();
-                    comboBoxGender.SelectedIndex = 0;
-                    maskedTextBoxNicNumber.Clear();
-                    textBoxWorkPhone.Clear();
-                    textBoxMobile.Clear();
-                    textBoxOther.Clear();
-                    textBoxEmail.Clear();
-                    pictureBoxPhoto.Image = null;
+                //    GenerateAutoId();
+                //    textBoxFirstName.Clear();
+                //    textBoxLastName.Clear();
+                //    textBoxDepartment.Clear();
+                //    textBoxDesignation.Clear();
+                //    textBoxPersonalAddress.Clear();
+                //    comboBoxGender.SelectedIndex = 0;
+                //    maskedTextBoxNicNumber.Clear();
+                //    textBoxWorkPhone.Clear();
+                //    textBoxMobile.Clear();
+                //    textBoxOther.Clear();
+                //    textBoxEmail.Clear();
+                //    pictureBoxPhoto.Image = null;
 
-                    textBoxFirstName.Focus();
+                //    textBoxFirstName.Focus();
 
-                }
-                catch(Exception ex) 
-                {
+                //}
+                //catch(Exception ex) 
+                //{
 
-                    MessageBox.Show(ex.Message);
-                }
+                //    MessageBox.Show(ex.Message);
+                //}
 
             }
 
             private void buttonEdit_Click(object sender, EventArgs e)
             {
-                try
-                {
+                //try
+                //{
                     
-                }
-                catch(Exception ex) 
-                {
+                //}
+                //catch(Exception ex) 
+                //{
 
-                    MessageBox.Show(ex.Message);
-                }
+                //    MessageBox.Show(ex.Message);
+                //}
 
             }
 
@@ -395,42 +395,42 @@ namespace VisitorManagementSystem
 
             private void dataGridViewEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
             {
-                try
-                {
-                    con.Open();
-                    employeeId = dataGridViewEmployee.Rows[e.RowIndex].Cells["EmployeeId"].Value.ToString();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Select * from Employee where EmployeeId='" + employeeId + "'";
-                    cmd.ExecuteNonQuery();
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
-                        textBoxFirstName.Text = dr["FirstName"].ToString();
-                        textBoxLastName.Text = dr["LastName"].ToString();
-                        maskedTextBoxNicNumber.Text = dr["NicNumber"].ToString();
-                        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();                        
-                        textBoxDesignation.Text = dr["Designation"].ToString();
-                        textBoxDepartment.Text = dr["Department"].ToString();
-                        comboBoxGender.Text = dr["Gender"].ToString();
-                        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
-                        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
-                        textBoxMobile.Text = dr["Mobile"].ToString();
-                        textBoxOther.Text = dr["Other"].ToString();
-                        textBoxEmail.Text = dr["Email"].ToString();
-                        //photo
+                //try
+                //{
+                //    con.Open();
+                //    employeeId = dataGridViewEmployee.Rows[e.RowIndex].Cells["EmployeeId"].Value.ToString();
+                //    SqlCommand cmd = con.CreateCommand();
+                //    cmd.CommandType = CommandType.Text;
+                //    cmd.CommandText = "Select * from Employee where EmployeeId='" + employeeId + "'";
+                //    cmd.ExecuteNonQuery();
+                //    DataTable dt = new DataTable();
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    da.Fill(dt);
+                //    foreach (DataRow dr in dt.Rows)
+                //    {
+                //        textBoxEmployeeId.Text = dr["EmployeeId"].ToString();
+                //        textBoxFirstName.Text = dr["FirstName"].ToString();
+                //        textBoxLastName.Text = dr["LastName"].ToString();
+                //        maskedTextBoxNicNumber.Text = dr["NicNumber"].ToString();
+                //        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();                        
+                //        textBoxDesignation.Text = dr["Designation"].ToString();
+                //        textBoxDepartment.Text = dr["Department"].ToString();
+                //        comboBoxGender.Text = dr["Gender"].ToString();
+                //        textBoxPersonalAddress.Text = dr["Address"].ToString();                        
+                //        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                //        textBoxMobile.Text = dr["Mobile"].ToString();
+                //        textBoxOther.Text = dr["Other"].ToString();
+                //        textBoxEmail.Text = dr["Email"].ToString();
+                //        //photo
 
-                    }
-                    con.Close();
-                }
-                catch (Exception ex)
-                {
+                //    }
+                //    con.Close();
+                //}
+                //catch (Exception ex)
+                //{
 
-                    MessageBox.Show(ex.Message);
-                }
+                //    MessageBox.Show(ex.Message);
+                //}
             }
         }
     }

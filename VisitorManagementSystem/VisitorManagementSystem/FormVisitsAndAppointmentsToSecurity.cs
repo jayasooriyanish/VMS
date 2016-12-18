@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace VisitorManagementSystem
 {
-    public partial class FormVisitorHistory : Form
+    public partial class FormVisitsAndAppointmentsToSecurity : Form
     {
-        public FormVisitorHistory()
+        public FormVisitsAndAppointmentsToSecurity()
         {
             InitializeComponent();
         }
 
-        private void FormVisitorHistory_Load(object sender, EventArgs e)
+        private void buttonAppointments_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            FormViewAppointmentsToSecurity view = new FormViewAppointmentsToSecurity();
+            view.Show();
         }
     }
 }

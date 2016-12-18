@@ -16,7 +16,14 @@ namespace VisitorManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new LoginForm());
+        }
+
+        public static void runRegisterForm()
+        { 
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new UserRegistrationForm());
         }
     }
 }

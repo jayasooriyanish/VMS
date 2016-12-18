@@ -77,7 +77,6 @@ D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\De
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitorRegisterFromSearchToSecurity.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormProceedToCheckin.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\bin\Debug\Zen.Barcode.Core.dll
-D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitorHistory.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.MainFormToSecurityAdmin.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.VisitorFormToSecurity.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorToSecurity.resources
@@ -102,3 +101,18 @@ D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\De
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormPendingRequestsMoreDetails.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormMoreAppointmentDetailsToEmployee.resources
 D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewAppointmentsToEmployee.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorMoreDetailsToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorMoreDetails.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorAppointmentsToSecurity.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewVisitorMoreDetailsToSecurity.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormProceedToCheckInFromViewVisitor.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewAppointmentsToSecurity.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitsAndAppointmentsToSecurity.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormMoreVisitDetailsToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormVisitListToEmployee.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.LoginForm.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.UserRegistrationForm.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewHistoryFromRegisterToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewHistoryFromViewVisitorToManager.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewHistoryFromRegisterToEmployee.resources
+D:\Silueta\VMS\Source\VMS\VisitorManagementSystem\VisitorManagementSystem\obj\Debug\VisitorManagementSystem.FormViewHistoryFromViewVisitorToEmployee.resources

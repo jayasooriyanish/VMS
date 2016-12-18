@@ -17,8 +17,8 @@ namespace VisitorManagementSystem
         
         int[] barCode;
 
-               
-        public FormPendingRequestsMoreDetails(string appId, string fromDate, string toDate, string fromTime, string toTime, string purpose, string eId, string eFName, string eLName, string status, string checkedIn, string checkedOut, string visitorId, string accomodation, string vehicles)
+
+        public FormPendingRequestsMoreDetails(string appId, string visitorId, string purpose, string fromDate, string fromTime, string toDate, string toTime, string eId, string eFName, string eLName,string accomodation, string vehicles, string status, string checkedIn, string checkedOut )
         {
             InitializeComponent();
             textBoxAppointmentId.Text = appId;
@@ -32,10 +32,41 @@ namespace VisitorManagementSystem
             textBoxEmployeeLastName.Text = eLName;
             textBoxVisitorId.Text = visitorId;
             comboBoxStatus.Text = status;
-            //checkBoxNeedAccomodation.Text = accomodation;
-            //checkBoxNeedVehicles.Text = vehicles;
-            //checkBoxCheckedIn.Text = checkedIn;
-            //checkBoxCheckedOut.Text = checkedOut;
+            if (accomodation == null || accomodation.Equals(""))
+            {
+                checkBoxNeedAccomodation.Checked = false;
+            }
+            else
+            {
+                checkBoxNeedAccomodation.Checked = Convert.ToBoolean(accomodation);
+            }
+
+            if (vehicles == null || vehicles.Equals(""))
+            {
+                checkBoxNeedVehicles.Checked = false;
+            }
+            else
+            {
+                checkBoxNeedVehicles.Checked = Convert.ToBoolean(vehicles);
+            }
+            if (checkedIn == null || checkedIn.Equals(""))
+            {
+                checkBoxCheckedIn.Checked = false;
+            }
+            else
+            {
+                checkBoxCheckedIn.Checked = Convert.ToBoolean(checkedIn);
+            }
+            if (checkedOut == null || checkedOut.Equals(""))
+            {
+                checkBoxCheckedOut.Checked = false;
+            }
+            else
+            {
+                checkBoxCheckedOut.Checked = Convert.ToBoolean(checkedOut);
+            }
+
+                       
         }
 
         private void FormPendingRequestsForApproval_Load(object sender, EventArgs e)

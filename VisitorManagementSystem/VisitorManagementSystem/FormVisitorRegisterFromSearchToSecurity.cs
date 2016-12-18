@@ -31,7 +31,7 @@ namespace VisitorManagementSystem
         private void FormVisitorRegisterFromSearchToSecurity_Load(object sender, EventArgs e)
         {
            
-            maskedTextBoxNicNumber.Text = id;            
+            maskedTextBoxNicNumber.Text = id;
 
             try
             {
@@ -49,7 +49,7 @@ namespace VisitorManagementSystem
                     while (dr.Read())
                     {
                         textBoxVisitorId.Text = dr["VisitorId"].ToString();
-                         textBoxfirstName.Text= dr["FirstName"].ToString();
+                        textBoxfirstName.Text = dr["FirstName"].ToString();
                         textBoxLastName.Text = dr["LastName"].ToString();
                         dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
                         comboBoxCategory.Text = dr["Category"].ToString();
@@ -64,18 +64,17 @@ namespace VisitorManagementSystem
                         textBoxEmail.Text = dr["Email"].ToString();
                         //pictureBoxPhoto.Image = dr["Photo"].ToString();
 
-                        textBoxVisitorId.Focus();
 
                     }
+                    dr.Close();
                 }
 
                 else
                 {
                     MessageBox.Show("Visitor Not Found!");
+                    con.Close();
                 }
-                dr.Close();
-
-
+                
                 con.Close();
 
                 //dateTimePickerFromDate.Focus();
@@ -85,7 +84,59 @@ namespace VisitorManagementSystem
             {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
+
+            try
+            {
+                con.Open();
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "select * from Appointment where VisitorId='" + textBoxVisitorId.Text + "'";
+
+                Object AppointmentExist = cmd2.ExecuteScalar();
+                SqlDataReader drApp = cmd2.ExecuteReader();
+
+                if (AppointmentExist != null)
+                {
+                    while (drApp.Read())
+                    {
+                        textBoxAppointmentId.Text = drApp["AppointmentId"].ToString();
+                        dateTimePickerFromDate.Text = drApp["FromDate"].ToString();
+                        dateTimePickerToDate.Text = drApp["ToDate"].ToString();
+                        dateTimePickerFromTime.Text = drApp["FromTime"].ToString();
+                        dateTimePickerToTime.Text = drApp["ToTime"].ToString();
+                        textBoxPurpose.Text = drApp["Purpose"].ToString();
+                        textBoxEmployeeId.Text = drApp["EmployeeId"].ToString();
+                        textBoxEmployeeFirstName.Text = drApp["FirstName"].ToString();
+                        textBoxEmployeeLastName.Text = drApp["LastName"].ToString();
+                        comboBoxStatus.Text = drApp["Status"].ToString();                        
+                        checkBoxNeedAccomodation.Checked = (bool)drApp["NeedAccomodation"];
+                        checkBoxNeedVehicles.Checked = (bool)drApp["NeedVehicles"];
+                       
+
+                    }
+                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("No Appointments Found For The Visitor!");
+                    groupBoxAppointments.Hide();
+                    panel1.Hide();
+                }
+                drApp.Close();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+
+            
+
+            groupBoxAppointments.Enabled = false;
+            groupBoxContactDetails.Enabled = false;
 
         }
 
@@ -99,6 +150,11 @@ namespace VisitorManagementSystem
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxEmployeeId_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

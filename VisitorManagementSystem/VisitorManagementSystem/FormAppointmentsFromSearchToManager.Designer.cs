@@ -100,12 +100,12 @@
             this.labelStatus = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBoxAccesAreas = new System.Windows.Forms.GroupBox();
-            this.labelAccessAreas = new System.Windows.Forms.Label();
-            this.checkBoxA5 = new System.Windows.Forms.CheckBox();
-            this.checkBoxA4 = new System.Windows.Forms.CheckBox();
-            this.checkBoxA3 = new System.Windows.Forms.CheckBox();
-            this.checkBoxA2 = new System.Windows.Forms.CheckBox();
             this.checkBoxA1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxA2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxA3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxA4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxA5 = new System.Windows.Forms.CheckBox();
+            this.labelAccessAreas = new System.Windows.Forms.Label();
             this.panelAppointments.SuspendLayout();
             this.groupBoxAppointments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
@@ -809,51 +809,17 @@
             this.groupBoxAccesAreas.TabStop = false;
             this.groupBoxAccesAreas.Text = "Mark Access Areas";
             // 
-            // labelAccessAreas
+            // checkBoxA1
             // 
-            this.labelAccessAreas.AutoSize = true;
-            this.labelAccessAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAccessAreas.Location = new System.Drawing.Point(6, 16);
-            this.labelAccessAreas.Name = "labelAccessAreas";
-            this.labelAccessAreas.Size = new System.Drawing.Size(312, 16);
-            this.labelAccessAreas.TabIndex = 0;
-            this.labelAccessAreas.Text = "Please Mark Access Areas Allowed For The Visitor";
-            // 
-            // checkBoxA5
-            // 
-            this.checkBoxA5.AutoSize = true;
-            this.checkBoxA5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxA5.Location = new System.Drawing.Point(346, 47);
-            this.checkBoxA5.Name = "checkBoxA5";
-            this.checkBoxA5.Size = new System.Drawing.Size(43, 20);
-            this.checkBoxA5.TabIndex = 1;
-            this.checkBoxA5.Text = "A5";
-            this.checkBoxA5.UseVisualStyleBackColor = true;
-            this.checkBoxA5.CheckedChanged += new System.EventHandler(this.checkBoxA5_CheckedChanged);
-            // 
-            // checkBoxA4
-            // 
-            this.checkBoxA4.AutoSize = true;
-            this.checkBoxA4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxA4.Location = new System.Drawing.Point(275, 47);
-            this.checkBoxA4.Name = "checkBoxA4";
-            this.checkBoxA4.Size = new System.Drawing.Size(43, 20);
-            this.checkBoxA4.TabIndex = 2;
-            this.checkBoxA4.Text = "A4";
-            this.checkBoxA4.UseVisualStyleBackColor = true;
-            this.checkBoxA4.CheckedChanged += new System.EventHandler(this.checkBoxA4_CheckedChanged);
-            // 
-            // checkBoxA3
-            // 
-            this.checkBoxA3.AutoSize = true;
-            this.checkBoxA3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxA3.Location = new System.Drawing.Point(201, 47);
-            this.checkBoxA3.Name = "checkBoxA3";
-            this.checkBoxA3.Size = new System.Drawing.Size(43, 20);
-            this.checkBoxA3.TabIndex = 3;
-            this.checkBoxA3.Text = "A3";
-            this.checkBoxA3.UseVisualStyleBackColor = true;
-            this.checkBoxA3.CheckedChanged += new System.EventHandler(this.checkBoxA3_CheckedChanged);
+            this.checkBoxA1.AutoSize = true;
+            this.checkBoxA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxA1.Location = new System.Drawing.Point(68, 47);
+            this.checkBoxA1.Name = "checkBoxA1";
+            this.checkBoxA1.Size = new System.Drawing.Size(43, 20);
+            this.checkBoxA1.TabIndex = 5;
+            this.checkBoxA1.Text = "A1";
+            this.checkBoxA1.UseVisualStyleBackColor = true;
+            this.checkBoxA1.CheckedChanged += new System.EventHandler(this.checkBoxA1_CheckedChanged);
             // 
             // checkBoxA2
             // 
@@ -867,17 +833,51 @@
             this.checkBoxA2.UseVisualStyleBackColor = true;
             this.checkBoxA2.CheckedChanged += new System.EventHandler(this.checkBoxA2_CheckedChanged);
             // 
-            // checkBoxA1
+            // checkBoxA3
             // 
-            this.checkBoxA1.AutoSize = true;
-            this.checkBoxA1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxA1.Location = new System.Drawing.Point(68, 47);
-            this.checkBoxA1.Name = "checkBoxA1";
-            this.checkBoxA1.Size = new System.Drawing.Size(43, 20);
-            this.checkBoxA1.TabIndex = 5;
-            this.checkBoxA1.Text = "A1";
-            this.checkBoxA1.UseVisualStyleBackColor = true;
-            this.checkBoxA1.CheckedChanged += new System.EventHandler(this.checkBoxA1_CheckedChanged);
+            this.checkBoxA3.AutoSize = true;
+            this.checkBoxA3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxA3.Location = new System.Drawing.Point(201, 47);
+            this.checkBoxA3.Name = "checkBoxA3";
+            this.checkBoxA3.Size = new System.Drawing.Size(43, 20);
+            this.checkBoxA3.TabIndex = 3;
+            this.checkBoxA3.Text = "A3";
+            this.checkBoxA3.UseVisualStyleBackColor = true;
+            this.checkBoxA3.CheckedChanged += new System.EventHandler(this.checkBoxA3_CheckedChanged);
+            // 
+            // checkBoxA4
+            // 
+            this.checkBoxA4.AutoSize = true;
+            this.checkBoxA4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxA4.Location = new System.Drawing.Point(275, 47);
+            this.checkBoxA4.Name = "checkBoxA4";
+            this.checkBoxA4.Size = new System.Drawing.Size(43, 20);
+            this.checkBoxA4.TabIndex = 2;
+            this.checkBoxA4.Text = "A4";
+            this.checkBoxA4.UseVisualStyleBackColor = true;
+            this.checkBoxA4.CheckedChanged += new System.EventHandler(this.checkBoxA4_CheckedChanged);
+            // 
+            // checkBoxA5
+            // 
+            this.checkBoxA5.AutoSize = true;
+            this.checkBoxA5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxA5.Location = new System.Drawing.Point(346, 47);
+            this.checkBoxA5.Name = "checkBoxA5";
+            this.checkBoxA5.Size = new System.Drawing.Size(43, 20);
+            this.checkBoxA5.TabIndex = 1;
+            this.checkBoxA5.Text = "A5";
+            this.checkBoxA5.UseVisualStyleBackColor = true;
+            this.checkBoxA5.CheckedChanged += new System.EventHandler(this.checkBoxA5_CheckedChanged);
+            // 
+            // labelAccessAreas
+            // 
+            this.labelAccessAreas.AutoSize = true;
+            this.labelAccessAreas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAccessAreas.Location = new System.Drawing.Point(6, 16);
+            this.labelAccessAreas.Name = "labelAccessAreas";
+            this.labelAccessAreas.Size = new System.Drawing.Size(312, 16);
+            this.labelAccessAreas.TabIndex = 0;
+            this.labelAccessAreas.Text = "Please Mark Access Areas Allowed For The Visitor";
             // 
             // FormAppointmentsFromSearchToManager
             // 

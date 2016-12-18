@@ -29,26 +29,34 @@ namespace VisitorManagementSystem
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                if (maskedTextBoxNicNumber.Text != "")
+                    {
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
 
-                Object VisitorExist = cmd.ExecuteScalar();
+                        Object VisitorExist = cmd.ExecuteScalar();
 
-                if (VisitorExist != null)
-                {
-                    FormVisitorRegisterFromSearchToSecurity newRegForm = new FormVisitorRegisterFromSearchToSecurity();
-                    newRegForm.PassValue = maskedTextBoxNicNumber.Text;
-                    newRegForm.ShowDialog();
-                }
-                else
-                {
-                    MessageBox.Show("Visitor Not Found! Please Check Your Data.");
+                            if (VisitorExist != null)
+                            {
+                                FormVisitorRegisterFromSearchToSecurity newRegForm = new FormVisitorRegisterFromSearchToSecurity();
+                                newRegForm.PassValue = maskedTextBoxNicNumber.Text;
+                                newRegForm.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Visitor Not Found! Please Check Your Data.");
 
-                }
+                            }
 
                 con.Close();
+                    }
+                else
+                {
+                    MessageBox.Show("Please enter visitor NIC number to search! ", "Insufficient Data!");
+                    maskedTextBoxNicNumber.Focus();
+                }
             }
             catch (Exception ex)
             {

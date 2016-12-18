@@ -141,9 +141,9 @@
             this.labelNicNumber.AutoSize = true;
             this.labelNicNumber.Location = new System.Drawing.Point(269, 62);
             this.labelNicNumber.Name = "labelNicNumber";
-            this.labelNicNumber.Size = new System.Drawing.Size(65, 13);
+            this.labelNicNumber.Size = new System.Drawing.Size(68, 13);
             this.labelNicNumber.TabIndex = 12;
-            this.labelNicNumber.Text = "NIC Number";
+            this.labelNicNumber.Text = "NIC Number ";
             // 
             // lableDateOfBirth
             // 

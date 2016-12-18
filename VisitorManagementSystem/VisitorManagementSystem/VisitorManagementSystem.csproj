@@ -86,6 +86,18 @@
     <Compile Include="FormMoreAppointmentDetailsToEmployee.Designer.cs">
       <DependentUpon>FormMoreAppointmentDetailsToEmployee.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMoreVisitDetailsToManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMoreVisitDetailsToManager.Designer.cs">
+      <DependentUpon>FormMoreVisitDetailsToManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProceedToCheckInFromViewVisitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProceedToCheckInFromViewVisitor.Designer.cs">
+      <DependentUpon>FormProceedToCheckInFromViewVisitor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormViewAppointmentsToEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,11 +188,59 @@
     <Compile Include="FormSearchVisitorToSecurity.Designer.cs">
       <DependentUpon>FormSearchVisitorToSecurity.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormViewAppointmentsToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewAppointmentsToSecurity.Designer.cs">
+      <DependentUpon>FormViewAppointmentsToSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewHistoryFromViewVisitorToEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewHistoryFromViewVisitorToEmployee.Designer.cs">
+      <DependentUpon>FormViewHistoryFromViewVisitorToEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewHistoryFromViewVisitorToManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewHistoryFromViewVisitorToManager.Designer.cs">
+      <DependentUpon>FormViewHistoryFromViewVisitorToManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewHistoryFromRegisterToManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewHistoryFromRegisterToManager.Designer.cs">
+      <DependentUpon>FormViewHistoryFromRegisterToManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormViewVisitor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormViewVisitor.Designer.cs">
       <DependentUpon>FormViewVisitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewVisitorAppointmentsToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewVisitorAppointmentsToSecurity.Designer.cs">
+      <DependentUpon>FormViewVisitorAppointmentsToSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetails.Designer.cs">
+      <DependentUpon>FormViewVisitorMoreDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetailsToManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetailsToManager.Designer.cs">
+      <DependentUpon>FormViewVisitorMoreDetailsToManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetailsToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormViewVisitorMoreDetailsToSecurity.Designer.cs">
+      <DependentUpon>FormViewVisitorMoreDetailsToSecurity.cs</DependentUpon>
     </Compile>
     <Compile Include="FormViewVisitorToManager.cs">
       <SubType>Form</SubType>
@@ -218,17 +278,23 @@
     <Compile Include="FormVisitConfirmationToManager.Designer.cs">
       <DependentUpon>FormVisitConfirmationToManager.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormVisitListToEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisitListToEmployee.Designer.cs">
+      <DependentUpon>FormVisitListToEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVisitListToManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormVisitListToManager.Designer.cs">
       <DependentUpon>FormVisitListToManager.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormVisitorHistory.cs">
+    <Compile Include="FormViewHistoryFromRegisterToEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormVisitorHistory.Designer.cs">
-      <DependentUpon>FormVisitorHistory.cs</DependentUpon>
+    <Compile Include="FormViewHistoryFromRegisterToEmployee.Designer.cs">
+      <DependentUpon>FormViewHistoryFromRegisterToEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVisitorRegisterFromSearchToEmployee.cs">
       <SubType>Form</SubType>
@@ -259,6 +325,18 @@
     </Compile>
     <Compile Include="FormVisitsAndAppointmentsToManager.Designer.cs">
       <DependentUpon>FormVisitsAndAppointmentsToManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVisitsAndAppointmentsToSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVisitsAndAppointmentsToSecurity.Designer.cs">
+      <DependentUpon>FormVisitsAndAppointmentsToSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -304,6 +382,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserRegistrationForm.Designer.cs">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils.cs" />
     <Compile Include="VisitorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +427,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMoreAppointmentDetailsToEmployee.resx">
       <DependentUpon>FormMoreAppointmentDetailsToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMoreVisitDetailsToManager.resx">
+      <DependentUpon>FormMoreVisitDetailsToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProceedToCheckInFromViewVisitor.resx">
+      <DependentUpon>FormProceedToCheckInFromViewVisitor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewAppointmentsToEmployee.resx">
       <DependentUpon>FormViewAppointmentsToEmployee.cs</DependentUpon>
@@ -388,8 +479,32 @@
     <EmbeddedResource Include="FormSearchVisitorToSecurity.resx">
       <DependentUpon>FormSearchVisitorToSecurity.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormViewAppointmentsToSecurity.resx">
+      <DependentUpon>FormViewAppointmentsToSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewHistoryFromViewVisitorToEmployee.resx">
+      <DependentUpon>FormViewHistoryFromViewVisitorToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewHistoryFromViewVisitorToManager.resx">
+      <DependentUpon>FormViewHistoryFromViewVisitorToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewHistoryFromRegisterToManager.resx">
+      <DependentUpon>FormViewHistoryFromRegisterToManager.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormViewVisitor.resx">
       <DependentUpon>FormViewVisitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewVisitorAppointmentsToSecurity.resx">
+      <DependentUpon>FormViewVisitorAppointmentsToSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewVisitorMoreDetails.resx">
+      <DependentUpon>FormViewVisitorMoreDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewVisitorMoreDetailsToManager.resx">
+      <DependentUpon>FormViewVisitorMoreDetailsToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormViewVisitorMoreDetailsToSecurity.resx">
+      <DependentUpon>FormViewVisitorMoreDetailsToSecurity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormViewVisitorToManager.resx">
       <DependentUpon>FormViewVisitorToManager.cs</DependentUpon>
@@ -409,11 +524,14 @@
     <EmbeddedResource Include="FormVisitConfirmationToManager.resx">
       <DependentUpon>FormVisitConfirmationToManager.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormVisitListToEmployee.resx">
+      <DependentUpon>FormVisitListToEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormVisitListToManager.resx">
       <DependentUpon>FormVisitListToManager.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormVisitorHistory.resx">
-      <DependentUpon>FormVisitorHistory.cs</DependentUpon>
+    <EmbeddedResource Include="FormViewHistoryFromRegisterToEmployee.resx">
+      <DependentUpon>FormViewHistoryFromRegisterToEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVisitorRegisterFromSearchToEmployee.resx">
       <DependentUpon>FormVisitorRegisterFromSearchToEmployee.cs</DependentUpon>
@@ -429,6 +547,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVisitsAndAppointmentsToManager.resx">
       <DependentUpon>FormVisitsAndAppointmentsToManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVisitsAndAppointmentsToSecurity.resx">
+      <DependentUpon>FormVisitsAndAppointmentsToSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -451,6 +575,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserRegistrationForm.resx">
+      <DependentUpon>UserRegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VisitorForm.resx">
       <DependentUpon>VisitorForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,11 +40,42 @@ namespace VisitorManagementSystem
             textBoxEmployeeId.Text = eId;
             textBoxEmployeeFirstName.Text = eFName;
             textBoxEmployeeLastName.Text = eLName;
+            comboBoxStatus.Text = status;
             textBoxVisitorId.Text = visitorId;
-            //checkBoxNeedAccomodation.Text = accomodation;
-            //checkBoxNeedVehicles.Text = vehicles;
-            //checkBoxCheckedIn.Text = checkedIn;
-            //checkBoxCheckedOut.Text = checkedOut;
+            if (accomodation == null || accomodation.Equals(""))
+            {
+                checkBoxNeedAccomodation.Checked = false;
+            }
+            else
+            {
+                checkBoxNeedAccomodation.Checked = Convert.ToBoolean(accomodation);
+            }
+
+            if (vehicles == null || vehicles.Equals(""))
+            {
+                checkBoxNeedVehicles.Checked = false;
+            }
+            else
+            {
+                checkBoxNeedVehicles.Checked = Convert.ToBoolean(vehicles);
+            }
+            if (checkedIn == null || checkedIn.Equals(""))
+            {
+                checkBoxCheckedIn.Checked = false;
+            }
+            else
+            {
+                checkBoxCheckedIn.Checked = Convert.ToBoolean(checkedIn);
+            }
+            if (checkedOut == null || checkedOut.Equals(""))
+            {
+                checkBoxCheckedOut.Checked = false;
+            }
+            else
+            {
+                checkBoxCheckedOut.Checked = Convert.ToBoolean(checkedOut);
+            }
+
 
             
 

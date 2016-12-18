@@ -38,57 +38,65 @@ namespace VisitorManagementSystem
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
-                cmd.ExecuteNonQuery();
-                Object VisitorExist = cmd.ExecuteScalar();
-
-
-                if (VisitorExist != null)
-                {
-                    DataTable dt = new DataTable();
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    dataGridViewVisitor.DataSource = dt;
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    while (dr.Read())
+                if (maskedTextBoxNicNumber.Text != "")
                     {
-                        textBoxFirstName.Text = dr["FirstName"].ToString();
-                        textBoxLastName.Text = dr["LastName"].ToString();
-                        textBoxVisitorId.Text = dr["VisitorId"].ToString();
-                        dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
-                        comboBoxCategory.Text = dr["Category"].ToString();
-                        textBoxOrganization.Text = dr["Organization"].ToString();
-                        textBoxDesignation.Text = dr["Designation"].ToString();
-                        comboBoxGender.Text = dr["Gender"].ToString();
-                        textBoxPersonalAddress.Text = dr["PersonalAddress"].ToString();
-                        textBoxCompanyAddress.Text = dr["CompanyAddress"].ToString();
-                        textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
-                        textBoxMobile.Text = dr["Mobile"].ToString();
-                        textBoxOther.Text = dr["Other"].ToString();
-                        textBoxEmail.Text = dr["Email"].ToString();
-                        //pictureBoxPhoto.Image =;
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "Select * from Visitor where NicNumber='" + maskedTextBoxNicNumber.Text + "'";
+                        cmd.ExecuteNonQuery();
+                        Object VisitorExist = cmd.ExecuteScalar();
 
+
+                        if (VisitorExist != null)
+                        {
+                            DataTable dt = new DataTable();
+                            SqlDataAdapter da = new SqlDataAdapter(cmd);
+                            da.Fill(dt);
+                            dataGridViewVisitor.DataSource = dt;
+
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            while (dr.Read())
+                            {
+                                textBoxFirstName.Text = dr["FirstName"].ToString();
+                                textBoxLastName.Text = dr["LastName"].ToString();
+                                textBoxVisitorId.Text = dr["VisitorId"].ToString();
+                                dateTimePickerDateOfBirth.Text = dr["DateOfBirth"].ToString();
+                                comboBoxCategory.Text = dr["Category"].ToString();
+                                textBoxOrganization.Text = dr["Organization"].ToString();
+                                textBoxDesignation.Text = dr["Designation"].ToString();
+                                comboBoxGender.Text = dr["Gender"].ToString();
+                                textBoxPersonalAddress.Text = dr["PersonalAddress"].ToString();
+                                textBoxCompanyAddress.Text = dr["CompanyAddress"].ToString();
+                                textBoxWorkPhone.Text = dr["WorkPhone"].ToString();
+                                textBoxMobile.Text = dr["Mobile"].ToString();
+                                textBoxOther.Text = dr["Other"].ToString();
+                                textBoxEmail.Text = dr["Email"].ToString();
+                                //pictureBoxPhoto.Image =;
+
+                            }
+                            dr.Close();
+                            con.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Visitor Not Found!Enter Visitor Details To Register New visitor.");
+                            con.Close();
+                            GenerateAutoId();
+                            maskedTextBoxNicNumber.Clear();
+                            textBoxFirstName.Focus();
+                            con.Close();
+                        }
+
+
+
+                        con.Close();
                     }
-                    dr.Close();
-                    con.Close();
-                }
                 else
                 {
-                    MessageBox.Show("Visitor Not Found!Enter Visitor Details To Register New visitor.");
-                    con.Close();
-                    GenerateAutoId();
-                    maskedTextBoxNicNumber.Clear();
-                    textBoxFirstName.Focus();
-                    con.Close();
+                    MessageBox.Show("Please enter visitor NIC number to search! ", "Insufficient Data!");
+                    maskedTextBoxNicNumber.Focus();
                 }
-
-
-
-                con.Close();
 
             }
             catch (Exception ex)
@@ -150,37 +158,58 @@ namespace VisitorManagementSystem
 
                 if (VisitorExist == null)
                 {
-                    con.Close();
-                    con.Open();
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "')";
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    GenerateAutoId();
+                    if(maskedTextBoxNicNumber.Text != "") 
+                        {
+                            if(textBoxFirstName.Text != "")
+                            {
+                                if (textBoxLastName.Text != "")
+                                {
+                                    con.Close();
+                                    con.Open();
+                                    SqlCommand cmd = con.CreateCommand();
+                                    cmd.CommandType = CommandType.Text;
+                                    cmd.CommandText = "Insert into Visitor(VisitorId,FirstName,LastName,NicNumber,Organization,Designation,Category,DateOfBirth,Gender,PersonalAddress,CompanyAddress,WorkPhone,Mobile,Other,Email) values('" + textBoxVisitorId.Text + "','" + textBoxFirstName.Text + "','" + textBoxLastName.Text + "','" + maskedTextBoxNicNumber.Text + "','" + textBoxOrganization.Text + "','" + textBoxDesignation.Text + "','" + comboBoxCategory.Text + "','" + dateTimePickerDateOfBirth.Value.ToString() + "','" + comboBoxGender.Text + "','" + textBoxPersonalAddress.Text + "','" + textBoxCompanyAddress.Text + "','" + textBoxWorkPhone.Text.ToString() + "','" + textBoxMobile.Text.ToString() + "','" + textBoxOther.Text.ToString() + "','" + textBoxEmail.Text + "')";
+                                    cmd.ExecuteNonQuery();
+                                    con.Close();
+                                    GenerateAutoId();
 
 
-                    comboBoxCategory.SelectedIndex = 0;
-                    comboBoxGender.SelectedIndex = 0;
-                    textBoxFirstName.Text = "";
-                    textBoxLastName.Text = "";
-                    textBoxOrganization.Text = "";
-                    textBoxDesignation.Text = "";
-                    maskedTextBoxNicNumber.Text = "";
-                    textBoxPersonalAddress.Text = "";
-                    textBoxCompanyAddress.Text = "";
-                    textBoxEmail.Text = "";
-                    textBoxWorkPhone.Text = "";
-                    textBoxMobile.Text = "";
-                    textBoxOther.Text = "";
-                    pictureBoxPhoto.Image = null;
+                                    comboBoxCategory.SelectedIndex = 0;
+                                    comboBoxGender.SelectedIndex = 0;
+                                    textBoxFirstName.Text = "";
+                                    textBoxLastName.Text = "";
+                                    textBoxOrganization.Text = "";
+                                    textBoxDesignation.Text = "";
+                                    maskedTextBoxNicNumber.Text = "";
+                                    textBoxPersonalAddress.Text = "";
+                                    textBoxCompanyAddress.Text = "";
+                                    textBoxEmail.Text = "";
+                                    textBoxWorkPhone.Text = "";
+                                    textBoxMobile.Text = "";
+                                    textBoxOther.Text = "";
+                                    pictureBoxPhoto.Image = null;
 
 
-                    MessageBox.Show("Record Saved!");
-                    textBoxFirstName.Focus();
+                                    MessageBox.Show("Record Saved!");
+                                    textBoxFirstName.Focus();
 
-                    disp_data();
-                    con.Close();
+                                    disp_data();
+                                    con.Close();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Last name is required");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("First name is required");
+                            }
+                        }
+                    else
+                    {
+                        MessageBox.Show("NIC number is required");
+                    } 
                 }
 
                 else
@@ -556,6 +585,30 @@ namespace VisitorManagementSystem
 
                      MessageBox.Show(ex.Message);
                  }
+             }
+
+             private void buttonViewHistory_Click(object sender, EventArgs e)
+             {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select * from Visit where VisitorId = '"+textBoxVisitorId.Text+"' ";
+                cmd.ExecuteNonQuery();
+                Object VisitorExist = cmd.ExecuteScalar();
+
+                if (VisitorExist != null)
+                {
+
+                    FormViewHistoryFromRegisterToManager history = new FormViewHistoryFromRegisterToManager();
+                    history.PassValue = textBoxVisitorId.Text;
+                    history.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No previous visits found for the visitor");
+                    con.Close();
+ 
+                }
              }
 
 

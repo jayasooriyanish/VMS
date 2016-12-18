@@ -52,6 +52,7 @@
             this.buttonVisits.TabIndex = 1;
             this.buttonVisits.Text = "Visits";
             this.buttonVisits.UseVisualStyleBackColor = true;
+            this.buttonVisits.Click += new System.EventHandler(this.buttonVisits_Click);
             // 
             // buttonReports
             // 

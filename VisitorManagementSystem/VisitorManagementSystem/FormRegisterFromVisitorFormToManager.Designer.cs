@@ -107,6 +107,7 @@
             this.buttonViewHistory.TabIndex = 9;
             this.buttonViewHistory.Text = "View History";
             this.buttonViewHistory.UseVisualStyleBackColor = false;
+            this.buttonViewHistory.Click += new System.EventHandler(this.buttonViewHistory_Click);
             // 
             // buttonViewAll
             // 

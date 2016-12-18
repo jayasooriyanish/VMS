@@ -69,7 +69,6 @@
             this.groupBoxAppointments = new System.Windows.Forms.GroupBox();
             this.textBoxAppointmentId = new System.Windows.Forms.TextBox();
             this.labelAppointmentId = new System.Windows.Forms.Label();
-            this.checkBoxApproved = new System.Windows.Forms.CheckBox();
             this.checkBoxNeedVehicles = new System.Windows.Forms.CheckBox();
             this.labelFromTime = new System.Windows.Forms.Label();
             this.labelToTime = new System.Windows.Forms.Label();
@@ -94,6 +93,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.labelStatus = new System.Windows.Forms.Label();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
             this.groupBoxContactDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.groupBoxAppointments.SuspendLayout();
@@ -431,7 +432,6 @@
             // 
             this.groupBoxAppointments.Controls.Add(this.textBoxAppointmentId);
             this.groupBoxAppointments.Controls.Add(this.labelAppointmentId);
-            this.groupBoxAppointments.Controls.Add(this.checkBoxApproved);
             this.groupBoxAppointments.Controls.Add(this.checkBoxNeedVehicles);
             this.groupBoxAppointments.Controls.Add(this.labelFromTime);
             this.groupBoxAppointments.Controls.Add(this.labelToTime);
@@ -475,17 +475,6 @@
             this.labelAppointmentId.Size = new System.Drawing.Size(78, 13);
             this.labelAppointmentId.TabIndex = 35;
             this.labelAppointmentId.Text = "Appointment Id";
-            // 
-            // checkBoxApproved
-            // 
-            this.checkBoxApproved.AutoSize = true;
-            this.checkBoxApproved.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxApproved.Location = new System.Drawing.Point(546, 143);
-            this.checkBoxApproved.Name = "checkBoxApproved";
-            this.checkBoxApproved.Size = new System.Drawing.Size(97, 22);
-            this.checkBoxApproved.TabIndex = 34;
-            this.checkBoxApproved.Text = "Approved?";
-            this.checkBoxApproved.UseVisualStyleBackColor = true;
             // 
             // checkBoxNeedVehicles
             // 
@@ -602,6 +591,7 @@
             this.textBoxEmployeeId.Name = "textBoxEmployeeId";
             this.textBoxEmployeeId.Size = new System.Drawing.Size(418, 20);
             this.textBoxEmployeeId.TabIndex = 20;
+            this.textBoxEmployeeId.TextChanged += new System.EventHandler(this.textBoxEmployeeId_TextChanged);
             // 
             // labelEmployeeLastName
             // 
@@ -669,6 +659,7 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.buttonExit);
             this.panel1.Controls.Add(this.buttonCancel);
             this.panel1.Controls.Add(this.buttonProceedToCheckin);
@@ -697,12 +688,36 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
+            // labelStatus
+            // 
+            this.labelStatus.AutoSize = true;
+            this.labelStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStatus.Location = new System.Drawing.Point(534, 7);
+            this.labelStatus.Name = "labelStatus";
+            this.labelStatus.Size = new System.Drawing.Size(41, 15);
+            this.labelStatus.TabIndex = 37;
+            this.labelStatus.Text = "Status";
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] {
+            "Pending",
+            "Approved",
+            "Blocked"});
+            this.comboBoxStatus.Location = new System.Drawing.Point(577, 5);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxStatus.TabIndex = 39;
+            // 
             // FormVisitorRegisterFromSearchToSecurity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(878, 678);
+            this.ClientSize = new System.Drawing.Size(862, 678);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.groupBoxAppointments);
             this.Controls.Add(this.textBoxSecurityAdmin);
@@ -785,7 +800,6 @@
         private System.Windows.Forms.GroupBox groupBoxAppointments;
         private System.Windows.Forms.TextBox textBoxAppointmentId;
         private System.Windows.Forms.Label labelAppointmentId;
-        private System.Windows.Forms.CheckBox checkBoxApproved;
         private System.Windows.Forms.CheckBox checkBoxNeedVehicles;
         private System.Windows.Forms.Label labelFromTime;
         private System.Windows.Forms.Label labelToTime;
@@ -810,5 +824,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Label labelStatus;
+        private System.Windows.Forms.ComboBox comboBoxStatus;
     }
 }

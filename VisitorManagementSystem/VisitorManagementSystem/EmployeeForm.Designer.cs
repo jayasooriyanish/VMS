@@ -58,21 +58,11 @@
             this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.buttonPhoto = new System.Windows.Forms.Button();
-            this.groupBoxAction = new System.Windows.Forms.GroupBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
-            this.buttonViewAll = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonDelete = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonAddEmployee = new System.Windows.Forms.Button();
-            this.dataGridViewEmployee = new System.Windows.Forms.DataGridView();
             this.photoOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.groupBoxContactDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
-            this.groupBoxAction.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).BeginInit();
             this.SuspendLayout();
             // 
             // labelEmployeeId
@@ -351,50 +341,12 @@
             this.buttonPhoto.UseVisualStyleBackColor = false;
             this.buttonPhoto.Click += new System.EventHandler(this.buttonPhoto_Click);
             // 
-            // groupBoxAction
-            // 
-            this.groupBoxAction.Controls.Add(this.buttonSearch);
-            this.groupBoxAction.Controls.Add(this.buttonViewAll);
-            this.groupBoxAction.Controls.Add(this.buttonExit);
-            this.groupBoxAction.Controls.Add(this.buttonSave);
-            this.groupBoxAction.Controls.Add(this.buttonCancel);
-            this.groupBoxAction.Controls.Add(this.buttonDelete);
-            this.groupBoxAction.Controls.Add(this.buttonEdit);
-            this.groupBoxAction.Controls.Add(this.buttonAddEmployee);
-            this.groupBoxAction.Location = new System.Drawing.Point(672, 28);
-            this.groupBoxAction.Name = "groupBoxAction";
-            this.groupBoxAction.Size = new System.Drawing.Size(175, 293);
-            this.groupBoxAction.TabIndex = 18;
-            this.groupBoxAction.TabStop = false;
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonSearch.Location = new System.Drawing.Point(52, 19);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
-            this.buttonSearch.TabIndex = 1;
-            this.buttonSearch.Text = "Search";
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
-            // 
-            // buttonViewAll
-            // 
-            this.buttonViewAll.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonViewAll.Location = new System.Drawing.Point(52, 221);
-            this.buttonViewAll.Name = "buttonViewAll";
-            this.buttonViewAll.Size = new System.Drawing.Size(75, 23);
-            this.buttonViewAll.TabIndex = 6;
-            this.buttonViewAll.Text = "View All";
-            this.buttonViewAll.UseVisualStyleBackColor = false;
-            this.buttonViewAll.Click += new System.EventHandler(this.buttonViewAll_Click);
-            // 
             // buttonExit
             // 
             this.buttonExit.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonExit.Location = new System.Drawing.Point(52, 251);
+            this.buttonExit.Location = new System.Drawing.Point(516, 355);
             this.buttonExit.Name = "buttonExit";
-            this.buttonExit.Size = new System.Drawing.Size(75, 23);
+            this.buttonExit.Size = new System.Drawing.Size(121, 47);
             this.buttonExit.TabIndex = 7;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = false;
@@ -403,66 +355,13 @@
             // buttonSave
             // 
             this.buttonSave.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonSave.Location = new System.Drawing.Point(52, 90);
+            this.buttonSave.Location = new System.Drawing.Point(365, 355);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(122, 47);
             this.buttonSave.TabIndex = 0;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonCancel.Location = new System.Drawing.Point(52, 177);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 5;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = false;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // buttonDelete
-            // 
-            this.buttonDelete.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonDelete.Location = new System.Drawing.Point(52, 148);
-            this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
-            this.buttonDelete.TabIndex = 4;
-            this.buttonDelete.Text = "Delete";
-            this.buttonDelete.UseVisualStyleBackColor = false;
-            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonEdit.Location = new System.Drawing.Point(52, 119);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
-            this.buttonEdit.TabIndex = 3;
-            this.buttonEdit.Text = "Edit";
-            this.buttonEdit.UseVisualStyleBackColor = false;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonAddEmployee
-            // 
-            this.buttonAddEmployee.BackColor = System.Drawing.SystemColors.Menu;
-            this.buttonAddEmployee.Location = new System.Drawing.Point(52, 49);
-            this.buttonAddEmployee.Name = "buttonAddEmployee";
-            this.buttonAddEmployee.Size = new System.Drawing.Size(75, 35);
-            this.buttonAddEmployee.TabIndex = 2;
-            this.buttonAddEmployee.Text = "Add New";
-            this.buttonAddEmployee.UseVisualStyleBackColor = false;
-            this.buttonAddEmployee.Click += new System.EventHandler(this.buttonAddEmployee_Click);
-            // 
-            // dataGridViewEmployee
-            // 
-            this.dataGridViewEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewEmployee.Location = new System.Drawing.Point(12, 327);
-            this.dataGridViewEmployee.Name = "dataGridViewEmployee";
-            this.dataGridViewEmployee.Size = new System.Drawing.Size(835, 160);
-            this.dataGridViewEmployee.TabIndex = 20;
-            this.dataGridViewEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEmployee_CellClick);
             // 
             // photoOpenFileDialog
             // 
@@ -473,9 +372,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
-            this.ClientSize = new System.Drawing.Size(859, 499);
-            this.Controls.Add(this.dataGridViewEmployee);
-            this.Controls.Add(this.groupBoxAction);
+            this.ClientSize = new System.Drawing.Size(685, 426);
+            this.Controls.Add(this.buttonExit);
+            this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonPhoto);
             this.Controls.Add(this.pictureBoxPhoto);
             this.Controls.Add(this.comboBoxGender);
@@ -501,8 +400,6 @@
             this.groupBoxContactDetails.ResumeLayout(false);
             this.groupBoxContactDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
-            this.groupBoxAction.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -540,16 +437,8 @@
         private System.Windows.Forms.ComboBox comboBoxGender;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonPhoto;
-        private System.Windows.Forms.GroupBox groupBoxAction;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonDelete;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonAddEmployee;
-        private System.Windows.Forms.DataGridView dataGridViewEmployee;
-        private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Button buttonViewAll;
         private System.Windows.Forms.OpenFileDialog photoOpenFileDialog;
     }
 }

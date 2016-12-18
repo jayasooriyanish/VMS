@@ -34,5 +34,20 @@ namespace VisitorManagementSystem
             FormRegisterFromVisitorFormToManager reg = new FormRegisterFromVisitorFormToManager();
             reg.Show();
         }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonHome_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

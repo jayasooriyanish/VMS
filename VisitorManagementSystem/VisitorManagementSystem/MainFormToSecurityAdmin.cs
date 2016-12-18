@@ -22,5 +22,11 @@ namespace VisitorManagementSystem
             VisitorFormToSecurity newfrm = new VisitorFormToSecurity();
             newfrm.ShowDialog();
         }
+
+        private void buttonVisits_Click(object sender, EventArgs e)
+        {
+            FormVisitsAndAppointmentsToSecurity frm = new FormVisitsAndAppointmentsToSecurity();
+            frm.Show();
+        }
     }
 }

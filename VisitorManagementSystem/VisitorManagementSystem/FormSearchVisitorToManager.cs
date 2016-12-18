@@ -56,33 +56,41 @@ namespace VisitorManagementSystem
         {
             try
             {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNIC.Text + "'";
+                if (maskedTextBoxNIC.Text != "")
+                    {
+                        con.Open();
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "select * from Visitor where NicNumber='" + maskedTextBoxNIC.Text + "'";
 
-                Object VisitorExist = cmd.ExecuteScalar();
+                        Object VisitorExist = cmd.ExecuteScalar();
 
-                if (VisitorExist != null)
-                {
-                    FormVisitorRegisterFromSearchToEmployee newRegForm = new FormVisitorRegisterFromSearchToEmployee();
-                    newRegForm.PassValue = maskedTextBoxNIC.Text;
-                    newRegForm.ShowDialog();
-                }
+                            if (VisitorExist != null)
+                            {
+                                FormVisitorRegisterFromSearchToEmployee newRegForm = new FormVisitorRegisterFromSearchToEmployee();
+                                newRegForm.PassValue = maskedTextBoxNIC.Text;
+                                newRegForm.ShowDialog();
+                            }
+                            else
+                            {
+                                DialogResult answer;
+                                answer = MessageBox.Show("Visitor Not Found!Do You Want To Register New", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                    if (answer == DialogResult.Yes)
+                                    {
+                                        VisitorRegisterForm newfrm = new VisitorRegisterForm();
+                                        newfrm.Show();
+
+                                    }
+
+                            }
+
+                            con.Close();
+                    }
                 else
                 {
-                    DialogResult answer;
-                    answer = MessageBox.Show("Visitor Not Found!Do You Want To Register New", this.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (answer == DialogResult.Yes)
-                    {
-                        VisitorRegisterForm newfrm = new VisitorRegisterForm();
-                        newfrm.Show();
-
-                    }
-
+                    MessageBox.Show("Please enter visitor NIC number to search! ", "Insufficient Data!");
+                    maskedTextBoxNIC.Focus();
                 }
-
-                con.Close();
             }
             catch (Exception ex)
             {

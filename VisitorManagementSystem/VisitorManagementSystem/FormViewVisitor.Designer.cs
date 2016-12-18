@@ -34,7 +34,6 @@
             this.buttonViewHistory = new System.Windows.Forms.Button();
             this.buttonMoreDetails = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
-            this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.labelClickToSelect = new System.Windows.Forms.Label();
             this.dateTimePickerToDate = new System.Windows.Forms.DateTimePicker();
@@ -42,6 +41,8 @@
             this.labelToDate = new System.Windows.Forms.Label();
             this.labelFromDate = new System.Windows.Forms.Label();
             this.labelSelectDate = new System.Windows.Forms.Label();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.labelNic = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewViewVisitor)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,18 +111,9 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(179, 53);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(41, 13);
-            this.labelSearch.TabIndex = 40;
-            this.labelSearch.Text = "Search";
-            // 
             // textBoxSearch
             // 
-            this.textBoxSearch.Location = new System.Drawing.Point(30, 46);
+            this.textBoxSearch.Location = new System.Drawing.Point(67, 47);
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(143, 20);
             this.textBoxSearch.TabIndex = 39;
@@ -179,13 +171,32 @@
             this.labelSelectDate.TabIndex = 31;
             this.labelSelectDate.Text = "Select Date";
             // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(216, 47);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(75, 23);
+            this.buttonSearch.TabIndex = 40;
+            this.buttonSearch.Text = "Search";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            // 
+            // labelNic
+            // 
+            this.labelNic.AutoSize = true;
+            this.labelNic.Location = new System.Drawing.Point(16, 50);
+            this.labelNic.Name = "labelNic";
+            this.labelNic.Size = new System.Drawing.Size(45, 13);
+            this.labelNic.TabIndex = 41;
+            this.labelNic.Text = "NIC No:";
+            // 
             // FormViewVisitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SteelBlue;
             this.ClientSize = new System.Drawing.Size(835, 602);
-            this.Controls.Add(this.labelSearch);
+            this.Controls.Add(this.labelNic);
+            this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBoxSearch);
             this.Controls.Add(this.labelClickToSelect);
             this.Controls.Add(this.dateTimePickerToDate);
@@ -216,7 +227,6 @@
         private System.Windows.Forms.Button buttonViewHistory;
         private System.Windows.Forms.Button buttonMoreDetails;
         private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.TextBox textBoxSearch;
         private System.Windows.Forms.Label labelClickToSelect;
         private System.Windows.Forms.DateTimePicker dateTimePickerToDate;
@@ -224,5 +234,7 @@
         private System.Windows.Forms.Label labelToDate;
         private System.Windows.Forms.Label labelFromDate;
         private System.Windows.Forms.Label labelSelectDate;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.Label labelNic;
     }
 }

@@ -55,5 +55,19 @@ namespace VisitorManagementSystem
                 con.Close();
             }
         }
+
+        private void buttonMoreDetails_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FormViewVisitorMoreDetailsToSecurity more = new FormViewVisitorMoreDetailsToSecurity(dataGridViewViewVisitorToSecurity.SelectedRows[0].Cells[0].Value.ToString());
+                more.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                con.Close();
+            }
+        }
     }
 }
